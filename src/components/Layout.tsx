@@ -45,7 +45,7 @@ function Header() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-white/40 bg-white/70 shadow-sm backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Brand />
 
@@ -64,7 +64,7 @@ function Header() {
         <div className="hidden items-center gap-3 lg:flex">
           <Link
             to="/contact"
-            className="rounded-lg bg-primary px-4 py-2 text-sm text-primary-foreground transition-opacity hover:opacity-90"
+            className="btn-primary rounded-xl px-5 py-2 text-sm font-medium"
           >
             Contact Us
           </Link>
