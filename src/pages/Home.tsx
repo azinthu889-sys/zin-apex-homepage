@@ -112,6 +112,13 @@ function Hero() {
               Explore Courses
             </a>
           </div>
+          <div className="animate-fade-up delay-4 mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-medium text-white/80">
+            <span className="flex items-center gap-2"><span className="text-gold">★</span> Trusted since 2023</span>
+            <span className="hidden h-1 w-1 rounded-full bg-white/40 sm:block" />
+            <span>100+ students placed in Japan</span>
+            <span className="hidden h-1 w-1 rounded-full bg-white/40 sm:block" />
+            <span>97% COE success rate</span>
+          </div>
         </div>
       </div>
       <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-background to-transparent" />
@@ -124,7 +131,7 @@ function SupportStrip() {
     <section className="border-b bg-card">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 lg:grid-cols-2">
         {/* photo with floating accent stat */}
-        <div className="relative">
+        <div data-reveal className="relative">
           <SmartImage
             src={images.support}
             alt="Zin Apex Education students celebrating their journey to Japan"
@@ -138,7 +145,7 @@ function SupportStrip() {
         </div>
 
         {/* text + stats */}
-        <div>
+        <div data-reveal>
           <span className="inline-flex items-center gap-2 rounded-full bg-secondary/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-secondary">
             <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
             Support
@@ -181,7 +188,7 @@ function SectionHeading({
   subtitle?: string
 }) {
   return (
-    <div className="mx-auto max-w-2xl text-center">
+    <div data-reveal className="mx-auto max-w-2xl text-center">
       {eyebrow && (
         <span className="inline-flex items-center gap-2 rounded-full bg-secondary/15 px-5 py-2 text-xs font-semibold uppercase tracking-widest text-secondary">
           <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
@@ -200,7 +207,7 @@ function AboutSection() {
   return (
     <section id="about" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-24">
       <SectionHeading eyebrow="About" title="About Zin Apex Education" />
-      <div className="mt-12 grid items-center gap-12 lg:grid-cols-2">
+      <div data-reveal className="mt-12 grid items-center gap-12 lg:grid-cols-2">
         <SmartImage
           src={images.office}
           alt="Zin Apex Education office in Mandalay"
@@ -234,7 +241,7 @@ function AboutSection() {
         </div>
       </div>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-3">
+      <div data-reveal className="mt-12 grid gap-6 md:grid-cols-3">
         <ValueCard icon={<Target className="h-5 w-5" />} title="Mission">
           <ul className="space-y-2">
             {mission.map((m) => (
@@ -292,7 +299,7 @@ function ServicesSection() {
           title="Complete support, every step"
           subtitle="From your first application to your arrival in Japan."
         />
-        <div className="mt-16 grid gap-6 sm:grid-cols-2">
+        <div data-reveal className="mt-16 grid gap-6 sm:grid-cols-2">
           {services.map((service) => (
             <div
               key={service.title}
@@ -343,7 +350,7 @@ function CoursesSection() {
         title="Japanese Language Courses"
         subtitle="Comprehensive JLPT preparation designed to take you from beginner to advanced proficiency."
       />
-      <div className="mt-16 grid gap-6 md:grid-cols-2">
+      <div data-reveal className="mt-16 grid gap-6 md:grid-cols-2">
         {courses.map((course) => (
           <div
             key={course.title}
@@ -565,7 +572,7 @@ function StoriesSection() {
         title="Student Reviews"
         subtitle="See how our students benefited from our support services and achieved their study-abroad goals."
       />
-      <div className="mt-16 grid gap-6 md:grid-cols-3">
+      <div data-reveal className="mt-16 grid gap-6 md:grid-cols-3">
         {reviews.map((r, i) => (
           <a
             key={i}
@@ -603,7 +610,7 @@ function ActivitiesSection() {
           title="Our Activities"
           subtitle="Discover how we support students at every step of their study-abroad journey through our activities and programs."
         />
-        <div className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-3">
+        <div data-reveal className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-3">
           {activities.map((a) => (
             <div key={a.title} className="lift group relative overflow-hidden rounded-2xl border border-[#e5eaf2] shadow-sm">
               <SmartImage
@@ -642,7 +649,7 @@ function ResultsSection() {
         title="Our COE Result"
         subtitle="This track record demonstrates Zin Apex Education's commitment and capability in guiding students successfully through the Japanese immigration and study application process."
       />
-      <div className="mt-16 grid grid-cols-2 gap-6 md:grid-cols-4">
+      <div data-reveal className="mt-16 grid grid-cols-2 gap-6 md:grid-cols-4">
         {achievements.map((a) => (
           <div key={a.label} className="lift rounded-2xl border border-[#e5eaf2] bg-white p-7 text-center shadow-sm">
             <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">

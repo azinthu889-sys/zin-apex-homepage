@@ -177,3 +177,19 @@ body {
   .lift { transition: none; }
   html { scroll-behavior: auto; }
 }
+
+/* Scroll reveal — only hides while .js-ready is set (JS booted), so content
+   never stays hidden if scripts fail. Elements get .revealed when in view. */
+.js-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1);
+  will-change: opacity, transform;
+}
+.js-ready [data-reveal].revealed {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js-ready [data-reveal] { opacity: 1; transform: none; transition: none; }
+}
