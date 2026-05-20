@@ -77,10 +77,9 @@ function Hero() {
         className="absolute inset-0 h-full w-full"
         imgClassName="object-center"
       />
-      {/* lighter overlay so the photo stays visible (darker on the left for text) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/70 to-primary/20" />
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent md:hidden" />
-      <div className="pointer-events-none absolute -bottom-24 -left-16 h-80 w-80 rounded-full bg-secondary/15 blur-3xl" />
+      {/* desktop: only the left text column is darkened, photo stays clear on the right */}
+      <div className="absolute inset-0 hidden bg-gradient-to-r from-primary via-primary/45 to-transparent md:block" />
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/45 to-primary/30 md:hidden" />
 
       <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-36">
         <div className="max-w-xl">
@@ -436,14 +435,33 @@ function StudySection() {
               Download our application form (PDF), fill it out, and send it back to
               us. All required attachments are in the Google Drive folder.
             </p>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <a
+                href={site.formPdfUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary inline-flex h-12 items-center gap-2 px-6 text-sm"
+              >
+                Download form
+                <Download className="h-4 w-4" />
+              </a>
+              <a
+                href={site.formSampleUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-12 items-center gap-2 rounded-2xl border-2 border-[#e5eaf2] px-5 text-sm font-black uppercase tracking-wide transition-colors hover:bg-accent"
+              >
+                View sample
+              </a>
+            </div>
             <a
               href={site.applicationFormUrl}
               target="_blank"
               rel="noreferrer"
-              className="btn-primary mt-6 inline-flex h-12 items-center gap-2 px-6 text-sm"
+              className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-secondary hover:underline"
             >
-              Download form
-              <Download className="h-4 w-4" />
+              Open Drive folder &amp; attachments
+              <ArrowRight className="h-3.5 w-3.5" />
             </a>
           </div>
           <div className="rounded-[2rem] border border-[#e5eaf2] bg-white p-9 shadow-xl">
@@ -573,7 +591,7 @@ function ActivitiesSection() {
                 className="aspect-[4/3] w-full"
                 imgClassName="transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
               <span className="absolute bottom-4 left-5 right-5 text-sm font-black uppercase tracking-tight text-white drop-shadow">
                 {a.title}
               </span>
@@ -682,8 +700,8 @@ function ContactCta() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-24">
       <div className="relative overflow-hidden rounded-[3rem] bg-primary shadow-2xl">
-        <SmartImage src={images.mandalay} alt="Mandalay" className="absolute inset-0 h-full w-full opacity-50" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/80 to-primary/55" />
+        <SmartImage src={images.mandalay} alt="Mandalay" className="absolute inset-0 h-full w-full opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-primary/45" />
         <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
         <div className="float-slow pointer-events-none absolute -bottom-16 -left-12 h-72 w-72 rounded-full bg-gold/15 blur-3xl" />
         <div className="relative px-8 py-20 text-center text-white">

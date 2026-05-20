@@ -37,6 +37,10 @@ export const site = {
   tagline: 'Your trusted pathway to study in Japan',
   applicationFormUrl:
     'https://drive.google.com/drive/folders/1YH9ASp1qnexRfQu1rpSywLvuWS3GSNWw?usp=sharing',
+  formPdfUrl:
+    'https://drive.google.com/file/d/1FepKHj1IV47rYsHXwyIP0Ep935Ot3b-W/view?usp=sharing',
+  formSampleUrl:
+    'https://drive.google.com/file/d/1IJabKHY_KPiOrv-Jt5SLry_Oefvz8saU/view?usp=sharing',
   orientationFormUrl: 'https://forms.gle/Rk8dxPJeJgLSfRpx5',
   office: {
     label: 'Mandalay Office',
