@@ -4,6 +4,7 @@ import { Menu, X, Facebook, Youtube, Send } from 'lucide-react'
 import { site, images } from '../data'
 
 const nav = [
+  { label: 'Home', href: '/#home' },
   { label: 'About', href: '/#about' },
   { label: 'Courses', href: '/#courses' },
   { label: 'Study in Japan', href: '/#study' },
