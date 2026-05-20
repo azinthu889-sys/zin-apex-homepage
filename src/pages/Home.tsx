@@ -90,7 +90,7 @@ function Hero() {
             </span>
             Now enrolling — April, July &amp; October 2026
           </span>
-          <h1 className="animate-fade-up delay-1 mt-6 text-4xl font-black uppercase leading-[0.95] tracking-tight text-white md:text-6xl">
+          <h1 className="animate-fade-up delay-1 mt-6 text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl">
             Your Gateway to <span className="text-gold">Japan</span>
           </h1>
           <p className="animate-fade-up delay-2 mt-5 max-w-lg text-lg font-medium text-white/85">
@@ -107,7 +107,7 @@ function Hero() {
             </Link>
             <a
               href="#courses"
-              className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl border-2 border-white/30 bg-white/5 px-8 text-sm font-black uppercase tracking-wider text-white backdrop-blur transition-all hover:scale-105 hover:bg-white/15"
+              className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl border-2 border-white/30 bg-white/5 px-8 text-sm font-semibold tracking-wide text-white backdrop-blur transition-all hover:bg-white/15"
             >
               Explore Courses
             </a>
@@ -133,12 +133,12 @@ function SupportStrip() {
           {achievements.map((a) => (
             <div
               key={a.label}
-              className="lift flex flex-col items-center rounded-[2rem] border border-[#e5eaf2] bg-white p-7 shadow-xl"
+              className="lift flex flex-col items-center rounded-2xl border border-[#e5eaf2] bg-white p-7 shadow-sm"
             >
               <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
                 <a.icon className="h-7 w-7" />
               </span>
-              <div className="mt-4 text-3xl font-black tracking-tight text-primary md:text-4xl">
+              <div className="mt-4 text-3xl font-bold tracking-tight text-primary md:text-4xl">
                 {a.value}
               </div>
               <div className="mt-1 text-sm font-medium text-muted-foreground">{a.label}</div>
@@ -162,7 +162,7 @@ function SectionHeading({
   return (
     <div className="mx-auto max-w-2xl text-center">
       {eyebrow && (
-        <span className="inline-flex items-center gap-2 rounded-full bg-secondary/15 px-5 py-2 text-xs font-black uppercase tracking-widest text-secondary">
+        <span className="inline-flex items-center gap-2 rounded-full bg-secondary/15 px-5 py-2 text-xs font-semibold uppercase tracking-widest text-secondary">
           <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
           {eyebrow}
         </span>
@@ -183,19 +183,19 @@ function AboutSection() {
         <SmartImage
           src={images.office}
           alt="Zin Apex Education office in Mandalay"
-          className="aspect-[4/3] rounded-[2.5rem] border border-[#e5eaf2] shadow-2xl"
+          className="aspect-[4/3] rounded-2xl border border-[#e5eaf2] shadow-lg"
         />
         <div>
           <p className="font-medium text-muted-foreground">{about.intro}</p>
           <p className="mt-4 font-medium text-muted-foreground">{about.detail}</p>
 
-          <div className="mt-8 rounded-[2rem] border border-[#e5eaf2] bg-white p-7 shadow-xl">
+          <div className="mt-8 rounded-2xl border border-[#e5eaf2] bg-white p-7 shadow-sm">
             <div className="flex items-center gap-4">
-              <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-lg font-black text-gold">
+              <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-lg font-bold text-gold">
                 {founder.initials}
               </span>
               <div>
-                <h3 className="font-black uppercase tracking-tight">{founder.name}</h3>
+                <h3 className="font-bold tracking-tight">{founder.name}</h3>
                 <p className="text-sm font-medium text-muted-foreground">{founder.role}</p>
               </div>
             </div>
@@ -252,11 +252,11 @@ function ValueCard({
   children: React.ReactNode
 }) {
   return (
-    <div className="lift rounded-[2rem] border border-[#e5eaf2] bg-white p-8 shadow-xl">
+    <div className="lift rounded-2xl border border-[#e5eaf2] bg-white p-8 shadow-sm">
       <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
         {icon}
       </div>
-      <h3 className="mt-5 text-lg font-black uppercase tracking-tight">{title}</h3>
+      <h3 className="mt-5 text-lg font-bold tracking-tight">{title}</h3>
       <div className="mt-3">{children}</div>
     </div>
   )
@@ -275,12 +275,12 @@ function ServicesSection() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="lift rounded-[2.5rem] border border-[#e5eaf2] bg-white p-8 shadow-xl"
+              className="lift rounded-2xl border border-[#e5eaf2] bg-white p-8 shadow-sm"
             >
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-white">
                 <service.icon className="h-6 w-6" />
               </div>
-              <h3 className="mt-5 text-lg font-black uppercase tracking-tight">{service.title}</h3>
+              <h3 className="mt-5 text-lg font-bold tracking-tight">{service.title}</h3>
               <ul className="mt-3 space-y-2">
                 {service.items.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -297,8 +297,8 @@ function ServicesSection() {
           <SectionHeading title="Why choose Zin Apex Education?" />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {whyChooseUs.map((item) => (
-              <div key={item.title} className="lift rounded-[2rem] border border-[#e5eaf2] bg-white p-7 shadow-xl">
-                <h3 className="flex items-start gap-2.5 font-black uppercase tracking-tight">
+              <div key={item.title} className="lift rounded-2xl border border-[#e5eaf2] bg-white p-7 shadow-sm">
+                <h3 className="flex items-start gap-2.5 font-bold tracking-tight">
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-xl bg-gold/20 text-primary">
                     <Check className="h-4 w-4" />
                   </span>
@@ -326,12 +326,12 @@ function CoursesSection() {
         {courses.map((course) => (
           <div
             key={course.title}
-            className="lift flex flex-col overflow-hidden rounded-[2.5rem] border border-[#e5eaf2] bg-white shadow-xl"
+            className="lift flex flex-col overflow-hidden rounded-2xl border border-[#e5eaf2] bg-white shadow-sm"
           >
             <div className="relative">
               <SmartImage src={course.image} alt={course.title} className="aspect-[16/9] w-full" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
-              <span className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-gold text-sm font-black text-primary shadow-lg">
+              <span className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-gold text-sm font-bold text-primary shadow-lg">
                 {course.code}
               </span>
               <span className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary backdrop-blur">
@@ -340,7 +340,7 @@ function CoursesSection() {
             </div>
             <div className="flex flex-1 flex-col p-7">
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-black uppercase tracking-tight">{course.title}</h3>
+                <h3 className="text-lg font-bold tracking-tight">{course.title}</h3>
                 <span className="text-sm font-semibold text-muted-foreground">{course.duration}</span>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">{course.description}</p>
@@ -365,15 +365,15 @@ function CoursesSection() {
         ))}
       </div>
 
-      <div className="mt-12 rounded-[2.5rem] border border-[#e5eaf2] bg-white p-10 shadow-xl">
-        <h3 className="text-center text-xl font-black uppercase tracking-tight">Flexible ways to learn</h3>
+      <div className="mt-12 rounded-2xl border border-[#e5eaf2] bg-white p-10 shadow-sm">
+        <h3 className="text-center text-xl font-bold tracking-tight">Flexible ways to learn</h3>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {learningFormats.map((f) => (
             <div key={f.title} className="text-center">
               <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
                 <f.icon className="h-7 w-7" />
               </span>
-              <h4 className="mt-4 font-black uppercase tracking-tight">{f.title}</h4>
+              <h4 className="mt-4 font-bold tracking-tight">{f.title}</h4>
               <p className="mt-1 text-sm text-muted-foreground">{f.description}</p>
             </div>
           ))}
@@ -384,12 +384,12 @@ function CoursesSection() {
         <SectionHeading title="Why our courses are effective" />
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {whyCoursesWork.map((item, i) => (
-            <div key={item.title} className="lift flex gap-4 rounded-[2rem] border border-[#e5eaf2] bg-white p-7 shadow-xl">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary text-sm font-black text-white">
+            <div key={item.title} className="lift flex gap-4 rounded-2xl border border-[#e5eaf2] bg-white p-7 shadow-sm">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary text-sm font-bold text-white">
                 {i + 1}
               </span>
               <div>
-                <h3 className="font-black uppercase tracking-tight">{item.title}</h3>
+                <h3 className="font-bold tracking-tight">{item.title}</h3>
                 <p className="mt-2 text-sm font-medium text-muted-foreground">{item.description}</p>
               </div>
             </div>
@@ -426,11 +426,11 @@ function StudySection() {
         </ul>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          <div className="rounded-[2rem] border border-[#e5eaf2] bg-white p-9 shadow-xl">
+          <div className="rounded-2xl border border-[#e5eaf2] bg-white p-9 shadow-sm">
             <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
               <Download className="h-7 w-7" />
             </span>
-            <h3 className="mt-5 text-lg font-black uppercase tracking-tight">Application form</h3>
+            <h3 className="mt-5 text-lg font-bold tracking-tight">Application form</h3>
             <p className="mt-2 text-sm font-medium text-muted-foreground">
               Download our application form (PDF), fill it out, and send it back to
               us. All required attachments are in the Google Drive folder.
@@ -449,7 +449,7 @@ function StudySection() {
                 href={site.formSampleUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-12 items-center gap-2 rounded-2xl border-2 border-[#e5eaf2] px-5 text-sm font-black uppercase tracking-wide transition-colors hover:bg-accent"
+                className="inline-flex h-12 items-center gap-2 rounded-2xl border-2 border-[#e5eaf2] px-5 text-sm font-semibold transition-colors hover:bg-accent"
               >
                 View sample
               </a>
@@ -464,11 +464,11 @@ function StudySection() {
               <ArrowRight className="h-3.5 w-3.5" />
             </a>
           </div>
-          <div className="rounded-[2rem] border border-[#e5eaf2] bg-white p-9 shadow-xl">
+          <div className="rounded-2xl border border-[#e5eaf2] bg-white p-9 shadow-sm">
             <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
               <ClipboardList className="h-7 w-7" />
             </span>
-            <h3 className="mt-5 text-lg font-black uppercase tracking-tight">Student orientation</h3>
+            <h3 className="mt-5 text-lg font-bold tracking-tight">Student orientation</h3>
             <p className="mt-2 text-sm font-medium text-muted-foreground">
               Register through our Google Form to join the orientation briefing and
               get important information about the application process.
@@ -477,7 +477,7 @@ function StudySection() {
               href={site.orientationFormUrl}
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex h-12 items-center gap-2 rounded-2xl border-2 border-[#e5eaf2] px-6 text-sm font-black uppercase tracking-wide transition-colors hover:bg-accent"
+              className="mt-6 inline-flex h-12 items-center gap-2 rounded-2xl border-2 border-[#e5eaf2] px-6 text-sm font-semibold transition-colors hover:bg-accent"
             >
               Register now
               <ArrowRight className="h-4 w-4" />
@@ -524,7 +524,7 @@ function StudySection() {
                 className="aspect-[3/4] w-full"
                 imgClassName="transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent" />
               <span className="absolute bottom-3 left-3 text-sm font-medium text-white">
                 {city.name}
               </span>
@@ -551,18 +551,18 @@ function StoriesSection() {
             href={site.social.youtube}
             target="_blank"
             rel="noreferrer"
-            className="lift group overflow-hidden rounded-[2.5rem] border border-[#e5eaf2] bg-white shadow-xl"
+            className="lift group overflow-hidden rounded-2xl border border-[#e5eaf2] bg-white shadow-sm"
           >
             <div className="relative">
               <SmartImage src={r.image} alt={r.name} className="aspect-video w-full" />
               <div className="absolute inset-0 flex items-center justify-center bg-primary/35 transition-colors group-hover:bg-primary/50">
-                <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gold text-primary shadow-xl transition-transform duration-300 group-hover:scale-110">
+                <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gold text-primary shadow-sm transition-transform duration-300 group-hover:scale-110">
                   <Play className="h-6 w-6 fill-current" />
                 </span>
               </div>
             </div>
             <div className="p-6">
-              <h3 className="font-black uppercase tracking-tight">{r.name}</h3>
+              <h3 className="font-bold tracking-tight">{r.name}</h3>
               <p className="mt-1 text-sm font-medium text-muted-foreground">{r.school}</p>
               <p className="text-sm font-medium text-muted-foreground">{r.program}</p>
             </div>
@@ -584,7 +584,7 @@ function ActivitiesSection() {
         />
         <div className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-3">
           {activities.map((a) => (
-            <div key={a.title} className="lift group relative overflow-hidden rounded-[2rem] border border-[#e5eaf2] shadow-xl">
+            <div key={a.title} className="lift group relative overflow-hidden rounded-2xl border border-[#e5eaf2] shadow-sm">
               <SmartImage
                 src={a.image}
                 alt={a.title}
@@ -592,7 +592,7 @@ function ActivitiesSection() {
                 imgClassName="transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
-              <span className="absolute bottom-4 left-5 right-5 text-sm font-black uppercase tracking-tight text-white drop-shadow">
+              <span className="absolute bottom-4 left-5 right-5 text-sm font-bold tracking-tight text-white drop-shadow">
                 {a.title}
               </span>
             </div>
@@ -623,11 +623,11 @@ function ResultsSection() {
       />
       <div className="mt-16 grid grid-cols-2 gap-6 md:grid-cols-4">
         {achievements.map((a) => (
-          <div key={a.label} className="lift rounded-[2rem] border border-[#e5eaf2] bg-white p-7 text-center shadow-xl">
+          <div key={a.label} className="lift rounded-2xl border border-[#e5eaf2] bg-white p-7 text-center shadow-sm">
             <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
               <a.icon className="h-7 w-7" />
             </span>
-            <div className="mt-4 text-4xl font-black tracking-tight text-primary">
+            <div className="mt-4 text-4xl font-bold tracking-tight text-primary">
               {a.value}
             </div>
             <div className="mt-1 text-sm font-medium text-muted-foreground">{a.label}</div>
@@ -669,7 +669,7 @@ function FaqSection() {
           {faqs.map((faq, i) => {
             const isOpen = open === i
             return (
-              <div key={faq.q} className="overflow-hidden rounded-[1.5rem] border border-[#e5eaf2] bg-white shadow-sm">
+              <div key={faq.q} className="overflow-hidden rounded-xl border border-[#e5eaf2] bg-white shadow-sm">
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
                   className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
@@ -699,13 +699,13 @@ function FaqSection() {
 function ContactCta() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-24">
-      <div className="relative overflow-hidden rounded-[3rem] bg-primary shadow-2xl">
+      <div className="relative overflow-hidden rounded-3xl bg-primary shadow-lg">
         <SmartImage src={images.mandalay} alt="Mandalay" className="absolute inset-0 h-full w-full opacity-60" />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-primary/45" />
         <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
         <div className="float-slow pointer-events-none absolute -bottom-16 -left-12 h-72 w-72 rounded-full bg-gold/15 blur-3xl" />
         <div className="relative px-8 py-20 text-center text-white">
-          <h2 className="mx-auto max-w-3xl text-3xl font-black uppercase leading-tight tracking-tight md:text-5xl">
+          <h2 className="mx-auto max-w-3xl text-3xl font-bold leading-tight tracking-tight md:text-5xl">
             Ready to begin your journey to{' '}
             <span className="text-gold">Japan?</span>
           </h2>

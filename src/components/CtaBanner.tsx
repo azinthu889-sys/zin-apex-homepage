@@ -19,7 +19,7 @@ export default function CtaBanner({
 }: Props) {
   return (
     <section className="mx-auto max-w-6xl px-6 py-24">
-      <div className="relative overflow-hidden rounded-[3rem] bg-primary shadow-2xl">
+      <div className="relative overflow-hidden rounded-3xl bg-primary shadow-lg">
         <SmartImage
           src={image}
           alt=""
@@ -29,7 +29,7 @@ export default function CtaBanner({
         <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
         <div className="float-slow pointer-events-none absolute -bottom-16 -left-12 h-72 w-72 rounded-full bg-gold/15 blur-3xl" />
         <div className="relative px-8 py-20 text-center text-white">
-          <h2 className="mx-auto max-w-2xl text-3xl font-black uppercase leading-tight tracking-tight md:text-4xl">
+          <h2 className="mx-auto max-w-2xl text-3xl font-bold leading-tight tracking-tight md:text-4xl">
             {title}
           </h2>
           <p className="mx-auto mt-5 max-w-xl font-medium text-white/85">{subtitle}</p>
