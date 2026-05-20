@@ -1,41 +1,45 @@
-import { Link } from 'react-router'
-import { ArrowRight, Check, Target, Eye, Compass, Youtube } from 'lucide-react'
-import { about, founder, mission, vision, purpose, site } from '../data'
+import { Check, Target, Eye, Compass, Youtube } from 'lucide-react'
+import SmartImage from '../components/SmartImage'
+import PageHero from '../components/PageHero'
+import CtaBanner from '../components/CtaBanner'
+import { about, founder, mission, vision, purpose, site, images } from '../data'
 
 export default function About() {
   return (
     <>
-      <section className="border-b bg-card">
-        <div className="mx-auto max-w-6xl px-6 py-20 text-center">
-          <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
-            About Zin Apex Education
-          </h1>
-          <p className="mx-auto mt-4 max-w-3xl text-muted-foreground">
-            {about.intro}
-          </p>
-          <p className="mx-auto mt-3 max-w-3xl text-muted-foreground">
-            {about.detail}
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="About Zin Apex Education"
+        image={images.kyotoStreet}
+        imageAlt="Traditional street in Japan"
+      >
+        <p>{about.intro}</p>
+        <p className="mt-3">{about.detail}</p>
+      </PageHero>
 
       <section className="mx-auto max-w-6xl px-6 py-24">
         <div className="grid items-start gap-10 lg:grid-cols-[280px_1fr]">
-          <div className="rounded-2xl border bg-card p-8 text-center">
-            <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-primary text-2xl font-semibold text-primary-foreground">
-              {founder.initials}
+          <div className="overflow-hidden rounded-2xl border bg-card text-center">
+            <SmartImage
+              src={images.torii}
+              alt="Torii gates in Japan"
+              className="aspect-[4/3] w-full"
+            />
+            <div className="p-8">
+              <div className="mx-auto -mt-16 flex h-24 w-24 items-center justify-center rounded-full border-4 border-card bg-primary text-2xl font-semibold text-primary-foreground shadow-lg">
+                {founder.initials}
+              </div>
+              <h3 className="mt-5 text-lg font-medium">{founder.name}</h3>
+              <p className="text-sm text-muted-foreground">{founder.role}</p>
+              <a
+                href={site.social.youtube}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-5 inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-sm transition-colors hover:bg-accent"
+              >
+                <Youtube className="h-4 w-4" />
+                Zin Japan Life
+              </a>
             </div>
-            <h3 className="mt-5 text-lg font-medium">{founder.name}</h3>
-            <p className="text-sm text-muted-foreground">{founder.role}</p>
-            <a
-              href={site.social.youtube}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-5 inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-sm transition-colors hover:bg-accent"
-            >
-              <Youtube className="h-4 w-4" />
-              Zin Japan Life
-            </a>
           </div>
           <div>
             <h2 className="text-2xl font-semibold tracking-tight">
@@ -102,23 +106,13 @@ export default function About() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="rounded-3xl bg-primary px-8 py-16 text-center text-primary-foreground">
-          <h2 className="mx-auto max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">
-            Join the Zin Apex Education community
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl opacity-80">
-            Let us guide you towards a successful future in Japan.
-          </p>
-          <Link
-            to="/contact"
-            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-background px-6 py-3 text-foreground transition-opacity hover:opacity-90"
-          >
-            Contact us
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-      </section>
+      <CtaBanner
+        title="Join the Zin Apex Education community"
+        subtitle="Let us guide you towards a successful future in Japan."
+        buttonLabel="Contact us"
+        to="/contact"
+        image={images.cherryBlossom}
+      />
     </>
   )
 }

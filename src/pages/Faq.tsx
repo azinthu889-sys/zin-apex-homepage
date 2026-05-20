@@ -1,23 +1,21 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { ArrowRight, ChevronDown } from 'lucide-react'
-import { faqs } from '../data'
+import PageHero from '../components/PageHero'
+import { faqs, images } from '../data'
 
 export default function Faq() {
   const [open, setOpen] = useState<number | null>(0)
 
   return (
     <>
-      <section className="border-b bg-card">
-        <div className="mx-auto max-w-6xl px-6 py-20 text-center">
-          <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
-            Frequently asked questions
-          </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            မေးလေ့ရှိသော မေးခွန်းများ — အဖြေတွေ ဒီမှာ စုစည်းပေးထားပါတယ်။
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Frequently asked questions"
+        image={images.study}
+        imageAlt="Studying and preparing questions"
+      >
+        <p>မေးလေ့ရှိသော မေးခွန်းများ — အဖြေတွေ ဒီမှာ စုစည်းပေးထားပါတယ်။</p>
+      </PageHero>
 
       <section className="mx-auto max-w-3xl px-6 py-24">
         <div className="space-y-3">

@@ -11,8 +11,9 @@ import {
   Youtube,
   Send,
 } from 'lucide-react'
+import PageHero from '../components/PageHero'
 import { db } from '../lib/firebase'
-import { courses, site } from '../data'
+import { courses, site, images } from '../data'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -48,17 +49,16 @@ export default function Contact() {
 
   return (
     <>
-      <section className="border-b bg-card">
-        <div className="mx-auto max-w-6xl px-6 py-20 text-center">
-          <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
-            Contact us
-          </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Ready to apply or have a question? Send us a message and our team will
-            get back to you shortly.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Contact us"
+        image={images.desk}
+        imageAlt="Get in touch with our team"
+      >
+        <p>
+          Ready to apply or have a question? Send us a message and our team will
+          get back to you shortly.
+        </p>
+      </PageHero>
 
       <section className="mx-auto max-w-6xl px-6 py-24">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.5fr]">

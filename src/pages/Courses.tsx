@@ -1,43 +1,54 @@
 import { Link } from 'react-router'
 import { ArrowRight, Check } from 'lucide-react'
-import { courses, whyCoursesWork } from '../data'
+import SmartImage from '../components/SmartImage'
+import PageHero from '../components/PageHero'
+import CtaBanner from '../components/CtaBanner'
+import { courses, whyCoursesWork, images } from '../data'
 
 export default function Courses() {
   return (
     <>
-      <section className="border-b bg-card">
-        <div className="mx-auto max-w-6xl px-6 py-20 text-center">
-          <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
-            Japanese language courses
-          </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            JLPT-focused courses and practical training to prepare you for study
-            and life in Japan.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Japanese language courses"
+        image={images.classroom}
+        imageAlt="Japanese language classroom"
+      >
+        <p>
+          JLPT-focused courses and practical training to prepare you for study
+          and life in Japan.
+        </p>
+      </PageHero>
 
       <section className="mx-auto max-w-6xl px-6 py-24">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {courses.map((course) => (
             <div
               key={course.title}
-              className="flex flex-col rounded-xl border bg-card p-6"
+              className="flex flex-col overflow-hidden rounded-xl border bg-card transition-shadow hover:shadow-md"
             >
-              <span className="inline-block w-fit rounded-full bg-accent px-3 py-1 text-xs text-accent-foreground">
-                {course.level}
-              </span>
-              <h3 className="mt-4 font-medium">{course.title}</h3>
-              <p className="mt-3 flex-1 text-sm text-muted-foreground">
-                {course.description}
-              </p>
-              <Link
-                to="/contact"
-                className="mt-6 inline-flex items-center gap-2 text-sm font-medium hover:underline"
-              >
-                Enroll
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+              <div className="relative">
+                <SmartImage
+                  src={course.image}
+                  alt={course.title}
+                  className="aspect-[16/10] w-full"
+                />
+                <span className="absolute left-3 top-3 inline-block rounded-full bg-background/90 px-3 py-1 text-xs font-medium backdrop-blur">
+                  {course.level}
+                </span>
+              </div>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="font-medium">{course.title}</h3>
+                <p className="mt-3 flex-1 text-sm text-muted-foreground">
+                  {course.description}
+                </p>
+                <Link
+                  to="/contact"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-medium hover:underline"
+                >
+                  Enroll
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
             </div>
           ))}
         </div>
@@ -72,26 +83,41 @@ export default function Courses() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="rounded-3xl border bg-card px-8 py-12 text-center">
-          <h2 className="text-2xl font-semibold tracking-tight">
-            Speaking-focused &amp; flexible self-study
-          </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
-            Boost your conversational ability in our speaking classes, or learn at
-            your own pace with flexible N5 video lessons.
-          </p>
-          <ul className="mx-auto mt-6 flex max-w-xl flex-col gap-2 text-left">
-            <li className="flex items-start gap-2 text-sm">
-              <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-              Conversation-centred lessons for real-life fluency
-            </li>
-            <li className="flex items-start gap-2 text-sm">
-              <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-              On-demand N5 video lessons you can study anytime
-            </li>
-          </ul>
+        <div className="grid items-center gap-10 rounded-3xl border bg-card p-8 md:grid-cols-2 md:p-12">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight">
+              Speaking-focused &amp; flexible self-study
+            </h2>
+            <p className="mt-3 text-muted-foreground">
+              Boost your conversational ability in our speaking classes, or learn
+              at your own pace with flexible N5 video lessons.
+            </p>
+            <ul className="mt-6 flex flex-col gap-2">
+              <li className="flex items-start gap-2 text-sm">
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                Conversation-centred lessons for real-life fluency
+              </li>
+              <li className="flex items-start gap-2 text-sm">
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                On-demand N5 video lessons you can study anytime
+              </li>
+            </ul>
+          </div>
+          <SmartImage
+            src={images.study}
+            alt="Studying Japanese at your own pace"
+            className="aspect-[4/3] rounded-2xl border shadow-sm"
+          />
         </div>
       </section>
+
+      <CtaBanner
+        title="Start learning Japanese today"
+        subtitle="Enroll in a course that fits your goals and schedule."
+        buttonLabel="Enroll now"
+        to="/contact"
+        image={images.graduation}
+      />
     </>
   )
 }

@@ -1,21 +1,22 @@
-import { Link } from 'react-router'
 import { ArrowRight, Download, FileCheck, ClipboardList, MapPin } from 'lucide-react'
-import { requiredDocuments, intakes, cities, site } from '../data'
+import SmartImage from '../components/SmartImage'
+import PageHero from '../components/PageHero'
+import CtaBanner from '../components/CtaBanner'
+import { requiredDocuments, intakes, cities, site, images } from '../data'
 
 export default function StudyInJapan() {
   return (
     <>
-      <section className="border-b bg-card">
-        <div className="mx-auto max-w-6xl px-6 py-20 text-center">
-          <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
-            Study in Japan
-          </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Everything you need to know to apply to a Japanese language school
-            with Zin Apex Education.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Study in Japan"
+        image={images.cherryBlossom}
+        imageAlt="Cherry blossoms in Japan"
+      >
+        <p>
+          Everything you need to know to apply to a Japanese language school
+          with Zin Apex Education.
+        </p>
+      </PageHero>
 
       <section className="mx-auto max-w-6xl px-6 py-24">
         <div className="flex items-center gap-3">
@@ -134,36 +135,35 @@ export default function StudyInJapan() {
             Japan. Choose the city that matches your goals, lifestyle, and study
             plan.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
             {cities.map((city) => (
-              <span
-                key={city}
-                className="rounded-full border bg-background px-5 py-2 text-sm font-medium"
+              <div
+                key={city.name}
+                className="group relative overflow-hidden rounded-xl border"
               >
-                {city}
-              </span>
+                <SmartImage
+                  src={city.image}
+                  alt={city.name}
+                  className="aspect-[3/4] w-full"
+                  imgClassName="transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <span className="absolute bottom-3 left-3 text-sm font-medium text-white">
+                  {city.name}
+                </span>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="rounded-3xl bg-primary px-8 py-16 text-center text-primary-foreground">
-          <h2 className="mx-auto max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">
-            Have questions about applying?
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl opacity-80">
-            Our team will guide you through every step of the process.
-          </p>
-          <Link
-            to="/contact"
-            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-background px-6 py-3 text-foreground transition-opacity hover:opacity-90"
-          >
-            Get in touch
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-      </section>
+      <CtaBanner
+        title="Have questions about applying?"
+        subtitle="Our team will guide you through every step of the process."
+        buttonLabel="Get in touch"
+        to="/contact"
+        image={images.shibuya}
+      />
     </>
   )
 }

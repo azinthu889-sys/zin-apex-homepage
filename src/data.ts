@@ -6,6 +6,9 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 
+const unsplash = (id: string, w = 1200) =>
+  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`
+
 export const site = {
   name: 'Zin Apex Education',
   tagline: 'Your trusted pathway to study in Japan',
@@ -148,30 +151,35 @@ export const courses = [
     level: 'Beginner',
     description:
       'Build a solid foundation in Japanese — hiragana, katakana, basic grammar, and everyday vocabulary.',
+    image: unsplash('1456513080510-7bf3a84b82f8', 900),
   },
   {
     title: 'JLPT N4 Course',
     level: 'Elementary',
     description:
       'Progress to intermediate grammar, kanji, reading, and listening for the JLPT N4 exam.',
+    image: unsplash('1524178232363-1fb2b075b655', 900),
   },
   {
     title: 'Speaking-Focused Class',
     level: 'All levels',
     description:
       'Conversation-centred lessons that build confidence and fluency for daily life in Japan.',
+    image: unsplash('1523240795612-9a054b0db644', 900),
   },
   {
     title: 'Practical Skills Training',
     level: 'All levels',
     description:
       'Real-world skills and cultural know-how to help you adapt smoothly to life and study in Japan.',
+    image: unsplash('1531545514256-b1400bc00f31', 900),
   },
   {
     title: 'N5 Video Lessons',
     level: 'Self-study',
     description:
       'Flexible, on-demand N5 video lessons you can study anytime, at your own pace.',
+    image: unsplash('1542051841857-5f90071e7989', 900),
   },
 ]
 
@@ -236,7 +244,28 @@ export const intakes = [
   },
 ]
 
-export const cities = ['Tokyo', 'Shizuoka', 'Hamamatsu', 'Okayama', 'Kobe']
+export const images = {
+  heroFuji: unsplash('1493976040374-85c8e12f0c0e', 1600),
+  tokyoNight: unsplash('1542051841857-5f90071e7989', 1400),
+  shibuya: unsplash('1480796927426-f609979314bd', 1400),
+  torii: unsplash('1545569341-9eb8b30979d9', 1400),
+  kyotoStreet: unsplash('1528360983277-13d401cdc186', 1400),
+  cherryBlossom: unsplash('1522383225653-ed111181a951', 1400),
+  students: unsplash('1523240795612-9a054b0db644', 1400),
+  study: unsplash('1456513080510-7bf3a84b82f8', 1200),
+  graduation: unsplash('1523050854058-8df90110c9f1', 1400),
+  classroom: unsplash('1524178232363-1fb2b075b655', 1200),
+  teamwork: unsplash('1531545514256-b1400bc00f31', 1200),
+  desk: unsplash('1486312338219-ce68d2c6f44d', 1400),
+}
+
+export const cities = [
+  { name: 'Tokyo', image: unsplash('1480796927426-f609979314bd', 900) },
+  { name: 'Shizuoka', image: unsplash('1493976040374-85c8e12f0c0e', 900) },
+  { name: 'Hamamatsu', image: unsplash('1528360983277-13d401cdc186', 900) },
+  { name: 'Okayama', image: unsplash('1545569341-9eb8b30979d9', 900) },
+  { name: 'Kobe', image: unsplash('1542051841857-5f90071e7989', 900) },
+]
 
 export const coeResults = [
   { year: '2023', applicants: 7, successful: '6' },
