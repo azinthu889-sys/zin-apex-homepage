@@ -1,113 +1,280 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router'
-import { ArrowRight, Check, Star } from 'lucide-react'
+import {
+  ArrowRight,
+  Check,
+  Star,
+  Play,
+  Download,
+  FileCheck,
+  ClipboardList,
+  MapPin,
+  Target,
+  Eye,
+  Compass,
+  Youtube,
+  ChevronDown,
+  MessageCircle,
+} from 'lucide-react'
 import SmartImage from '../components/SmartImage'
 import {
   about,
+  founder,
+  mission,
+  vision,
+  purpose,
   services,
   whyChooseUs,
-  stats,
+  courses,
+  learningFormats,
+  whyCoursesWork,
+  requiredDocuments,
+  intakes,
+  cities,
+  achievements,
   coeResults,
+  reviews,
+  activities,
+  faqs,
+  site,
   images,
 } from '../data'
 
+function useHashScroll() {
+  useEffect(() => {
+    if (window.location.hash) {
+      const el = document.querySelector(window.location.hash)
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100)
+    }
+  }, [])
+}
+
 export default function Home() {
+  useHashScroll()
   return (
     <>
-      <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
-          <div className="absolute -right-24 top-40 h-96 w-96 rounded-full bg-chart-1/10 blur-3xl" />
-          <div className="absolute inset-0 bg-gradient-to-b from-accent/50 to-background" />
-        </div>
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:py-28">
-          <div className="text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 rounded-full border bg-card px-4 py-1.5 text-sm text-muted-foreground">
-              <span className="h-2 w-2 rounded-full bg-primary" />
-              Now enrolling — April, July &amp; October 2026
-            </div>
-            <h1 className="mt-6 text-4xl font-semibold tracking-tight md:text-6xl">
-              Your trusted pathway to{' '}
-              <span className="text-primary">study in Japan</span>
-            </h1>
-            <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground lg:mx-0">
-              {about.intro}
-            </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-primary-foreground transition-opacity hover:opacity-90"
-              >
-                Apply now
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                to="/study-in-japan"
-                className="inline-flex items-center gap-2 rounded-lg border bg-card px-6 py-3 transition-colors hover:bg-accent"
-              >
-                How it works
-              </Link>
-            </div>
-          </div>
+      <Hero />
+      <SupportStrip />
+      <AboutSection />
+      <ServicesSection />
+      <CoursesSection />
+      <StudySection />
+      <StoriesSection />
+      <ActivitiesSection />
+      <ResultsSection />
+      <FaqSection />
+      <ContactCta />
+    </>
+  )
+}
 
-          <div className="relative">
-            <SmartImage
-              src={images.heroFuji}
-              alt="Mount Fuji and cherry blossoms in Japan"
-              className="aspect-[4/5] rounded-3xl border shadow-xl sm:aspect-[5/4] lg:aspect-[4/5]"
-            />
-            <div className="absolute -bottom-5 -left-5 hidden rounded-2xl border bg-card p-4 shadow-lg sm:block">
-              <div className="flex items-center gap-1 text-chart-4">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
-                ))}
-              </div>
-              <p className="mt-1 text-sm font-medium">100+ successful COE</p>
-              <p className="text-xs text-muted-foreground">Trusted since 2023</p>
-            </div>
+function Hero() {
+  return (
+    <section id="home" className="relative overflow-hidden">
+      <SmartImage
+        src={images.study}
+        alt="Students studying Japanese"
+        className="absolute inset-0 h-full w-full"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/80 to-navy/60" />
+      <div className="relative mx-auto max-w-6xl px-6 py-28 md:py-36">
+        <div className="max-w-2xl">
+          <span className="inline-flex items-center gap-2 rounded-full bg-gold/20 px-4 py-1.5 text-sm font-medium text-gold ring-1 ring-gold/40">
+            Now enrolling — April, July &amp; October 2026
+          </span>
+          <h1 className="mt-6 text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
+            Your Gateway to{' '}
+            <span className="text-gold">Japan</span>
+          </h1>
+          <p className="mt-4 text-xl font-medium text-white/90">
+            Helping Myanmar Students Study at Top Japanese Language Schools
+          </p>
+          <p className="mt-4 max-w-xl text-white/75">
+            Join thousands of Myanmar students who achieved their dream of
+            studying in Japan through our complete guidance and support programs.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="#courses"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              Explore Courses
+              <ArrowRight className="h-4 w-4" />
+            </a>
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-6 py-3 font-medium text-navy transition-opacity hover:opacity-90"
+            >
+              Get Free Consultation
+            </Link>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  )
+}
 
-      <section className="border-y bg-card">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-6 py-12 md:grid-cols-4">
-          {stats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="text-3xl font-semibold tracking-tight text-primary md:text-4xl">
-                {stat.value}
+function SupportStrip() {
+  return (
+    <section className="border-b bg-card">
+      <div className="mx-auto max-w-6xl px-6 py-14 text-center">
+        <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
+          Complete Student Support
+        </h2>
+        <p className="mt-2 text-muted-foreground">
+          From enrollment to achievement — we're with you every step.
+        </p>
+        <div className="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-8 md:grid-cols-4">
+          {achievements.map((a) => (
+            <div key={a.label} className="flex flex-col items-center">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary">
+                <a.icon className="h-6 w-6" />
+              </span>
+              <div className="mt-3 text-2xl font-semibold tracking-tight text-primary md:text-3xl">
+                {a.value}
               </div>
-              <div className="mt-1 text-sm text-muted-foreground">
-                {stat.label}
-              </div>
+              <div className="mt-1 text-sm text-muted-foreground">{a.label}</div>
             </div>
           ))}
         </div>
-      </section>
+      </div>
+    </section>
+  )
+}
 
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-            Our services
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            Complete support from your first application to your arrival in Japan.
-          </p>
+function SectionHeading({
+  eyebrow,
+  title,
+  subtitle,
+}: {
+  eyebrow?: string
+  title: string
+  subtitle?: string
+}) {
+  return (
+    <div className="mx-auto max-w-2xl text-center">
+      {eyebrow && (
+        <span className="text-sm font-semibold uppercase tracking-wider text-gold">
+          {eyebrow}
+        </span>
+      )}
+      <h2 className="mt-2 text-3xl font-semibold tracking-tight md:text-4xl">
+        {title}
+      </h2>
+      {subtitle && <p className="mt-4 text-muted-foreground">{subtitle}</p>}
+    </div>
+  )
+}
+
+function AboutSection() {
+  return (
+    <section id="about" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-24">
+      <SectionHeading eyebrow="About" title="About Zin Apex Education" />
+      <div className="mt-12 grid items-center gap-12 lg:grid-cols-2">
+        <SmartImage
+          src={images.kyotoStreet}
+          alt="Study in Japan"
+          className="aspect-[4/3] rounded-3xl border shadow-lg"
+        />
+        <div>
+          <p className="text-muted-foreground">{about.intro}</p>
+          <p className="mt-4 text-muted-foreground">{about.detail}</p>
+
+          <div className="mt-8 rounded-2xl border bg-card p-6">
+            <div className="flex items-center gap-4">
+              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-navy text-lg font-semibold text-gold">
+                {founder.initials}
+              </span>
+              <div>
+                <h3 className="font-medium">{founder.name}</h3>
+                <p className="text-sm text-muted-foreground">{founder.role}</p>
+              </div>
+            </div>
+            <p className="mt-4 text-sm text-muted-foreground">{founder.bio}</p>
+            <a
+              href={site.social.youtube}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+            >
+              <Youtube className="h-4 w-4" />
+              Zin Japan Life on YouTube
+            </a>
+          </div>
         </div>
+      </div>
+
+      <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <ValueCard icon={<Target className="h-5 w-5" />} title="Mission">
+          <ul className="space-y-2">
+            {mission.map((m) => (
+              <li key={m} className="flex items-start gap-2 text-sm text-muted-foreground">
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                {m}
+              </li>
+            ))}
+          </ul>
+        </ValueCard>
+        <ValueCard icon={<Eye className="h-5 w-5" />} title="Vision">
+          <p className="text-sm text-muted-foreground">{vision}</p>
+        </ValueCard>
+        <ValueCard icon={<Compass className="h-5 w-5" />} title="Purpose">
+          <ul className="space-y-2">
+            {purpose.map((p) => (
+              <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                {p}
+              </li>
+            ))}
+          </ul>
+        </ValueCard>
+      </div>
+    </section>
+  )
+}
+
+function ValueCard({
+  icon,
+  title,
+  children,
+}: {
+  icon: React.ReactNode
+  title: string
+  children: React.ReactNode
+}) {
+  return (
+    <div className="rounded-xl border bg-card p-6">
+      <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent text-primary">
+        {icon}
+      </div>
+      <h3 className="mt-5 font-medium">{title}</h3>
+      <div className="mt-3">{children}</div>
+    </div>
+  )
+}
+
+function ServicesSection() {
+  return (
+    <section className="border-y bg-card">
+      <div className="mx-auto max-w-6xl px-6 py-24">
+        <SectionHeading
+          eyebrow="Our Services"
+          title="Complete support, every step"
+          subtitle="From your first application to your arrival in Japan."
+        />
         <div className="mt-16 grid gap-6 sm:grid-cols-2">
           {services.map((service) => (
             <div
               key={service.title}
-              className="rounded-xl border bg-card p-6 transition-shadow hover:shadow-md"
+              className="rounded-xl border bg-background p-6 transition-shadow hover:shadow-md"
             >
-              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent text-accent-foreground">
+              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary text-primary-foreground">
                 <service.icon className="h-5 w-5" />
               </div>
               <h3 className="mt-5 font-medium">{service.title}</h3>
               <ul className="mt-3 space-y-2">
                 {service.items.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-2 text-sm text-muted-foreground"
-                  >
+                  <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                     {item}
                   </li>
@@ -116,99 +283,406 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
 
-      <section className="border-y bg-card">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
-          <SmartImage
-            src={images.students}
-            alt="Students studying together"
-            className="aspect-[4/3] rounded-3xl border shadow-lg"
-          />
-          <div>
-            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-              Why choose Zin Apex Education?
-            </h2>
-            <p className="mt-4 text-muted-foreground">
-              A trusted partner that guides you with accurate information and
-              full support — every step of the way.
-            </p>
-            <div className="mt-8 grid gap-5 sm:grid-cols-2">
-              {whyChooseUs.map((item) => (
-                <div key={item.title}>
-                  <h3 className="flex items-center gap-2 font-medium">
-                    <Check className="h-4 w-4 shrink-0 text-primary" />
-                    {item.title}
-                  </h3>
-                  <p className="mt-1.5 text-sm text-muted-foreground">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+        <div className="mt-16">
+          <SectionHeading title="Why choose Zin Apex Education?" />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {whyChooseUs.map((item) => (
+              <div key={item.title} className="rounded-xl border bg-background p-6">
+                <h3 className="flex items-start gap-2 font-medium">
+                  <Check className="mt-1 h-4 w-4 shrink-0 text-gold" />
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  )
+}
 
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-            Our COE success record
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            A track record that reflects our commitment to guiding students
-            successfully through the Japanese study application process.
-          </p>
+function CoursesSection() {
+  return (
+    <section id="courses" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-24">
+      <SectionHeading
+        eyebrow="Courses"
+        title="Japanese Language Courses"
+        subtitle="Comprehensive JLPT preparation designed to take you from beginner to advanced proficiency."
+      />
+      <div className="mt-16 grid gap-6 md:grid-cols-2">
+        {courses.map((course) => (
+          <div
+            key={course.title}
+            className="flex flex-col overflow-hidden rounded-2xl border bg-card transition-shadow hover:shadow-md"
+          >
+            <div className="relative">
+              <SmartImage src={course.image} alt={course.title} className="aspect-[16/9] w-full" />
+              <span className="absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-navy text-sm font-semibold text-gold">
+                {course.code}
+              </span>
+              <span className="absolute right-4 top-4 rounded-full bg-background/90 px-3 py-1 text-xs font-medium backdrop-blur">
+                {course.level}
+              </span>
+            </div>
+            <div className="flex flex-1 flex-col p-6">
+              <div className="flex items-center justify-between">
+                <h3 className="text-lg font-medium">{course.title}</h3>
+                <span className="text-sm text-muted-foreground">{course.duration}</span>
+              </div>
+              <p className="mt-2 text-sm text-muted-foreground">{course.description}</p>
+              <h4 className="mt-5 text-sm font-medium">Course Features</h4>
+              <ul className="mt-2 space-y-2">
+                {course.features.map((f) => (
+                  <li key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                to="/contact"
+                className="mt-6 inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm text-primary-foreground transition-opacity hover:opacity-90"
+              >
+                Enroll Now
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-12 rounded-2xl border bg-card p-8">
+        <h3 className="text-center text-lg font-medium">Flexible ways to learn</h3>
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+          {learningFormats.map((f) => (
+            <div key={f.title} className="text-center">
+              <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary">
+                <f.icon className="h-6 w-6" />
+              </span>
+              <h4 className="mt-3 font-medium">{f.title}</h4>
+              <p className="mt-1 text-sm text-muted-foreground">{f.description}</p>
+            </div>
+          ))}
         </div>
-        <div className="mx-auto mt-12 max-w-2xl overflow-hidden rounded-xl border">
-          <table className="w-full text-sm">
-            <thead className="bg-card">
+      </div>
+
+      <div className="mt-12">
+        <SectionHeading title="Why our courses are effective" />
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          {whyCoursesWork.map((item, i) => (
+            <div key={item.title} className="flex gap-4 rounded-xl border bg-card p-6">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">
+                {i + 1}
+              </span>
+              <div>
+                <h3 className="font-medium">{item.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function StudySection() {
+  return (
+    <section id="study" className="scroll-mt-20 border-y bg-card">
+      <div className="mx-auto max-w-6xl px-6 py-24">
+        <SectionHeading
+          eyebrow="Study in Japan"
+          title="Your path to a Japanese language school"
+          subtitle="Everything you need to know to apply with Zin Apex Education."
+        />
+
+        <div className="mt-16 flex items-center gap-3">
+          <FileCheck className="h-6 w-6 text-primary" />
+          <h3 className="text-xl font-semibold tracking-tight">Required documents (sample)</h3>
+        </div>
+        <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+          {requiredDocuments.map((doc, i) => (
+            <li key={doc} className="flex items-start gap-3 rounded-xl border bg-background p-4 text-sm">
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-semibold text-primary">
+                {i + 1}
+              </span>
+              {doc}
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          <div className="rounded-2xl border bg-background p-8">
+            <Download className="h-7 w-7 text-primary" />
+            <h3 className="mt-4 text-lg font-medium">Application form</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Download our application form (PDF), fill it out, and send it back to
+              us. All required attachments are in the Google Drive folder.
+            </p>
+            <a
+              href={site.applicationFormUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-6 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              Download form
+              <Download className="h-4 w-4" />
+            </a>
+          </div>
+          <div className="rounded-2xl border bg-background p-8">
+            <ClipboardList className="h-7 w-7 text-primary" />
+            <h3 className="mt-4 text-lg font-medium">Student orientation</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Register through our Google Form to join the orientation briefing and
+              get important information about the application process.
+            </p>
+            <a
+              href={site.orientationFormUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-6 inline-flex items-center gap-2 rounded-lg border px-5 py-2.5 text-sm transition-colors hover:bg-accent"
+            >
+              Register now
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+
+        <h3 className="mt-12 text-xl font-semibold tracking-tight">Intake schedules</h3>
+        <div className="mt-6 overflow-x-auto rounded-xl border">
+          <table className="w-full min-w-[640px] text-sm">
+            <thead className="bg-accent/60">
               <tr className="text-left">
-                <th className="px-5 py-3 font-medium">Year</th>
-                <th className="px-5 py-3 font-medium">Applicants</th>
-                <th className="px-5 py-3 font-medium">Successful COE</th>
+                <th className="px-5 py-3 font-medium">Intake</th>
+                <th className="px-5 py-3 font-medium">Registration Deadline</th>
+                <th className="px-5 py-3 font-medium">COE Submission</th>
+                <th className="px-5 py-3 font-medium">COE Result</th>
               </tr>
             </thead>
             <tbody>
-              {coeResults.map((row) => (
-                <tr key={row.year} className="border-t">
-                  <td className="px-5 py-3">{row.year}</td>
-                  <td className="px-5 py-3">{row.applicants}</td>
-                  <td className="px-5 py-3 font-medium text-primary">
-                    {row.successful}
-                  </td>
+              {intakes.map((row) => (
+                <tr key={row.intake} className="border-t bg-background">
+                  <td className="px-5 py-3 font-medium">{row.intake}</td>
+                  <td className="px-5 py-3 text-muted-foreground">{row.registration}</td>
+                  <td className="px-5 py-3 text-muted-foreground">{row.coeSubmission}</td>
+                  <td className="px-5 py-3 text-muted-foreground">{row.coeResult}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-      </section>
 
-      <section className="mx-auto max-w-6xl px-6 pb-24">
-        <div className="relative overflow-hidden rounded-3xl border">
-          <SmartImage
-            src={images.tokyoNight}
-            alt="Tokyo at night"
-            className="absolute inset-0 h-full w-full"
-          />
-          <div className="absolute inset-0 bg-primary/80" />
-          <div className="relative px-8 py-16 text-center text-primary-foreground">
-            <h2 className="mx-auto max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">
-              Ready to begin your journey to Japan?
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl opacity-90">
-              Get in touch with our team for clear guidance and full support.
-            </p>
-            <Link
-              to="/contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-lg bg-background px-6 py-3 text-foreground transition-opacity hover:opacity-90"
-            >
-              Contact us
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
+        <div className="mt-12 flex items-center gap-3">
+          <MapPin className="h-6 w-6 text-primary" />
+          <h3 className="text-xl font-semibold tracking-tight">
+            Cities where you can apply with us
+          </h3>
         </div>
-      </section>
-    </>
+        <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          {cities.map((city) => (
+            <div key={city.name} className="group relative overflow-hidden rounded-xl border">
+              <SmartImage
+                src={city.image}
+                alt={city.name}
+                className="aspect-[3/4] w-full"
+                imgClassName="transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" />
+              <span className="absolute bottom-3 left-3 text-sm font-medium text-white">
+                {city.name}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function StoriesSection() {
+  return (
+    <section id="stories" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-24">
+      <SectionHeading
+        eyebrow="Student Stories"
+        title="Student Reviews"
+        subtitle="See how our students benefited from our support services and achieved their study-abroad goals."
+      />
+      <div className="mt-16 grid gap-6 md:grid-cols-3">
+        {reviews.map((r, i) => (
+          <a
+            key={i}
+            href={site.social.youtube}
+            target="_blank"
+            rel="noreferrer"
+            className="group overflow-hidden rounded-2xl border bg-card transition-shadow hover:shadow-md"
+          >
+            <div className="relative">
+              <SmartImage src={r.image} alt={r.name} className="aspect-video w-full" />
+              <div className="absolute inset-0 flex items-center justify-center bg-navy/30 transition-colors group-hover:bg-navy/40">
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 text-primary">
+                  <Play className="h-6 w-6 fill-current" />
+                </span>
+              </div>
+            </div>
+            <div className="p-5">
+              <h3 className="font-medium">{r.name}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{r.school}</p>
+              <p className="text-sm text-muted-foreground">{r.program}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function ActivitiesSection() {
+  return (
+    <section id="activities" className="scroll-mt-20 border-y bg-card">
+      <div className="mx-auto max-w-6xl px-6 py-24">
+        <SectionHeading
+          eyebrow="Activities"
+          title="Our Activities"
+          subtitle="Discover how we support students at every step of their study-abroad journey through our activities and programs."
+        />
+        <div className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-3">
+          {activities.map((a) => (
+            <div key={a.title} className="group relative overflow-hidden rounded-xl border">
+              <SmartImage
+                src={a.image}
+                alt={a.title}
+                className="aspect-[4/3] w-full"
+                imgClassName="transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+              <span className="absolute bottom-3 left-3 text-sm font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
+                {a.title}
+              </span>
+            </div>
+          ))}
+        </div>
+        <div className="mt-10 text-center">
+          <p className="text-muted-foreground">Want to share your success story? We'd love to feature you.</p>
+          <Link
+            to="/contact"
+            className="mt-4 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            <MessageCircle className="h-4 w-4" />
+            Contact us to share your story
+          </Link>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function ResultsSection() {
+  return (
+    <section id="results" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-24">
+      <SectionHeading
+        eyebrow="Results"
+        title="Our COE Result"
+        subtitle="This track record demonstrates Zin Apex Education's commitment and capability in guiding students successfully through the Japanese immigration and study application process."
+      />
+      <div className="mt-16 grid grid-cols-2 gap-6 md:grid-cols-4">
+        {achievements.map((a) => (
+          <div key={a.label} className="rounded-2xl border bg-card p-6 text-center">
+            <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent text-primary">
+              <a.icon className="h-6 w-6" />
+            </span>
+            <div className="mt-4 text-3xl font-semibold tracking-tight text-primary">
+              {a.value}
+            </div>
+            <div className="mt-1 text-sm text-muted-foreground">{a.label}</div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mx-auto mt-12 max-w-2xl overflow-hidden rounded-xl border">
+        <table className="w-full text-sm">
+          <thead className="bg-accent/60">
+            <tr className="text-left">
+              <th className="px-5 py-3 font-medium">Year</th>
+              <th className="px-5 py-3 font-medium">Applicants</th>
+              <th className="px-5 py-3 font-medium">Successful COE</th>
+            </tr>
+          </thead>
+          <tbody>
+            {coeResults.map((row) => (
+              <tr key={row.year} className="border-t">
+                <td className="px-5 py-3">{row.year}</td>
+                <td className="px-5 py-3">{row.applicants}</td>
+                <td className="px-5 py-3 font-medium text-primary">{row.successful}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )
+}
+
+function FaqSection() {
+  const [open, setOpen] = useState<number | null>(0)
+  return (
+    <section id="faq" className="scroll-mt-20 border-t bg-card">
+      <div className="mx-auto max-w-3xl px-6 py-24">
+        <SectionHeading eyebrow="FAQ" title="Frequently asked questions" />
+        <div className="mt-12 space-y-3">
+          {faqs.map((faq, i) => {
+            const isOpen = open === i
+            return (
+              <div key={faq.q} className="overflow-hidden rounded-xl border bg-background">
+                <button
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+                  aria-expanded={isOpen}
+                >
+                  <span className="font-medium">{faq.q}</span>
+                  <ChevronDown
+                    className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform ${
+                      isOpen ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                {isOpen && (
+                  <p className="border-t px-5 py-4 text-sm leading-relaxed text-muted-foreground">
+                    {faq.a}
+                  </p>
+                )}
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function ContactCta() {
+  return (
+    <section className="mx-auto max-w-6xl px-6 py-24">
+      <div className="relative overflow-hidden rounded-3xl border">
+        <SmartImage src={images.tokyoNight} alt="Tokyo at night" className="absolute inset-0 h-full w-full" />
+        <div className="absolute inset-0 bg-navy/85" />
+        <div className="relative px-8 py-16 text-center text-white">
+          <h2 className="mx-auto max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">
+            Ready to begin your journey to Japan?
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-white/80">
+            Get in touch with our team for clear guidance and full support.
+          </p>
+          <Link
+            to="/contact"
+            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3 font-medium text-navy transition-opacity hover:opacity-90"
+          >
+            Get Free Consultation
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </div>
+    </section>
   )
 }

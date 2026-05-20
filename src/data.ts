@@ -3,6 +3,13 @@ import {
   Plane,
   PlaneLanding,
   GraduationCap,
+  Video,
+  MonitorPlay,
+  Layers,
+  Award,
+  Users,
+  TrendingUp,
+  Building2,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -11,6 +18,8 @@ const unsplash = (id: string, w = 1200) =>
 
 export const site = {
   name: 'Zin Apex Education',
+  academy: 'Japanese Language Academy',
+  since: 2023,
   tagline: 'Your trusted pathway to study in Japan',
   applicationFormUrl:
     'https://drive.google.com/drive/folders/1YH9ASp1qnexRfQu1rpSywLvuWS3GSNWw?usp=sharing',
@@ -147,39 +156,62 @@ export const whyChooseUs = [
 
 export const courses = [
   {
-    title: 'JLPT N5 Course',
+    code: 'N5',
+    title: 'Japanese Foundation',
     level: 'Beginner',
+    duration: '3 months',
     description:
       'Build a solid foundation in Japanese — hiragana, katakana, basic grammar, and everyday vocabulary.',
     image: unsplash('1456513080510-7bf3a84b82f8', 900),
+    features: [
+      'Hiragana, katakana & basic kanji',
+      'Basic greetings and grammar',
+      'Everyday vocabulary and phrases',
+      'Listening and pronunciation practice',
+    ],
   },
   {
-    title: 'JLPT N4 Course',
+    code: 'N4',
+    title: 'Elementary Japanese',
     level: 'Elementary',
+    duration: '4 months',
     description:
       'Progress to intermediate grammar, kanji, reading, and listening for the JLPT N4 exam.',
     image: unsplash('1524178232363-1fb2b075b655', 900),
+    features: [
+      '300+ kanji characters',
+      'Complex grammar patterns',
+      'Reading and article comprehension',
+      'Conversation practice for daily life',
+    ],
   },
   {
+    code: 'SPK',
     title: 'Speaking-Focused Class',
     level: 'All levels',
+    duration: 'Flexible',
     description:
       'Conversation-centred lessons that build confidence and fluency for daily life in Japan.',
     image: unsplash('1523240795612-9a054b0db644', 900),
+    features: [
+      'Conversation-centred lessons',
+      'Confidence and fluency building',
+      'Real-life situational practice',
+    ],
   },
   {
+    code: 'SKL',
     title: 'Practical Skills Training',
     level: 'All levels',
+    duration: 'Flexible',
     description:
       'Real-world skills and cultural know-how to help you adapt smoothly to life and study in Japan.',
     image: unsplash('1531545514256-b1400bc00f31', 900),
-  },
-  {
-    title: 'N5 Video Lessons',
-    level: 'Self-study',
-    description:
-      'Flexible, on-demand N5 video lessons you can study anytime, at your own pace.',
-    image: unsplash('1542051841857-5f90071e7989', 900),
+    features: [
+      'Cultural know-how for Japan',
+      'Daily-life practical skills',
+      'Smooth adaptation guidance',
+    ],
   },
 ]
 
@@ -318,4 +350,61 @@ export const faqs = [
     q: 'LANGUAGE SCHOOL ပြီးရင် အလုပ်လုပ်လို့ရလား?',
     a: 'LANGUAGE SCHOOL ပြီးရင် တက္ကသိုလ်ဆက်မတက်ပဲ အလုပ်ပြောင်းလုပ်လို့ရပါသည်။ TOKUTEI အလုပ်မိတ်ဆက်ပေးသည့် LANGUAGE SCHOOL ကိုလဲ လျှောက်ထားလို့ရပါသည်။',
   },
+]
+
+export const learningFormats = [
+  {
+    icon: Video,
+    title: 'Video',
+    description: 'Self-paced lessons you can study anytime, at your own pace.',
+  },
+  {
+    icon: MonitorPlay,
+    title: 'Zoom',
+    description: 'Live online classes with real-time interaction and feedback.',
+  },
+  {
+    icon: Layers,
+    title: 'Zoom + Video',
+    description: 'Live classes plus recordings for flexible, complete learning.',
+  },
+]
+
+export const achievements = [
+  { icon: TrendingUp, value: '97%', label: 'Overall COE success rate' },
+  { icon: Users, value: '100+', label: 'Students placed in Japan' },
+  { icon: Award, value: '2023', label: 'Trusted since' },
+  { icon: Building2, value: '5', label: 'Partner cities in Japan' },
+]
+
+// Placeholder student reviews — real video reviews to be supplied via Drive.
+export const reviews = [
+  {
+    name: 'Student Success Story',
+    school: 'Tokyo Language School',
+    program: 'April 2024 Intake',
+    image: unsplash('1523240795612-9a054b0db644', 800),
+  },
+  {
+    name: 'Student Success Story',
+    school: 'Shizuoka Language School',
+    program: 'July 2024 Intake',
+    image: unsplash('1517048676732-d65bc937f952', 800),
+  },
+  {
+    name: 'Student Success Story',
+    school: 'Hamamatsu Language School',
+    program: 'October 2024 Intake',
+    image: unsplash('1522202176988-66273c2fd55f', 800),
+  },
+]
+
+// Placeholder activity photos — real photos to be supplied via Drive.
+export const activities = [
+  { title: 'Airport welcome', image: unsplash('1436491865332-7a61a109cc05', 800) },
+  { title: 'Orientation session', image: unsplash('1524178232363-1fb2b075b655', 800) },
+  { title: 'Language class', image: unsplash('1503676260728-1c00da094a0b', 800) },
+  { title: 'Student community', image: unsplash('1529390079861-591de354faf5', 800) },
+  { title: 'Document preparation', image: unsplash('1454165804606-c3d57bc86b40', 800) },
+  { title: 'Campus visit', image: unsplash('1523050854058-8df90110c9f1', 800) },
 ]
