@@ -16,9 +16,10 @@ export default function PageHero({ title, image, imageAlt, children }: Props) {
         alt={imageAlt}
         className="absolute inset-0 h-full w-full"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/80 to-background/95" />
-      <div className="relative mx-auto max-w-6xl px-6 py-24 text-center md:py-28">
-        <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
+      <div className="absolute inset-0 bg-gradient-to-b from-background/75 via-background/85 to-background/97" />
+      <div className="absolute inset-0 bg-[radial-gradient(40rem_22rem_at_80%_-10%,rgba(248,209,78,0.16),transparent_60%)]" />
+      <div className="relative mx-auto max-w-6xl px-6 py-28 text-center md:py-32">
+        <h1 className="gradient-text text-4xl font-bold tracking-tight md:text-5xl">
           {title}
         </h1>
         {children && (
