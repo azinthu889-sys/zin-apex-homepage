@@ -135,7 +135,14 @@ export default function StudyInJapan() {
             Japan. Choose the city that matches your goals, lifestyle, and study
             plan.
           </p>
-          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="mt-8 overflow-hidden rounded-2xl border bg-white">
+            <img
+              src={images.japanMap}
+              alt="Map of Japan showing the cities where you can apply with us"
+              className="aspect-[21/10] w-full object-cover object-top"
+            />
+          </div>
+          <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
             {cities.map((city) => (
               <div
                 key={city.name}

@@ -54,6 +54,26 @@ export default function Courses() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-6 pb-8">
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          <img
+            src={images.n4Textbooks}
+            alt="N4 level textbooks and materials used in our courses"
+            className="w-full rounded-2xl border shadow-sm"
+          />
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight">
+              N4 textbooks &amp; materials
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Our N4 course covers grammar, kotoba, reading, listening, and kanji
+              using Minna no Nihongo and curated supplementary materials —
+              available through flexible video, live Zoom, or combined formats.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="border-y bg-card">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <div className="mx-auto max-w-2xl text-center">

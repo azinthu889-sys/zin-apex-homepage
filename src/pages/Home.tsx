@@ -72,8 +72,8 @@ function Hero() {
   return (
     <section id="home" className="relative overflow-hidden">
       <SmartImage
-        src={images.study}
-        alt="Students studying Japanese"
+        src={images.mandalayHill}
+        alt="View of Mandalay at sunset"
         className="absolute inset-0 h-full w-full"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/80 to-navy/60" />
@@ -172,8 +172,8 @@ function AboutSection() {
       <SectionHeading eyebrow="About" title="About Zin Apex Education" />
       <div className="mt-12 grid items-center gap-12 lg:grid-cols-2">
         <SmartImage
-          src={images.kyotoStreet}
-          alt="Study in Japan"
+          src={images.office}
+          alt="Zin Apex Education office in Mandalay"
           className="aspect-[4/3] rounded-3xl border shadow-lg"
         />
         <div>
@@ -665,7 +665,7 @@ function ContactCta() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-24">
       <div className="relative overflow-hidden rounded-3xl border">
-        <SmartImage src={images.tokyoNight} alt="Tokyo at night" className="absolute inset-0 h-full w-full" />
+        <SmartImage src={images.mandalay} alt="Mandalay" className="absolute inset-0 h-full w-full" />
         <div className="absolute inset-0 bg-navy/85" />
         <div className="relative px-8 py-16 text-center text-white">
           <h2 className="mx-auto max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">

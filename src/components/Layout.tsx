@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, Outlet } from 'react-router'
-import { Menu, X, Facebook, Youtube, Send, GraduationCap } from 'lucide-react'
-import { site } from '../data'
+import { Menu, X, Facebook, Youtube, Send } from 'lucide-react'
+import { site, images } from '../data'
 
 const nav = [
   { label: 'About', href: '/#about' },
@@ -15,9 +15,11 @@ const nav = [
 function Brand({ light = false }: { light?: boolean }) {
   return (
     <Link to="/" className="flex items-center gap-3">
-      <span className="flex h-11 w-11 items-center justify-center rounded-full bg-navy ring-2 ring-gold/70">
-        <GraduationCap className="h-6 w-6 text-gold" />
-      </span>
+      <img
+        src={images.logo}
+        alt="Zin Apex Education logo"
+        className="h-11 w-11 rounded-full object-contain ring-2 ring-gold/70"
+      />
       <span className="leading-tight">
         <span
           className={`block font-semibold tracking-tight ${

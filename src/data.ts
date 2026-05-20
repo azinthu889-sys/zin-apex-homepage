@@ -12,6 +12,18 @@ import {
   Building2,
   type LucideIcon,
 } from 'lucide-react'
+import logoUrl from './assets/logo.png'
+import officePhoto from './assets/office.jpg'
+import mandalayPhoto from './assets/mandalay.jpg'
+import mandalayHillPhoto from './assets/mandalay2.jpg'
+import japanMapImg from './assets/japan-map.jpg'
+import n4TextbooksImg from './assets/n4-textbooks.jpg'
+import activity1 from './assets/activity1.jpg'
+import activity2 from './assets/activity2.jpg'
+import activity3 from './assets/activity3.jpg'
+import activity4 from './assets/activity4.jpg'
+import activity5 from './assets/activity5.jpg'
+import activity6 from './assets/activity6.jpg'
 
 const unsplash = (id: string, w = 1200) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`
@@ -277,6 +289,12 @@ export const intakes = [
 ]
 
 export const images = {
+  logo: logoUrl,
+  office: officePhoto,
+  mandalay: mandalayPhoto,
+  mandalayHill: mandalayHillPhoto,
+  japanMap: japanMapImg,
+  n4Textbooks: n4TextbooksImg,
   heroFuji: unsplash('1493976040374-85c8e12f0c0e', 1600),
   tokyoNight: unsplash('1542051841857-5f90071e7989', 1400),
   shibuya: unsplash('1480796927426-f609979314bd', 1400),
@@ -399,12 +417,11 @@ export const reviews = [
   },
 ]
 
-// Placeholder activity photos — real photos to be supplied via Drive.
 export const activities = [
-  { title: 'Airport welcome', image: unsplash('1436491865332-7a61a109cc05', 800) },
-  { title: 'Orientation session', image: unsplash('1524178232363-1fb2b075b655', 800) },
-  { title: 'Language class', image: unsplash('1503676260728-1c00da094a0b', 800) },
-  { title: 'Student community', image: unsplash('1529390079861-591de354faf5', 800) },
-  { title: 'Document preparation', image: unsplash('1454165804606-c3d57bc86b40', 800) },
-  { title: 'Campus visit', image: unsplash('1523050854058-8df90110c9f1', 800) },
+  { title: 'Welcome to Japan', image: activity1 },
+  { title: 'Orientation ceremony', image: activity2 },
+  { title: 'Exploring Japan together', image: activity3 },
+  { title: 'Daily life in Japan', image: activity4 },
+  { title: 'Student orientation', image: activity5 },
+  { title: 'Arriving in the city', image: activity6 },
 ]
