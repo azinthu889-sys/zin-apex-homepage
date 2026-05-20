@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Link, Outlet } from 'react-router'
+import { useEffect, useState } from 'react'
+import { Link, Outlet, useLocation } from 'react-router'
 import { Menu, X, Facebook, Youtube, Send } from 'lucide-react'
 import { site, images } from '../data'
 
@@ -192,7 +192,33 @@ function Social({
   )
 }
 
+function useScrollReveal() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    const els = Array.from(document.querySelectorAll('[data-reveal]'))
+    if (els.length === 0) return
+    if (!('IntersectionObserver' in window)) {
+      els.forEach((el) => el.classList.add('revealed'))
+      return
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('revealed')
+            io.unobserve(e.target)
+          }
+        })
+      },
+      { rootMargin: '0px 0px -8% 0px', threshold: 0.08 },
+    )
+    els.forEach((el) => io.observe(el))
+    return () => io.disconnect()
+  }, [pathname])
+}
+
 export default function Layout() {
+  useScrollReveal()
   return (
     <div className="flex min-h-full flex-col bg-background text-foreground">
       <Header />
