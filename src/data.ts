@@ -299,6 +299,7 @@ export const images = {
   office: officePhoto,
   mandalay: mandalayPhoto,
   mandalayHill: mandalayHillPhoto,
+  support: activity2,
   heroPhoto: heroArrivals,
   japanMap: japanMapImg,
   n4Textbooks: n4TextbooksImg,

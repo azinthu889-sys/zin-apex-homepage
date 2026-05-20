@@ -122,28 +122,49 @@ function Hero() {
 function SupportStrip() {
   return (
     <section className="border-b bg-card">
-      <div className="mx-auto max-w-6xl px-6 py-14 text-center">
-        <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-          Complete Student Support
-        </h2>
-        <p className="mt-2 text-muted-foreground">
-          From enrollment to achievement — we're with you every step.
-        </p>
-        <div className="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-          {achievements.map((a) => (
-            <div
-              key={a.label}
-              className="lift flex flex-col items-center rounded-2xl border border-[#e5eaf2] bg-white p-7 shadow-sm"
-            >
-              <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
-                <a.icon className="h-7 w-7" />
-              </span>
-              <div className="mt-4 text-3xl font-bold tracking-tight text-primary md:text-4xl">
-                {a.value}
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 lg:grid-cols-2">
+        {/* photo with floating accent stat */}
+        <div className="relative">
+          <SmartImage
+            src={images.support}
+            alt="Zin Apex Education students celebrating their journey to Japan"
+            className="aspect-[4/3] w-full rounded-3xl shadow-lg ring-1 ring-[#e5eaf2]"
+          />
+          <div className="absolute -bottom-5 right-4 rounded-2xl bg-gold px-5 py-3 shadow-xl sm:-right-4">
+            <div className="text-2xl font-extrabold tracking-tight text-primary">100+</div>
+            <div className="text-xs font-semibold text-primary/80">Students in Japan</div>
+          </div>
+          <div className="pointer-events-none absolute -left-4 -top-4 -z-10 h-28 w-28 rounded-2xl bg-secondary/20 blur-2xl" />
+        </div>
+
+        {/* text + stats */}
+        <div>
+          <span className="inline-flex items-center gap-2 rounded-full bg-secondary/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-secondary">
+            <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+            Support
+          </span>
+          <h2 className="heading-black mt-4 text-3xl md:text-4xl">
+            Complete Student Support
+          </h2>
+          <p className="mt-3 font-medium text-muted-foreground">
+            From enrollment to achievement — we're with you every step of the way.
+          </p>
+          <div className="mt-8 grid grid-cols-2 gap-4">
+            {achievements.map((a) => (
+              <div
+                key={a.label}
+                className="rounded-2xl border border-[#e5eaf2] bg-background p-5"
+              >
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-secondary/15 text-secondary">
+                  <a.icon className="h-5 w-5" />
+                </span>
+                <div className="mt-3 text-2xl font-extrabold tracking-tight text-primary">
+                  {a.value}
+                </div>
+                <div className="text-sm font-medium text-muted-foreground">{a.label}</div>
               </div>
-              <div className="mt-1 text-sm font-medium text-muted-foreground">{a.label}</div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
