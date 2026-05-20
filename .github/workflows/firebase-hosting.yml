@@ -29,17 +29,6 @@ jobs:
       - name: Build
         run: pnpm run build
 
-      - name: Check FIREBASE_TOKEN is present
-        run: |
-          if [ -z "$FIREBASE_TOKEN" ]; then
-            echo "FIREBASE_TOKEN is EMPTY - secret not reaching the job"
-            exit 1
-          fi
-          echo "FIREBASE_TOKEN is set, length=${#FIREBASE_TOKEN}"
-          echo "First 3 chars (should be '1//'): ${FIREBASE_TOKEN:0:3}"
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-
       - name: Deploy to Firebase Hosting
         run: npx --yes firebase-tools deploy --only hosting --project zin-apex-home-page --non-interactive
         env:
