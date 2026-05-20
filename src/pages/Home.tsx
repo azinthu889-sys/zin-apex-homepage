@@ -73,8 +73,9 @@ function Hero() {
     <section id="home" className="relative overflow-hidden">
       <SmartImage
         src={images.heroPhoto}
-        alt="Zin Apex Education students in Japan"
+        alt="Zin Apex Education students at the airport, departing for Japan"
         className="absolute inset-0 h-full w-full"
+        imgClassName="object-top"
       />
       {/* layered premium overlays */}
       <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/40" />
@@ -444,7 +445,7 @@ function StudySection() {
               href={site.applicationFormUrl}
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm text-primary-foreground transition-opacity hover:opacity-90"
+              className="btn-primary mt-6 inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium"
             >
               Download form
               <Download className="h-4 w-4" />
