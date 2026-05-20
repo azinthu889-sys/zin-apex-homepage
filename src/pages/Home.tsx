@@ -74,47 +74,48 @@ function Hero() {
       <SmartImage
         src={images.heroPhoto}
         alt="Zin Apex Education students arriving in Japan"
-        className="absolute inset-0 h-full w-full opacity-35"
+        className="absolute inset-0 h-full w-full"
         imgClassName="object-center"
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary/70" />
-      {/* decorative blur circles */}
-      <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-white/5 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-32 -left-20 h-96 w-96 rounded-full bg-secondary/10 blur-3xl" />
-      <div className="float-slow pointer-events-none absolute right-1/4 top-10 h-72 w-72 rounded-full bg-gold/10 blur-3xl" />
+      {/* lighter overlay so the photo stays visible (darker on the left for text) */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/70 to-primary/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent md:hidden" />
+      <div className="pointer-events-none absolute -bottom-24 -left-16 h-80 w-80 rounded-full bg-secondary/15 blur-3xl" />
 
-      <div className="relative mx-auto max-w-6xl px-6 py-28 text-center md:py-40">
-        <span className="animate-fade-up inline-flex items-center gap-2 rounded-full bg-gold/15 px-6 py-2 text-sm font-bold uppercase tracking-wider text-gold ring-1 ring-gold/30">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
+      <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-36">
+        <div className="max-w-xl">
+          <span className="animate-fade-up inline-flex items-center gap-2 rounded-full bg-gold/15 px-5 py-2 text-xs font-bold uppercase tracking-wider text-gold ring-1 ring-gold/30">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
+            </span>
+            Now enrolling — April, July &amp; October 2026
           </span>
-          Now enrolling — April, July &amp; October 2026
-        </span>
-        <h1 className="animate-fade-up delay-1 mx-auto mt-8 max-w-4xl text-5xl font-black uppercase leading-[0.95] tracking-tight text-white md:text-7xl">
-          Your Gateway to <span className="text-gold">Japan</span>
-        </h1>
-        <p className="animate-fade-up delay-2 mx-auto mt-6 max-w-2xl text-lg font-medium text-white/85 md:text-xl">
-          Helping Myanmar students study at top Japanese language schools — with
-          complete guidance and support from application to arrival.
-        </p>
-        <div className="animate-fade-up delay-3 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Link
-            to="/contact"
-            className="btn-gold inline-flex h-14 items-center justify-center gap-2 px-8 text-sm"
-          >
-            Get Free Consultation
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-          <a
-            href="#courses"
-            className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl border-2 border-white/30 bg-white/5 px-8 text-sm font-black uppercase tracking-wider text-white backdrop-blur transition-all hover:scale-105 hover:bg-white/15"
-          >
-            Explore Courses
-          </a>
+          <h1 className="animate-fade-up delay-1 mt-6 text-4xl font-black uppercase leading-[0.95] tracking-tight text-white md:text-6xl">
+            Your Gateway to <span className="text-gold">Japan</span>
+          </h1>
+          <p className="animate-fade-up delay-2 mt-5 max-w-lg text-lg font-medium text-white/85">
+            Helping Myanmar students study at top Japanese language schools — with
+            complete guidance and support from application to arrival.
+          </p>
+          <div className="animate-fade-up delay-3 mt-9 flex flex-col gap-4 sm:flex-row">
+            <Link
+              to="/contact"
+              className="btn-gold inline-flex h-14 items-center justify-center gap-2 px-8 text-sm"
+            >
+              Get Free Consultation
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <a
+              href="#courses"
+              className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl border-2 border-white/30 bg-white/5 px-8 text-sm font-black uppercase tracking-wider text-white backdrop-blur transition-all hover:scale-105 hover:bg-white/15"
+            >
+              Explore Courses
+            </a>
+          </div>
         </div>
       </div>
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-background to-transparent" />
     </section>
   )
 }
@@ -572,7 +573,7 @@ function ActivitiesSection() {
                 className="aspect-[4/3] w-full"
                 imgClassName="transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
               <span className="absolute bottom-4 left-5 right-5 text-sm font-black uppercase tracking-tight text-white drop-shadow">
                 {a.title}
               </span>
@@ -681,8 +682,8 @@ function ContactCta() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-24">
       <div className="relative overflow-hidden rounded-[3rem] bg-primary shadow-2xl">
-        <SmartImage src={images.mandalay} alt="Mandalay" className="absolute inset-0 h-full w-full opacity-25" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary/70" />
+        <SmartImage src={images.mandalay} alt="Mandalay" className="absolute inset-0 h-full w-full opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/80 to-primary/55" />
         <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
         <div className="float-slow pointer-events-none absolute -bottom-16 -left-12 h-72 w-72 rounded-full bg-gold/15 blur-3xl" />
         <div className="relative px-8 py-20 text-center text-white">

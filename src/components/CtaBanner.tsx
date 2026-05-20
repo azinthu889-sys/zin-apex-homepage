@@ -23,9 +23,9 @@ export default function CtaBanner({
         <SmartImage
           src={image}
           alt=""
-          className="absolute inset-0 h-full w-full opacity-25"
+          className="absolute inset-0 h-full w-full opacity-45"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary/70" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/80 to-primary/55" />
         <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
         <div className="float-slow pointer-events-none absolute -bottom-16 -left-12 h-72 w-72 rounded-full bg-gold/15 blur-3xl" />
         <div className="relative px-8 py-20 text-center text-white">
