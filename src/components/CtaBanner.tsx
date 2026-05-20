@@ -19,23 +19,23 @@ export default function CtaBanner({
 }: Props) {
   return (
     <section className="mx-auto max-w-6xl px-6 py-24">
-      <div className="relative overflow-hidden rounded-[2rem] border shadow-2xl">
+      <div className="relative overflow-hidden rounded-[3rem] bg-primary shadow-2xl">
         <SmartImage
           src={image}
           alt=""
-          className="absolute inset-0 h-full w-full"
+          className="absolute inset-0 h-full w-full opacity-25"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-primary/85 to-primary/70" />
-        <div className="absolute inset-0 bg-[radial-gradient(38rem_22rem_at_82%_120%,rgba(245,180,23,0.28),transparent_60%)]" />
-        <div className="float-slow pointer-events-none absolute -left-12 -top-12 h-60 w-60 rounded-full bg-gold/20 blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary/70" />
+        <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
+        <div className="float-slow pointer-events-none absolute -bottom-16 -left-12 h-72 w-72 rounded-full bg-gold/15 blur-3xl" />
         <div className="relative px-8 py-20 text-center text-white">
-          <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight md:text-4xl">
+          <h2 className="mx-auto max-w-2xl text-3xl font-black uppercase leading-tight tracking-tight md:text-4xl">
             {title}
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-white/85">{subtitle}</p>
+          <p className="mx-auto mt-5 max-w-xl font-medium text-white/85">{subtitle}</p>
           <Link
             to={to}
-            className="btn-gold mt-9 inline-flex items-center gap-2 rounded-xl px-7 py-3.5 font-semibold"
+            className="btn-gold mt-9 inline-flex h-14 items-center gap-2 px-8 text-sm"
           >
             {buttonLabel}
             <ArrowRight className="h-4 w-4" />

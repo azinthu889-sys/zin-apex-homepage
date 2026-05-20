@@ -25,6 +25,7 @@ import activity4 from './assets/activity4.jpg'
 import activity5 from './assets/activity5.jpg'
 import activity6 from './assets/activity6.jpg'
 import airportPhoto from './assets/airport.jpg'
+import heroArrivals from './assets/hero-arrivals.jpg'
 
 const unsplash = (id: string, w = 1200) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`
@@ -294,7 +295,7 @@ export const images = {
   office: officePhoto,
   mandalay: mandalayPhoto,
   mandalayHill: mandalayHillPhoto,
-  heroPhoto: airportPhoto,
+  heroPhoto: heroArrivals,
   japanMap: japanMapImg,
   n4Textbooks: n4TextbooksImg,
   heroFuji: unsplash('1493976040374-85c8e12f0c0e', 1600),
