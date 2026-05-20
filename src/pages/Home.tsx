@@ -72,8 +72,8 @@ function Hero() {
   return (
     <section id="home" className="relative overflow-hidden">
       <SmartImage
-        src={images.mandalayHill}
-        alt="View of Mandalay at sunset"
+        src={images.heroPhoto}
+        alt="Zin Apex Education students in Japan"
         className="absolute inset-0 h-full w-full"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/80 to-navy/60" />

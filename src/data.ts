@@ -293,6 +293,7 @@ export const images = {
   office: officePhoto,
   mandalay: mandalayPhoto,
   mandalayHill: mandalayHillPhoto,
+  heroPhoto: activity3,
   japanMap: japanMapImg,
   n4Textbooks: n4TextbooksImg,
   heroFuji: unsplash('1493976040374-85c8e12f0c0e', 1600),
