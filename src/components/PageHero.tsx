@@ -10,20 +10,21 @@ type Props = {
 
 export default function PageHero({ title, image, imageAlt, children }: Props) {
   return (
-    <section className="relative overflow-hidden border-b">
+    <section className="relative overflow-hidden bg-primary">
       <SmartImage
         src={image}
         alt={imageAlt}
-        className="absolute inset-0 h-full w-full"
+        className="absolute inset-0 h-full w-full opacity-25"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/75 via-background/85 to-background/97" />
-      <div className="absolute inset-0 bg-[radial-gradient(40rem_22rem_at_80%_-10%,rgba(248,209,78,0.16),transparent_60%)]" />
-      <div className="relative mx-auto max-w-6xl px-6 py-28 text-center md:py-32">
-        <h1 className="gradient-text text-4xl font-bold tracking-tight md:text-5xl">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary/70" />
+      <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-24 -left-20 h-80 w-80 rounded-full bg-secondary/10 blur-3xl" />
+      <div className="relative mx-auto max-w-6xl px-6 py-24 text-center md:py-28">
+        <h1 className="text-4xl font-black uppercase leading-tight tracking-tight text-white md:text-6xl">
           {title}
         </h1>
         {children && (
-          <div className="mx-auto mt-4 max-w-3xl text-muted-foreground">
+          <div className="mx-auto mt-5 max-w-3xl font-medium text-white/80">
             {children}
           </div>
         )}

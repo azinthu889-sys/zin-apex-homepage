@@ -70,56 +70,48 @@ export default function Home() {
 
 function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden">
+    <section id="home" className="relative overflow-hidden bg-primary">
       <SmartImage
         src={images.heroPhoto}
-        alt="Zin Apex Education students at the airport, departing for Japan"
-        className="absolute inset-0 h-full w-full"
-        imgClassName="object-top"
+        alt="Zin Apex Education students arriving in Japan"
+        className="absolute inset-0 h-full w-full opacity-35"
+        imgClassName="object-center"
       />
-      {/* layered premium overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/40" />
-      <div className="absolute inset-0 bg-[radial-gradient(60rem_40rem_at_85%_20%,rgba(245,180,23,0.22),transparent_60%)]" />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-navy/20" />
-      {/* floating accent blobs */}
-      <div className="float-slow pointer-events-none absolute -right-10 top-10 h-72 w-72 rounded-full bg-gold/25 blur-3xl" />
-      <div className="float-slow pointer-events-none absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-primary/30 blur-3xl" style={{ animationDelay: '1.5s' }} />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary/70" />
+      {/* decorative blur circles */}
+      <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-white/5 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-32 -left-20 h-96 w-96 rounded-full bg-secondary/10 blur-3xl" />
+      <div className="float-slow pointer-events-none absolute right-1/4 top-10 h-72 w-72 rounded-full bg-gold/10 blur-3xl" />
 
-      <div className="relative mx-auto max-w-6xl px-6 py-28 md:py-40">
-        <div className="max-w-2xl">
-          <span className="animate-fade-up glass-navy inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium text-gold ring-1 ring-gold/40">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
-            </span>
-            Now enrolling — April, July &amp; October 2026
+      <div className="relative mx-auto max-w-6xl px-6 py-28 text-center md:py-40">
+        <span className="animate-fade-up inline-flex items-center gap-2 rounded-full bg-gold/15 px-6 py-2 text-sm font-bold uppercase tracking-wider text-gold ring-1 ring-gold/30">
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-75" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
           </span>
-          <h1 className="animate-fade-up delay-1 mt-6 text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl">
-            Your Gateway to{' '}
-            <span className="gradient-gold">Japan</span>
-          </h1>
-          <p className="animate-fade-up delay-2 mt-5 text-xl font-medium text-white/90">
-            Helping Myanmar Students Study at Top Japanese Language Schools
-          </p>
-          <p className="animate-fade-up delay-2 mt-4 max-w-xl text-white/75">
-            Join thousands of Myanmar students who achieved their dream of
-            studying in Japan through our complete guidance and support programs.
-          </p>
-          <div className="animate-fade-up delay-3 mt-9 flex flex-col gap-3 sm:flex-row">
-            <Link
-              to="/contact"
-              className="btn-gold inline-flex items-center justify-center gap-2 px-7 py-3.5"
-            >
-              Get Free Consultation
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <a
-              href="#courses"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/10 px-7 py-3.5 font-medium text-white backdrop-blur transition-colors hover:bg-white/20"
-            >
-              Explore Courses
-            </a>
-          </div>
+          Now enrolling — April, July &amp; October 2026
+        </span>
+        <h1 className="animate-fade-up delay-1 mx-auto mt-8 max-w-4xl text-5xl font-black uppercase leading-[0.95] tracking-tight text-white md:text-7xl">
+          Your Gateway to <span className="text-gold">Japan</span>
+        </h1>
+        <p className="animate-fade-up delay-2 mx-auto mt-6 max-w-2xl text-lg font-medium text-white/85 md:text-xl">
+          Helping Myanmar students study at top Japanese language schools — with
+          complete guidance and support from application to arrival.
+        </p>
+        <div className="animate-fade-up delay-3 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Link
+            to="/contact"
+            className="btn-gold inline-flex h-14 items-center justify-center gap-2 px-8 text-sm"
+          >
+            Get Free Consultation
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+          <a
+            href="#courses"
+            className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl border-2 border-white/30 bg-white/5 px-8 text-sm font-black uppercase tracking-wider text-white backdrop-blur transition-all hover:scale-105 hover:bg-white/15"
+          >
+            Explore Courses
+          </a>
         </div>
       </div>
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent" />
@@ -141,15 +133,15 @@ function SupportStrip() {
           {achievements.map((a) => (
             <div
               key={a.label}
-              className="lift glass flex flex-col items-center rounded-2xl p-6"
+              className="lift flex flex-col items-center rounded-[2rem] border border-[#e5eaf2] bg-white p-7 shadow-xl"
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-navy text-white shadow-lg">
-                <a.icon className="h-6 w-6" />
+              <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
+                <a.icon className="h-7 w-7" />
               </span>
-              <div className="gradient-text mt-3 text-2xl font-bold tracking-tight md:text-4xl">
+              <div className="mt-4 text-3xl font-black tracking-tight text-primary md:text-4xl">
                 {a.value}
               </div>
-              <div className="mt-1 text-sm text-muted-foreground">{a.label}</div>
+              <div className="mt-1 text-sm font-medium text-muted-foreground">{a.label}</div>
             </div>
           ))}
         </div>
@@ -170,15 +162,15 @@ function SectionHeading({
   return (
     <div className="mx-auto max-w-2xl text-center">
       {eyebrow && (
-        <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-accent px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
-          <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+        <span className="inline-flex items-center gap-2 rounded-full bg-secondary/15 px-5 py-2 text-xs font-black uppercase tracking-widest text-secondary">
+          <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
           {eyebrow}
         </span>
       )}
-      <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
+      <h2 className="heading-black mt-5 text-3xl md:text-5xl">
         {title}
       </h2>
-      {subtitle && <p className="mt-4 text-muted-foreground">{subtitle}</p>}
+      {subtitle && <p className="mt-4 font-medium text-muted-foreground">{subtitle}</p>}
     </div>
   )
 }
@@ -191,28 +183,28 @@ function AboutSection() {
         <SmartImage
           src={images.office}
           alt="Zin Apex Education office in Mandalay"
-          className="aspect-[4/3] rounded-3xl border shadow-lg"
+          className="aspect-[4/3] rounded-[2.5rem] border border-[#e5eaf2] shadow-2xl"
         />
         <div>
-          <p className="text-muted-foreground">{about.intro}</p>
-          <p className="mt-4 text-muted-foreground">{about.detail}</p>
+          <p className="font-medium text-muted-foreground">{about.intro}</p>
+          <p className="mt-4 font-medium text-muted-foreground">{about.detail}</p>
 
-          <div className="mt-8 rounded-2xl border bg-card p-6">
+          <div className="mt-8 rounded-[2rem] border border-[#e5eaf2] bg-white p-7 shadow-xl">
             <div className="flex items-center gap-4">
-              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-navy text-lg font-semibold text-gold">
+              <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-lg font-black text-gold">
                 {founder.initials}
               </span>
               <div>
-                <h3 className="font-medium">{founder.name}</h3>
-                <p className="text-sm text-muted-foreground">{founder.role}</p>
+                <h3 className="font-black uppercase tracking-tight">{founder.name}</h3>
+                <p className="text-sm font-medium text-muted-foreground">{founder.role}</p>
               </div>
             </div>
-            <p className="mt-4 text-sm text-muted-foreground">{founder.bio}</p>
+            <p className="mt-4 text-sm font-medium text-muted-foreground">{founder.bio}</p>
             <a
               href={site.social.youtube}
               target="_blank"
               rel="noreferrer"
-              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-secondary hover:underline"
             >
               <Youtube className="h-4 w-4" />
               Zin Japan Life on YouTube
@@ -260,11 +252,11 @@ function ValueCard({
   children: React.ReactNode
 }) {
   return (
-    <div className="lift rounded-2xl border bg-card p-6 shadow-sm">
-      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-navy text-white shadow-md">
+    <div className="lift rounded-[2rem] border border-[#e5eaf2] bg-white p-8 shadow-xl">
+      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
         {icon}
       </div>
-      <h3 className="mt-5 font-semibold">{title}</h3>
+      <h3 className="mt-5 text-lg font-black uppercase tracking-tight">{title}</h3>
       <div className="mt-3">{children}</div>
     </div>
   )
@@ -283,12 +275,12 @@ function ServicesSection() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="lift rounded-2xl border bg-background p-6 shadow-sm"
+              className="lift rounded-[2.5rem] border border-[#e5eaf2] bg-white p-8 shadow-xl"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-navy text-primary-foreground shadow-md">
-                <service.icon className="h-5 w-5" />
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-white">
+                <service.icon className="h-6 w-6" />
               </div>
-              <h3 className="mt-5 font-medium">{service.title}</h3>
+              <h3 className="mt-5 text-lg font-black uppercase tracking-tight">{service.title}</h3>
               <ul className="mt-3 space-y-2">
                 {service.items.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -305,14 +297,14 @@ function ServicesSection() {
           <SectionHeading title="Why choose Zin Apex Education?" />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {whyChooseUs.map((item) => (
-              <div key={item.title} className="lift rounded-2xl border bg-background p-6 shadow-sm">
-                <h3 className="flex items-start gap-2 font-semibold">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
-                    <Check className="h-3.5 w-3.5" />
+              <div key={item.title} className="lift rounded-[2rem] border border-[#e5eaf2] bg-white p-7 shadow-xl">
+                <h3 className="flex items-start gap-2.5 font-black uppercase tracking-tight">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-xl bg-gold/20 text-primary">
+                    <Check className="h-4 w-4" />
                   </span>
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
+                <p className="mt-3 text-sm font-medium text-muted-foreground">{item.description}</p>
               </div>
             ))}
           </div>
@@ -334,22 +326,22 @@ function CoursesSection() {
         {courses.map((course) => (
           <div
             key={course.title}
-            className="lift flex flex-col overflow-hidden rounded-2xl border bg-card shadow-sm"
+            className="lift flex flex-col overflow-hidden rounded-[2.5rem] border border-[#e5eaf2] bg-white shadow-xl"
           >
             <div className="relative">
               <SmartImage src={course.image} alt={course.title} className="aspect-[16/9] w-full" />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent" />
-              <span className="absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-gold to-gold-soft text-sm font-bold text-navy shadow-lg">
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
+              <span className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-gold text-sm font-black text-primary shadow-lg">
                 {course.code}
               </span>
-              <span className="absolute right-4 top-4 rounded-full bg-background/90 px-3 py-1 text-xs font-medium backdrop-blur">
+              <span className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary backdrop-blur">
                 {course.level}
               </span>
             </div>
-            <div className="flex flex-1 flex-col p-6">
+            <div className="flex flex-1 flex-col p-7">
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-medium">{course.title}</h3>
-                <span className="text-sm text-muted-foreground">{course.duration}</span>
+                <h3 className="text-lg font-black uppercase tracking-tight">{course.title}</h3>
+                <span className="text-sm font-semibold text-muted-foreground">{course.duration}</span>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">{course.description}</p>
               <h4 className="mt-5 text-sm font-medium">Course Features</h4>
@@ -373,15 +365,15 @@ function CoursesSection() {
         ))}
       </div>
 
-      <div className="mt-12 rounded-3xl border bg-gradient-to-br from-card to-accent/40 p-8 shadow-sm">
-        <h3 className="text-center text-lg font-semibold">Flexible ways to learn</h3>
+      <div className="mt-12 rounded-[2.5rem] border border-[#e5eaf2] bg-white p-10 shadow-xl">
+        <h3 className="text-center text-xl font-black uppercase tracking-tight">Flexible ways to learn</h3>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {learningFormats.map((f) => (
             <div key={f.title} className="text-center">
-              <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-navy text-white shadow-md">
-                <f.icon className="h-6 w-6" />
+              <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
+                <f.icon className="h-7 w-7" />
               </span>
-              <h4 className="mt-3 font-medium">{f.title}</h4>
+              <h4 className="mt-4 font-black uppercase tracking-tight">{f.title}</h4>
               <p className="mt-1 text-sm text-muted-foreground">{f.description}</p>
             </div>
           ))}
@@ -392,13 +384,13 @@ function CoursesSection() {
         <SectionHeading title="Why our courses are effective" />
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {whyCoursesWork.map((item, i) => (
-            <div key={item.title} className="lift flex gap-4 rounded-2xl border bg-card p-6 shadow-sm">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-navy text-sm font-semibold text-white shadow-md">
+            <div key={item.title} className="lift flex gap-4 rounded-[2rem] border border-[#e5eaf2] bg-white p-7 shadow-xl">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary text-sm font-black text-white">
                 {i + 1}
               </span>
               <div>
-                <h3 className="font-medium">{item.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
+                <h3 className="font-black uppercase tracking-tight">{item.title}</h3>
+                <p className="mt-2 text-sm font-medium text-muted-foreground">{item.description}</p>
               </div>
             </div>
           ))}
@@ -434,10 +426,12 @@ function StudySection() {
         </ul>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border bg-background p-8">
-            <Download className="h-7 w-7 text-primary" />
-            <h3 className="mt-4 text-lg font-medium">Application form</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
+          <div className="rounded-[2rem] border border-[#e5eaf2] bg-white p-9 shadow-xl">
+            <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
+              <Download className="h-7 w-7" />
+            </span>
+            <h3 className="mt-5 text-lg font-black uppercase tracking-tight">Application form</h3>
+            <p className="mt-2 text-sm font-medium text-muted-foreground">
               Download our application form (PDF), fill it out, and send it back to
               us. All required attachments are in the Google Drive folder.
             </p>
@@ -445,16 +439,18 @@ function StudySection() {
               href={site.applicationFormUrl}
               target="_blank"
               rel="noreferrer"
-              className="btn-primary mt-6 inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium"
+              className="btn-primary mt-6 inline-flex h-12 items-center gap-2 px-6 text-sm"
             >
               Download form
               <Download className="h-4 w-4" />
             </a>
           </div>
-          <div className="rounded-2xl border bg-background p-8">
-            <ClipboardList className="h-7 w-7 text-primary" />
-            <h3 className="mt-4 text-lg font-medium">Student orientation</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
+          <div className="rounded-[2rem] border border-[#e5eaf2] bg-white p-9 shadow-xl">
+            <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
+              <ClipboardList className="h-7 w-7" />
+            </span>
+            <h3 className="mt-5 text-lg font-black uppercase tracking-tight">Student orientation</h3>
+            <p className="mt-2 text-sm font-medium text-muted-foreground">
               Register through our Google Form to join the orientation briefing and
               get important information about the application process.
             </p>
@@ -462,7 +458,7 @@ function StudySection() {
               href={site.orientationFormUrl}
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-lg border px-5 py-2.5 text-sm transition-colors hover:bg-accent"
+              className="mt-6 inline-flex h-12 items-center gap-2 rounded-2xl border-2 border-[#e5eaf2] px-6 text-sm font-black uppercase tracking-wide transition-colors hover:bg-accent"
             >
               Register now
               <ArrowRight className="h-4 w-4" />
@@ -536,20 +532,20 @@ function StoriesSection() {
             href={site.social.youtube}
             target="_blank"
             rel="noreferrer"
-            className="lift group overflow-hidden rounded-2xl border bg-card shadow-sm"
+            className="lift group overflow-hidden rounded-[2.5rem] border border-[#e5eaf2] bg-white shadow-xl"
           >
             <div className="relative">
               <SmartImage src={r.image} alt={r.name} className="aspect-video w-full" />
-              <div className="absolute inset-0 flex items-center justify-center bg-navy/30 transition-colors group-hover:bg-navy/45">
-                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-primary shadow-xl transition-transform duration-300 group-hover:scale-110">
+              <div className="absolute inset-0 flex items-center justify-center bg-primary/35 transition-colors group-hover:bg-primary/50">
+                <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gold text-primary shadow-xl transition-transform duration-300 group-hover:scale-110">
                   <Play className="h-6 w-6 fill-current" />
                 </span>
               </div>
             </div>
-            <div className="p-5">
-              <h3 className="font-medium">{r.name}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{r.school}</p>
-              <p className="text-sm text-muted-foreground">{r.program}</p>
+            <div className="p-6">
+              <h3 className="font-black uppercase tracking-tight">{r.name}</h3>
+              <p className="mt-1 text-sm font-medium text-muted-foreground">{r.school}</p>
+              <p className="text-sm font-medium text-muted-foreground">{r.program}</p>
             </div>
           </a>
         ))}
@@ -569,25 +565,25 @@ function ActivitiesSection() {
         />
         <div className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-3">
           {activities.map((a) => (
-            <div key={a.title} className="lift group relative overflow-hidden rounded-2xl border shadow-sm">
+            <div key={a.title} className="lift group relative overflow-hidden rounded-[2rem] border border-[#e5eaf2] shadow-xl">
               <SmartImage
                 src={a.image}
                 alt={a.title}
                 className="aspect-[4/3] w-full"
                 imgClassName="transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/85 via-navy/20 to-transparent" />
-              <span className="absolute bottom-3 left-4 right-4 text-sm font-semibold text-white drop-shadow">
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/20 to-transparent" />
+              <span className="absolute bottom-4 left-5 right-5 text-sm font-black uppercase tracking-tight text-white drop-shadow">
                 {a.title}
               </span>
             </div>
           ))}
         </div>
         <div className="mt-10 text-center">
-          <p className="text-muted-foreground">Want to share your success story? We'd love to feature you.</p>
+          <p className="font-medium text-muted-foreground">Want to share your success story? We'd love to feature you.</p>
           <Link
             to="/contact"
-            className="btn-primary mt-4 inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium"
+            className="btn-primary mt-5 inline-flex h-12 items-center gap-2 px-6 text-sm"
           >
             <MessageCircle className="h-4 w-4" />
             Contact us to share your story
@@ -608,14 +604,14 @@ function ResultsSection() {
       />
       <div className="mt-16 grid grid-cols-2 gap-6 md:grid-cols-4">
         {achievements.map((a) => (
-          <div key={a.label} className="lift rounded-2xl border bg-card p-6 text-center shadow-sm">
-            <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-navy text-white shadow-md">
-              <a.icon className="h-6 w-6" />
+          <div key={a.label} className="lift rounded-[2rem] border border-[#e5eaf2] bg-white p-7 text-center shadow-xl">
+            <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
+              <a.icon className="h-7 w-7" />
             </span>
-            <div className="gradient-text mt-4 text-3xl font-bold tracking-tight md:text-4xl">
+            <div className="mt-4 text-4xl font-black tracking-tight text-primary">
               {a.value}
             </div>
-            <div className="mt-1 text-sm text-muted-foreground">{a.label}</div>
+            <div className="mt-1 text-sm font-medium text-muted-foreground">{a.label}</div>
           </div>
         ))}
       </div>
@@ -654,21 +650,21 @@ function FaqSection() {
           {faqs.map((faq, i) => {
             const isOpen = open === i
             return (
-              <div key={faq.q} className="overflow-hidden rounded-xl border bg-background">
+              <div key={faq.q} className="overflow-hidden rounded-[1.5rem] border border-[#e5eaf2] bg-white shadow-sm">
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
-                  className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+                  className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
                   aria-expanded={isOpen}
                 >
-                  <span className="font-medium">{faq.q}</span>
+                  <span className="font-bold">{faq.q}</span>
                   <ChevronDown
-                    className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform ${
+                    className={`h-5 w-5 shrink-0 text-secondary transition-transform ${
                       isOpen ? 'rotate-180' : ''
                     }`}
                   />
                 </button>
                 {isOpen && (
-                  <p className="border-t px-5 py-4 text-sm leading-relaxed text-muted-foreground">
+                  <p className="border-t px-6 py-5 text-sm font-medium leading-relaxed text-muted-foreground">
                     {faq.a}
                   </p>
                 )}
@@ -684,22 +680,22 @@ function FaqSection() {
 function ContactCta() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-24">
-      <div className="relative overflow-hidden rounded-[2rem] border shadow-2xl">
-        <SmartImage src={images.mandalay} alt="Mandalay" className="absolute inset-0 h-full w-full" />
-        <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-navy/85 to-primary/70" />
-        <div className="absolute inset-0 bg-[radial-gradient(40rem_24rem_at_80%_120%,rgba(245,180,23,0.3),transparent_60%)]" />
-        <div className="float-slow pointer-events-none absolute -left-12 -top-12 h-64 w-64 rounded-full bg-gold/20 blur-3xl" />
+      <div className="relative overflow-hidden rounded-[3rem] bg-primary shadow-2xl">
+        <SmartImage src={images.mandalay} alt="Mandalay" className="absolute inset-0 h-full w-full opacity-25" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary/70" />
+        <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
+        <div className="float-slow pointer-events-none absolute -bottom-16 -left-12 h-72 w-72 rounded-full bg-gold/15 blur-3xl" />
         <div className="relative px-8 py-20 text-center text-white">
-          <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight md:text-5xl">
+          <h2 className="mx-auto max-w-3xl text-3xl font-black uppercase leading-tight tracking-tight md:text-5xl">
             Ready to begin your journey to{' '}
-            <span className="gradient-gold">Japan?</span>
+            <span className="text-gold">Japan?</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-white/80">
+          <p className="mx-auto mt-5 max-w-xl font-medium text-white/80">
             Get in touch with our team for clear guidance and full support.
           </p>
           <Link
             to="/contact"
-            className="btn-gold mt-9 inline-flex items-center gap-2 rounded-xl px-7 py-3.5 font-semibold"
+            className="btn-gold mt-9 inline-flex h-14 items-center gap-2 px-8 text-sm"
           >
             Get Free Consultation
             <ArrowRight className="h-4 w-4" />
