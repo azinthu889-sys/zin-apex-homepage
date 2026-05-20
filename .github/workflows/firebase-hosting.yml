@@ -36,6 +36,7 @@ jobs:
             exit 1
           fi
           echo "FIREBASE_TOKEN is set, length=${#FIREBASE_TOKEN}"
+          echo "First 3 chars (should be '1//'): ${FIREBASE_TOKEN:0:3}"
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
