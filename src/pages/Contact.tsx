@@ -51,8 +51,8 @@ export default function Contact() {
     <>
       <PageHero
         title="Contact us"
-        image={images.desk}
-        imageAlt="Get in touch with our team"
+        image={images.mandalay}
+        imageAlt="Mandalay, home of our office"
       >
         <p>
           Ready to apply or have a question? Send us a message and our team will
