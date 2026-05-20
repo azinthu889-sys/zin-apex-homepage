@@ -106,19 +106,19 @@ function Hero() {
             studying in Japan through our complete guidance and support programs.
           </p>
           <div className="animate-fade-up delay-3 mt-9 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#courses"
-              className="btn-primary inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-medium"
-            >
-              Explore Courses
-              <ArrowRight className="h-4 w-4" />
-            </a>
             <Link
               to="/contact"
-              className="btn-gold inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-semibold"
+              className="btn-gold inline-flex items-center justify-center gap-2 px-7 py-3.5"
             >
               Get Free Consultation
+              <ArrowRight className="h-4 w-4" />
             </Link>
+            <a
+              href="#courses"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/10 px-7 py-3.5 font-medium text-white backdrop-blur transition-colors hover:bg-white/20"
+            >
+              Explore Courses
+            </a>
           </div>
         </div>
       </div>
@@ -170,8 +170,8 @@ function SectionHeading({
   return (
     <div className="mx-auto max-w-2xl text-center">
       {eyebrow && (
-        <span className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-gold">
-          <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+        <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-accent px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
+          <span className="h-1.5 w-1.5 rounded-full bg-primary" />
           {eyebrow}
         </span>
       )}
