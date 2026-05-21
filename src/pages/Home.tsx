@@ -71,57 +71,63 @@ export default function Home() {
 function Hero() {
   return (
     <section id="home" className="relative overflow-hidden bg-primary">
-      <SmartImage
-        src={images.heroPhoto}
-        alt="Zin Apex Education students arriving in Japan"
-        className="absolute inset-0 h-full w-full"
-        imgClassName="object-center"
-      />
-      {/* desktop: only the left text column is darkened, photo stays clear on the right */}
-      <div className="absolute inset-0 hidden bg-gradient-to-r from-primary via-primary/45 to-transparent md:block" />
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/45 to-primary/30 md:hidden" />
+      <div className="pointer-events-none absolute -right-32 -top-28 h-96 w-96 rounded-full bg-secondary/15 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-28 left-1/4 h-80 w-80 rounded-full bg-gold/10 blur-3xl" />
 
-      <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-36">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:py-24 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
+        {/* text */}
         <div className="max-w-xl">
-          <span className="animate-fade-up inline-flex items-center gap-2 rounded-full bg-gold/15 px-5 py-2 text-xs font-bold uppercase tracking-wider text-gold ring-1 ring-gold/30">
+          <span className="animate-fade-up inline-flex items-center gap-2 rounded-full bg-gold/15 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-gold ring-1 ring-gold/30">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
             </span>
-            Now enrolling — April, July &amp; October 2026
+            Now enrolling — 2026 intakes
           </span>
-          <h1 className="animate-fade-up delay-1 mt-6 text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl">
+          <h1 className="animate-fade-up delay-1 mt-5 text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-5xl lg:text-6xl">
             Your Gateway to <span className="text-gold">Japan</span>
           </h1>
-          <p className="animate-fade-up delay-2 mt-5 max-w-lg text-lg font-medium text-white/85">
-            Helping Myanmar students study at top Japanese language schools — with
-            complete guidance and support from application to arrival.
+          <p className="animate-fade-up delay-2 mt-4 text-base font-medium text-white/85 md:text-lg">
+            Helping Myanmar students study at top Japanese language schools — full
+            guidance and support from application to arrival.
           </p>
-          <div className="animate-fade-up delay-3 mt-9 flex flex-col gap-4 sm:flex-row">
+          <div className="animate-fade-up delay-3 mt-7 flex flex-wrap gap-3">
             <Link
               to="/contact"
-              className="btn-gold inline-flex h-14 items-center justify-center gap-2 px-8 text-sm"
+              className="btn-gold inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm"
             >
               Get Free Consultation
               <ArrowRight className="h-4 w-4" />
             </Link>
             <a
               href="#courses"
-              className="inline-flex h-14 items-center justify-center gap-2 rounded-2xl border-2 border-white/30 bg-white/5 px-8 text-sm font-semibold tracking-wide text-white backdrop-blur transition-all hover:bg-white/15"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-white/30 bg-white/5 px-7 py-3.5 text-sm font-semibold tracking-wide text-white backdrop-blur transition-all hover:bg-white/15"
             >
               Explore Courses
             </a>
           </div>
-          <div className="animate-fade-up delay-4 mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-medium text-white/80">
-            <span className="flex items-center gap-2"><span className="text-gold">★</span> Trusted since 2023</span>
-            <span className="hidden h-1 w-1 rounded-full bg-white/40 sm:block" />
-            <span>100+ students placed in Japan</span>
-            <span className="hidden h-1 w-1 rounded-full bg-white/40 sm:block" />
-            <span>97% COE success rate</span>
+          <div className="animate-fade-up delay-4 mt-7 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm font-medium text-white/70">
+            <span className="text-gold">★</span>
+            <span>Trusted since 2023</span>
+            <span className="h-1 w-1 rounded-full bg-white/30" />
+            <span>100+ placed in Japan</span>
+            <span className="h-1 w-1 rounded-full bg-white/30" />
+            <span>97% COE success</span>
           </div>
         </div>
+
+        {/* framed photo */}
+        <div className="animate-fade-up delay-2 relative">
+          <div className="overflow-hidden rounded-3xl shadow-2xl ring-1 ring-white/10">
+            <SmartImage
+              src={images.heroPhoto}
+              alt="Zin Apex Education students arriving in Japan"
+              className="aspect-[4/3] w-full"
+            />
+          </div>
+          <div className="pointer-events-none absolute -right-4 -top-4 -z-10 h-32 w-32 rounded-3xl bg-gold/30 blur-2xl" />
+        </div>
       </div>
-      <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-background to-transparent" />
     </section>
   )
 }
