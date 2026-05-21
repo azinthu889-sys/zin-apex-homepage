@@ -70,18 +70,12 @@ export default function Home() {
 
 function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden bg-primary">
-      <div className="pointer-events-none absolute -right-32 -top-28 h-96 w-96 rounded-full bg-secondary/15 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-28 left-1/4 h-80 w-80 rounded-full bg-gold/10 blur-3xl" />
-
-      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:py-24 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
+    <section id="home" className="relative overflow-hidden border-b border-white/10 bg-primary">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:py-20 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
         {/* text */}
         <div className="max-w-xl">
-          <span className="animate-fade-up inline-flex items-center gap-2 rounded-full bg-gold/15 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-gold ring-1 ring-gold/30">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
-            </span>
+          <span className="animate-fade-up inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-gold">
+            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
             Now enrolling — 2026 intakes
           </span>
           <h1 className="animate-fade-up delay-1 mt-5 text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-5xl lg:text-6xl">
@@ -117,15 +111,12 @@ function Hero() {
         </div>
 
         {/* framed photo */}
-        <div className="animate-fade-up delay-2 relative">
-          <div className="overflow-hidden rounded-3xl shadow-2xl ring-1 ring-white/10">
-            <SmartImage
-              src={images.heroPhoto}
-              alt="Zin Apex Education students arriving in Japan"
-              className="aspect-[4/3] w-full"
-            />
-          </div>
-          <div className="pointer-events-none absolute -right-4 -top-4 -z-10 h-32 w-32 rounded-3xl bg-gold/30 blur-2xl" />
+        <div className="animate-fade-up delay-2 overflow-hidden rounded-2xl ring-1 ring-white/15">
+          <SmartImage
+            src={images.heroPhoto}
+            alt="Zin Apex Education students arriving in Japan"
+            className="aspect-[4/3] w-full"
+          />
         </div>
       </div>
     </section>
@@ -136,18 +127,13 @@ function SupportStrip() {
   return (
     <section className="border-b bg-card">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 lg:grid-cols-2">
-        {/* photo with floating accent stat */}
-        <div data-reveal className="relative">
+        {/* photo */}
+        <div data-reveal>
           <SmartImage
             src={images.support}
             alt="Zin Apex Education students celebrating their journey to Japan"
-            className="aspect-[4/3] w-full rounded-3xl shadow-lg ring-1 ring-[#e5eaf2]"
+            className="aspect-[4/3] w-full rounded-2xl border border-[#e5eaf2]"
           />
-          <div className="absolute -bottom-5 right-4 rounded-2xl bg-gold px-5 py-3 shadow-xl sm:-right-4">
-            <div className="text-2xl font-extrabold tracking-tight text-primary">100+</div>
-            <div className="text-xs font-semibold text-primary/80">Students in Japan</div>
-          </div>
-          <div className="pointer-events-none absolute -left-4 -top-4 -z-10 h-28 w-28 rounded-2xl bg-secondary/20 blur-2xl" />
         </div>
 
         {/* text + stats */}
@@ -217,7 +203,7 @@ function AboutSection() {
         <SmartImage
           src={images.office}
           alt="Zin Apex Education office in Mandalay"
-          className="aspect-[4/3] rounded-2xl border border-[#e5eaf2] shadow-lg"
+          className="aspect-[4/3] rounded-2xl border border-[#e5eaf2] shadow-sm"
         />
         <div>
           <p className="font-medium text-muted-foreground">{about.intro}</p>
@@ -365,7 +351,7 @@ function CoursesSection() {
             <div className="relative">
               <SmartImage src={course.image} alt={course.title} className="aspect-[16/9] w-full" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
-              <span className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-gold text-sm font-bold text-primary shadow-lg">
+              <span className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-gold text-sm font-bold text-primary">
                 {course.code}
               </span>
               <span className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary backdrop-blur">
@@ -735,9 +721,7 @@ function ContactCta() {
     <section className="mx-auto max-w-6xl px-6 py-24">
       <div className="relative overflow-hidden rounded-3xl bg-primary shadow-lg">
         <SmartImage src={images.mandalay} alt="Mandalay" className="absolute inset-0 h-full w-full opacity-60" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/70 to-primary/45" />
-        <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
-        <div className="float-slow pointer-events-none absolute -bottom-16 -left-12 h-72 w-72 rounded-full bg-gold/15 blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/75 to-primary/55" />
         <div className="relative px-8 py-20 text-center text-white">
           <h2 className="mx-auto max-w-3xl text-3xl font-bold leading-tight tracking-tight md:text-5xl">
             Ready to begin your journey to{' '}
