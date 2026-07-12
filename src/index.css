@@ -178,6 +178,24 @@ body {
   html { scroll-behavior: auto; }
 }
 
+/* Falling sakura petals (Japan-themed hero animation) */
+.sakura-petal {
+  position: absolute;
+  top: 0;
+  background: linear-gradient(135deg, #fbc7d8, #f49ebc);
+  border-radius: 100% 0 100% 0;
+  animation: sakura-fall linear infinite;
+  will-change: transform, opacity;
+}
+@keyframes sakura-fall {
+  0% { transform: translate3d(0, -8vh, 0) rotate(0deg); opacity: 0; }
+  8% { opacity: 0.9; }
+  100% { transform: translate3d(90px, 108vh, 0) rotate(640deg); opacity: 0.35; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sakura-petal { display: none; }
+}
+
 /* Auto-scrolling photo film-strip */
 @keyframes marquee {
   to { transform: translateX(-50%); }
