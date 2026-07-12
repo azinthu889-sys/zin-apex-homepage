@@ -70,61 +70,97 @@ export default function Home() {
   )
 }
 
+const sakuraPetals = [
+  { left: '4%', dur: '11s', delay: '-2s', size: 13 },
+  { left: '12%', dur: '14s', delay: '-7s', size: 10 },
+  { left: '22%', dur: '12s', delay: '-4s', size: 15 },
+  { left: '31%', dur: '16s', delay: '-10s', size: 9 },
+  { left: '42%', dur: '13s', delay: '-1s', size: 12 },
+  { left: '53%', dur: '15s', delay: '-8s', size: 10 },
+  { left: '63%', dur: '11s', delay: '-5s', size: 14 },
+  { left: '72%', dur: '14s', delay: '-11s', size: 9 },
+  { left: '82%', dur: '12s', delay: '-3s', size: 13 },
+  { left: '91%', dur: '16s', delay: '-9s', size: 11 },
+  { left: '48%', dur: '18s', delay: '-13s', size: 8 },
+  { left: '8%', dur: '17s', delay: '-14s', size: 8 },
+]
+
 function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden bg-primary">
-      {/* floating decorations */}
-      <div className="float-slow pointer-events-none absolute left-[8%] top-24 h-3 w-3 rounded-full bg-gold/70" />
-      <div className="float-slow pointer-events-none absolute right-[10%] top-32 h-4 w-4 rounded-full bg-secondary/60" style={{ animationDelay: '1.2s' }} />
-      <div className="float-slow pointer-events-none absolute left-[16%] top-72 h-2 w-2 rounded-full bg-white/40" style={{ animationDelay: '2.1s' }} />
-      <div className="float-slow pointer-events-none absolute right-[20%] top-64 text-xl text-gold/60" style={{ animationDelay: '0.6s' }}>★</div>
-      <div className="float-slow pointer-events-none absolute left-[26%] top-36 text-sm text-secondary/50" style={{ animationDelay: '2.8s' }}>★</div>
+    <section
+      id="home"
+      className="relative overflow-hidden bg-gradient-to-b from-[#e8f2fc] via-[#f2f7ff] to-card"
+    >
+      {/* falling sakura petals */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+        {sakuraPetals.map((p, i) => (
+          <span
+            key={i}
+            className="sakura-petal"
+            style={{
+              left: p.left,
+              width: p.size,
+              height: p.size,
+              animationDuration: p.dur,
+              animationDelay: p.delay,
+            }}
+          />
+        ))}
+      </div>
+      {/* soft floating accents */}
+      <div className="float-slow pointer-events-none absolute left-[8%] top-24 h-3 w-3 rounded-full bg-gold/80" />
+      <div className="float-slow pointer-events-none absolute right-[10%] top-32 h-4 w-4 rounded-full bg-secondary/50" style={{ animationDelay: '1.2s' }} />
+      <div className="float-slow pointer-events-none absolute right-[20%] top-64 text-xl text-gold" style={{ animationDelay: '0.6s' }}>★</div>
 
       {/* centered text */}
       <div className="relative mx-auto max-w-3xl px-6 pt-16 text-center md:pt-24">
-        <span className="animate-fade-up inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-gold">
+        <span className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-primary/10 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary backdrop-blur">
           <span className="h-1.5 w-1.5 rounded-full bg-gold" />
           Now enrolling — 2026 intakes
         </span>
-        <h1 className="animate-fade-up delay-1 mt-5 text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl">
-          Your Gateway to <span className="text-gold">Japan</span>
+        <h1 className="animate-fade-up delay-1 mt-5 text-4xl font-bold leading-[1.08] tracking-tight text-primary md:text-6xl">
+          Your Gateway to{' '}
+          <span className="relative inline-block">
+            <span className="absolute inset-x-0 bottom-1 h-[38%] -rotate-1 rounded-md bg-gold/70" />
+            <span className="relative">Japan</span>
+          </span>
         </h1>
-        <p className="animate-fade-up delay-2 mx-auto mt-4 max-w-xl text-base font-medium text-white/85 md:text-lg">
+        <p className="animate-fade-up delay-2 mx-auto mt-4 max-w-xl text-base font-medium text-muted-foreground md:text-lg">
           Helping Myanmar students study at top Japanese language schools — full
           guidance and support from application to arrival.
         </p>
         <div className="animate-fade-up delay-3 mt-7 flex flex-wrap justify-center gap-3">
           <Link
             to="/contact"
-            className="btn-gold inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm"
+            className="btn-primary inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm"
           >
             Get Free Consultation
             <ArrowRight className="h-4 w-4" />
           </Link>
           <a
             href="#courses"
-            className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-white/30 bg-white/5 px-7 py-3.5 text-sm font-semibold tracking-wide text-white backdrop-blur transition-all hover:bg-white/15"
+            className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-primary/15 bg-white/70 px-7 py-3.5 text-sm font-semibold tracking-wide text-primary backdrop-blur transition-colors hover:bg-accent"
           >
             Explore Courses
           </a>
         </div>
-        <div className="animate-fade-up delay-4 mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-sm font-medium text-white/70">
+        <div className="animate-fade-up delay-4 mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-sm font-medium text-muted-foreground">
           <span className="text-gold">★</span>
           <span>Trusted since 2023</span>
-          <span className="h-1 w-1 rounded-full bg-white/30" />
+          <span className="h-1 w-1 rounded-full bg-primary/20" />
           <span>100+ placed in Japan</span>
-          <span className="h-1 w-1 rounded-full bg-white/30" />
+          <span className="h-1 w-1 rounded-full bg-primary/20" />
           <span>97% COE success</span>
         </div>
       </div>
 
       {/* auto-scrolling photo film-strip */}
-      <div className="marquee-mask animate-fade-up delay-3 relative mt-12 pb-24 md:mt-14">
+      <div className="marquee-mask animate-fade-up delay-3 relative mt-12 pb-20 md:mt-14">
         <div className="animate-marquee flex w-max gap-5 pr-5">
           {[...activities, ...activities].map((a, i) => (
             <div
               key={`${a.title}-${i}`}
-              className={`h-48 w-72 shrink-0 overflow-hidden rounded-2xl border-4 border-white/10 shadow-2xl md:h-60 md:w-[22rem] ${
+              className={`h-48 w-72 shrink-0 overflow-hidden rounded-2xl border-4 border-white shadow-xl md:h-60 md:w-[22rem] ${
                 i % 2 === 0 ? '-rotate-1' : 'rotate-1'
               }`}
             >
@@ -133,17 +169,6 @@ function Hero() {
           ))}
         </div>
       </div>
-
-      {/* wave divider */}
-      <svg
-        aria-hidden
-        className="absolute bottom-0 left-0 h-12 w-full text-background md:h-16"
-        viewBox="0 0 1440 64"
-        preserveAspectRatio="none"
-        fill="currentColor"
-      >
-        <path d="M0,34 C240,64 480,4 720,18 C960,32 1200,62 1440,26 L1440,64 L0,64 Z" />
-      </svg>
     </section>
   )
 }
