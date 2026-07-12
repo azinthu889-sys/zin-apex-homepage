@@ -73,7 +73,7 @@ export default function Home() {
 function Hero() {
   return (
     <section id="home" className="relative overflow-hidden border-b border-white/10 bg-primary">
-      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:py-20 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:py-20 lg:grid-cols-[1fr_1.15fr] lg:gap-14">
         {/* text */}
         <div className="max-w-xl">
           <span className="animate-fade-up inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-gold">
@@ -117,7 +117,7 @@ function Hero() {
           <SmartImage
             src={images.heroPhoto}
             alt="Zin Apex Education students arriving in Japan"
-            className="aspect-[4/3] w-full"
+            className="aspect-[16/11] w-full"
           />
         </div>
       </div>
@@ -128,13 +128,13 @@ function Hero() {
 function SupportStrip() {
   return (
     <section className="border-b bg-card">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:items-stretch">
         {/* photo */}
-        <div data-reveal>
+        <div data-reveal className="h-full">
           <SmartImage
             src={images.support}
             alt="Zin Apex Education students celebrating their journey to Japan"
-            className="aspect-[4/3] w-full rounded-2xl border border-[#e5eaf2]"
+            className="aspect-[4/3] w-full rounded-2xl border border-[#e5eaf2] lg:aspect-auto lg:h-full"
           />
         </div>
 
@@ -641,16 +641,27 @@ function ActivitiesSection() {
           subtitle="Discover how we support students at every step of their study-abroad journey through our activities and programs."
         />
         <div data-reveal className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-3">
-          {activities.map((a) => (
-            <div key={a.title} className="lift group relative overflow-hidden rounded-2xl border border-[#e5eaf2] shadow-sm">
+          {activities.map((a, i) => (
+            <div
+              key={a.title}
+              className={`lift group relative overflow-hidden rounded-2xl border border-[#e5eaf2] shadow-sm ${
+                i === 0 ? 'col-span-2 row-span-2' : ''
+              }`}
+            >
               <SmartImage
                 src={a.image}
                 alt={a.title}
-                className="aspect-[4/3] w-full"
+                className={`w-full ${
+                  i === 0 ? 'h-full min-h-[280px] md:min-h-[460px]' : 'aspect-[4/3]'
+                }`}
                 imgClassName="transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
-              <span className="absolute bottom-4 left-5 right-5 text-sm font-bold tracking-tight text-white drop-shadow">
+              <span
+                className={`absolute bottom-4 left-5 right-5 font-bold tracking-tight text-white drop-shadow ${
+                  i === 0 ? 'text-lg' : 'text-sm'
+                }`}
+              >
                 {a.title}
               </span>
             </div>
