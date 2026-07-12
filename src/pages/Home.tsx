@@ -154,22 +154,23 @@ function Hero() {
         </div>
       </div>
 
-      {/* auto-scrolling photo film-strip */}
-      <div className="marquee-mask animate-fade-up delay-3 relative mt-12 pb-20 md:mt-14">
-        <div className="animate-marquee flex w-max gap-6 pr-6">
-          {[...activities, ...activities].map((a, i) => (
-            <div
-              key={`${a.title}-${i}`}
-              className="group h-52 w-80 shrink-0 overflow-hidden rounded-2xl border-4 border-white shadow-lg md:h-64 md:w-[24rem]"
-            >
-              <SmartImage
-                src={a.image}
-                alt={a.title}
-                className="h-full w-full"
-                imgClassName="transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
-          ))}
+      {/* one big cinematic hero photo */}
+      <div className="animate-fade-up delay-3 relative mx-auto mt-12 w-full max-w-5xl px-6 pb-20 md:mt-14">
+        <div className="relative overflow-hidden rounded-3xl shadow-2xl ring-1 ring-primary/10">
+          <SmartImage
+            src={images.heroPhoto}
+            alt="ZAE students arriving in Japan"
+            className="aspect-[16/9] w-full"
+            imgClassName="animate-kenburns"
+          />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-primary/75 to-transparent" />
+          <span className="absolute bottom-5 left-6 text-sm font-semibold text-white drop-shadow md:text-lg">
+            ZAE students arriving in Japan ✈️
+          </span>
+          <span className="absolute right-5 top-5 rounded-2xl bg-gold px-4 py-2.5 text-primary shadow-lg">
+            <span className="block text-lg font-extrabold leading-none tracking-tight">100+</span>
+            <span className="mt-0.5 block text-[0.65rem] font-bold uppercase tracking-wide">Students placed</span>
+          </span>
         </div>
       </div>
     </section>
