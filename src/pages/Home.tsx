@@ -73,69 +73,77 @@ export default function Home() {
 function Hero() {
   return (
     <section id="home" className="relative overflow-hidden bg-primary">
-      <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-6 py-20 md:py-24 lg:grid-cols-2">
-        {/* text */}
-        <div className="max-w-xl">
-          <span className="animate-fade-up inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-gold">
-            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-            Now enrolling — 2026 intakes
-          </span>
-          <h1 className="animate-fade-up delay-1 mt-5 text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-5xl lg:text-6xl">
-            Your Gateway to <span className="text-gold">Japan</span>
-          </h1>
-          <p className="animate-fade-up delay-2 mt-4 text-base font-medium text-white/85 md:text-lg">
-            Helping Myanmar students study at top Japanese language schools — full
-            guidance and support from application to arrival.
-          </p>
-          <div className="animate-fade-up delay-3 mt-7 flex flex-wrap gap-3">
-            <Link
-              to="/contact"
-              className="btn-gold inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm"
-            >
-              Get Free Consultation
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <a
-              href="#courses"
-              className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-white/30 bg-white/5 px-7 py-3.5 text-sm font-semibold tracking-wide text-white backdrop-blur transition-all hover:bg-white/15"
-            >
-              Explore Courses
-            </a>
-          </div>
-          <div className="animate-fade-up delay-4 mt-7 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm font-medium text-white/70">
-            <span className="text-gold">★</span>
-            <span>Trusted since 2023</span>
-            <span className="h-1 w-1 rounded-full bg-white/30" />
-            <span>100+ placed in Japan</span>
-            <span className="h-1 w-1 rounded-full bg-white/30" />
-            <span>97% COE success</span>
-          </div>
-        </div>
+      {/* floating decorations */}
+      <div className="float-slow pointer-events-none absolute left-[8%] top-24 h-3 w-3 rounded-full bg-gold/70" />
+      <div className="float-slow pointer-events-none absolute right-[10%] top-32 h-4 w-4 rounded-full bg-secondary/60" style={{ animationDelay: '1.2s' }} />
+      <div className="float-slow pointer-events-none absolute left-[16%] top-72 h-2 w-2 rounded-full bg-white/40" style={{ animationDelay: '2.1s' }} />
+      <div className="float-slow pointer-events-none absolute right-[20%] top-64 text-xl text-gold/60" style={{ animationDelay: '0.6s' }}>★</div>
+      <div className="float-slow pointer-events-none absolute left-[26%] top-36 text-sm text-secondary/50" style={{ animationDelay: '2.8s' }}>★</div>
 
-        {/* layered photo composition */}
-        <div className="animate-fade-up delay-2 relative mb-10 sm:mb-14">
-          <div className="overflow-hidden rounded-3xl shadow-2xl ring-1 ring-white/15">
-            <SmartImage
-              src={images.heroPhoto}
-              alt="Zin Apex Education students arriving in Japan"
-              className="aspect-[16/11] w-full"
-            />
-          </div>
-          {/* overlapping second group photo */}
-          <div className="absolute -bottom-12 -left-5 hidden w-[46%] overflow-hidden rounded-2xl border-4 border-primary shadow-2xl sm:block">
-            <SmartImage
-              src={images.heroSecondary}
-              alt="Students under cherry blossoms in Japan"
-              className="aspect-[16/10] w-full"
-            />
-          </div>
-          {/* gold stat badge */}
-          <div className="absolute -top-5 right-5 rounded-2xl bg-gold px-5 py-3 text-primary shadow-xl">
-            <div className="text-xl font-extrabold leading-none tracking-tight">97%</div>
-            <div className="mt-1 text-[0.7rem] font-bold uppercase tracking-wide">COE success</div>
-          </div>
+      {/* centered text */}
+      <div className="relative mx-auto max-w-3xl px-6 pt-16 text-center md:pt-24">
+        <span className="animate-fade-up inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-gold">
+          <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+          Now enrolling — 2026 intakes
+        </span>
+        <h1 className="animate-fade-up delay-1 mt-5 text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl">
+          Your Gateway to <span className="text-gold">Japan</span>
+        </h1>
+        <p className="animate-fade-up delay-2 mx-auto mt-4 max-w-xl text-base font-medium text-white/85 md:text-lg">
+          Helping Myanmar students study at top Japanese language schools — full
+          guidance and support from application to arrival.
+        </p>
+        <div className="animate-fade-up delay-3 mt-7 flex flex-wrap justify-center gap-3">
+          <Link
+            to="/contact"
+            className="btn-gold inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm"
+          >
+            Get Free Consultation
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+          <a
+            href="#courses"
+            className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-white/30 bg-white/5 px-7 py-3.5 text-sm font-semibold tracking-wide text-white backdrop-blur transition-all hover:bg-white/15"
+          >
+            Explore Courses
+          </a>
+        </div>
+        <div className="animate-fade-up delay-4 mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-sm font-medium text-white/70">
+          <span className="text-gold">★</span>
+          <span>Trusted since 2023</span>
+          <span className="h-1 w-1 rounded-full bg-white/30" />
+          <span>100+ placed in Japan</span>
+          <span className="h-1 w-1 rounded-full bg-white/30" />
+          <span>97% COE success</span>
         </div>
       </div>
+
+      {/* auto-scrolling photo film-strip */}
+      <div className="marquee-mask animate-fade-up delay-3 relative mt-12 pb-24 md:mt-14">
+        <div className="animate-marquee flex w-max gap-5 pr-5">
+          {[...activities, ...activities].map((a, i) => (
+            <div
+              key={`${a.title}-${i}`}
+              className={`h-48 w-72 shrink-0 overflow-hidden rounded-2xl border-4 border-white/10 shadow-2xl md:h-60 md:w-[22rem] ${
+                i % 2 === 0 ? '-rotate-1' : 'rotate-1'
+              }`}
+            >
+              <SmartImage src={a.image} alt={a.title} className="h-full w-full" />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* wave divider */}
+      <svg
+        aria-hidden
+        className="absolute bottom-0 left-0 h-12 w-full text-background md:h-16"
+        viewBox="0 0 1440 64"
+        preserveAspectRatio="none"
+        fill="currentColor"
+      >
+        <path d="M0,34 C240,64 480,4 720,18 C960,32 1200,62 1440,26 L1440,64 L0,64 Z" />
+      </svg>
     </section>
   )
 }
