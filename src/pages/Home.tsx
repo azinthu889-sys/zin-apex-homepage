@@ -176,14 +176,41 @@ function Hero() {
 function SupportStrip() {
   return (
     <section className="border-b bg-card">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:items-stretch">
-        {/* photo */}
-        <div data-reveal className="h-full">
-          <SmartImage
-            src={images.support}
-            alt="Zin Apex Education students celebrating their journey to Japan"
-            className="aspect-[4/3] w-full rounded-2xl border border-[#e5eaf2] lg:aspect-auto lg:h-full"
-          />
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 lg:grid-cols-2">
+        {/* staggered photo collage */}
+        <div data-reveal className="grid grid-cols-2 gap-4">
+          <div className="space-y-4">
+            <div className="-rotate-1 overflow-hidden rounded-2xl border-4 border-white shadow-lg">
+              <SmartImage
+                src={images.heroPhoto}
+                alt="ZAE students arriving in Japan"
+                className="aspect-[4/3] w-full"
+              />
+            </div>
+            <div className="rotate-1 overflow-hidden rounded-2xl border-4 border-white shadow-lg">
+              <SmartImage
+                src={images.haneda}
+                alt="Students arriving at Haneda Airport"
+                className="aspect-[3/4] w-full"
+              />
+            </div>
+          </div>
+          <div className="mt-10 space-y-4">
+            <div className="rotate-1 overflow-hidden rounded-2xl border-4 border-white shadow-lg">
+              <SmartImage
+                src={images.departure}
+                alt="Departure day — students heading to Japan"
+                className="aspect-[3/4] w-full"
+              />
+            </div>
+            <div className="-rotate-1 overflow-hidden rounded-2xl border-4 border-white shadow-lg">
+              <SmartImage
+                src={images.heroSecondary}
+                alt="Students under cherry blossoms in Japan"
+                className="aspect-[4/3] w-full"
+              />
+            </div>
+          </div>
         </div>
 
         {/* text + stats */}
