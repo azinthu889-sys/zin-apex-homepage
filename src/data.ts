@@ -362,7 +362,8 @@ export const coeResults = [
   { year: '2023', applicants: 7, successful: '6' },
   { year: '2024', applicants: 32, successful: '32' },
   { year: '2025', applicants: 38, successful: '37' },
-  { year: '2026', applicants: 35, successful: 'Pending' },
+  { year: '2026', applicants: 45, successful: '42' },
+  { year: '2027 (Oct intake)', applicants: 10, successful: '1 · 9 pending' },
 ]
 
 export const stats = [
