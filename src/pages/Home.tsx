@@ -23,6 +23,7 @@ import {
   mission,
   vision,
   purpose,
+  journey,
   services,
   whyChooseUs,
   courses,
@@ -57,6 +58,7 @@ export default function Home() {
       <SupportStrip />
       <AboutSection />
       <ServicesSection />
+      <JourneySection />
       <CoursesSection />
       <StudySection />
       <StoriesSection />
@@ -330,6 +332,42 @@ function ServicesSection() {
           </div>
         </div>
       </div>
+    </section>
+  )
+}
+
+function JourneySection() {
+  return (
+    <section className="mx-auto max-w-6xl px-6 py-24">
+      <SectionHeading
+        eyebrow="How it works"
+        title="Your journey to Japan"
+        subtitle="A clear, guided process — from your first consultation to your first day in Japan."
+      />
+      <ol data-reveal className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
+        {journey.map((item, i) => (
+          <li key={item.step} className="relative">
+            {/* connector line (desktop) */}
+            {i < journey.length - 1 && (
+              <span
+                aria-hidden
+                className="absolute left-[calc(50%+28px)] top-6 hidden h-px w-[calc(100%-56px)] bg-[#e5eaf2] lg:block"
+              />
+            )}
+            <div className="flex items-start gap-4 lg:flex-col lg:items-center lg:text-center">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-secondary/30 bg-white text-sm font-bold text-secondary">
+                {item.step}
+              </span>
+              <div className="lg:mt-4">
+                <h3 className="font-bold tracking-tight">{item.title}</h3>
+                <p className="mt-1.5 text-sm font-medium text-muted-foreground">
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ol>
     </section>
   )
 }

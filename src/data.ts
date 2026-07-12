@@ -94,6 +94,39 @@ export const purpose = [
   'To build a strong and inspiring community made up of talented and motivated young people.',
 ]
 
+export const journey = [
+  {
+    step: '01',
+    title: 'Free Consultation',
+    description:
+      'Talk with our team about your goals, budget, and the best intake for you.',
+  },
+  {
+    step: '02',
+    title: 'Choose Your School',
+    description:
+      'We match you with a reputable language school in one of our five partner cities.',
+  },
+  {
+    step: '03',
+    title: 'Documents & COE',
+    description:
+      'We prepare your documents precisely and submit your COE application.',
+  },
+  {
+    step: '04',
+    title: 'Visa & Travel',
+    description:
+      'Full visa guidance, air-ticket booking, and pre-departure orientation.',
+  },
+  {
+    step: '05',
+    title: 'Arrival in Japan',
+    description:
+      'We welcome you at the airport and escort you safely to your accommodation.',
+  },
+]
+
 export type Service = {
   icon: LucideIcon
   title: string
