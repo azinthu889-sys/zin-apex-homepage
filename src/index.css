@@ -178,6 +178,19 @@ body {
   html { scroll-behavior: auto; }
 }
 
+/* Cinematic slow zoom for full-bleed hero imagery */
+@keyframes kenburns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.12); }
+}
+.animate-kenburns {
+  animation: kenburns 22s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-kenburns { animation: none; }
+}
+
 /* Scroll reveal — only hides while .js-ready is set (JS booted), so content
    never stays hidden if scripts fail. Elements get .revealed when in view. */
 .js-ready [data-reveal] {

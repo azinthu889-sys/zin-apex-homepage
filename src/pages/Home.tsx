@@ -72,15 +72,28 @@ export default function Home() {
 
 function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden border-b border-white/10 bg-primary">
-      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:py-20 lg:grid-cols-[1fr_1.15fr] lg:gap-14">
-        {/* text */}
+    <section
+      id="home"
+      className="relative flex min-h-[72vh] items-center overflow-hidden bg-primary md:min-h-[84vh]"
+    >
+      {/* full-bleed photo with slow cinematic zoom */}
+      <SmartImage
+        src={images.heroPhoto}
+        alt="Zin Apex Education students arriving in Japan"
+        className="absolute inset-0 h-full w-full"
+        imgClassName="animate-kenburns object-center"
+      />
+      {/* readability gradients — photo stays clear on the right */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/60 to-primary/15" />
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-primary/25" />
+
+      <div className="relative mx-auto w-full max-w-6xl px-6 py-24 md:py-32">
         <div className="max-w-xl">
-          <span className="animate-fade-up inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-gold">
+          <span className="animate-fade-up inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-gold backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-gold" />
             Now enrolling — 2026 intakes
           </span>
-          <h1 className="animate-fade-up delay-1 mt-5 text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-5xl lg:text-6xl">
+          <h1 className="animate-fade-up delay-1 mt-5 text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl">
             Your Gateway to <span className="text-gold">Japan</span>
           </h1>
           <p className="animate-fade-up delay-2 mt-4 text-base font-medium text-white/85 md:text-lg">
@@ -111,16 +124,8 @@ function Hero() {
             <span>97% COE success</span>
           </div>
         </div>
-
-        {/* framed photo */}
-        <div className="animate-fade-up delay-2 overflow-hidden rounded-2xl ring-1 ring-white/15">
-          <SmartImage
-            src={images.heroPhoto}
-            alt="Zin Apex Education students arriving in Japan"
-            className="aspect-[16/11] w-full"
-          />
-        </div>
       </div>
+      <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-background to-transparent" />
     </section>
   )
 }
