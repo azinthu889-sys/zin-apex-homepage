@@ -27,6 +27,7 @@ import activity6 from './assets/activity6.jpg'
 import activity7 from './assets/activity7.jpg'
 import activity8 from './assets/activity8.jpg'
 import activity9 from './assets/activity9.jpg'
+import activity10 from './assets/activity10.jpg'
 import airportPhoto from './assets/airport.jpg'
 import heroArrivals from './assets/hero-arrivals.jpg'
 
@@ -447,24 +448,27 @@ export const reviews = [
     name: 'Student Success Story',
     school: 'Tokyo Language School',
     program: 'April 2024 Intake',
-    image: unsplash('1523240795612-9a054b0db644', 800),
+    image: heroArrivals,
   },
   {
     name: 'Student Success Story',
     school: 'Shizuoka Language School',
     program: 'July 2024 Intake',
-    image: unsplash('1517048676732-d65bc937f952', 800),
+    image: airportPhoto,
   },
   {
     name: 'Student Success Story',
     school: 'Hamamatsu Language School',
     program: 'October 2024 Intake',
-    image: unsplash('1522202176988-66273c2fd55f', 800),
+    image: activity10,
   },
 ]
 
 export const activities = [
+  { title: 'ZAE students arriving in Japan', image: heroArrivals },
+  { title: 'Departure day — off to Japan', image: airportPhoto },
   { title: 'Welcome to Japan', image: activity1 },
+  { title: 'Arrival day at the airport', image: activity10 },
   { title: 'Orientation ceremony', image: activity2 },
   { title: 'Exploring Japan together', image: activity3 },
   { title: 'Arriving at Haneda Airport', image: activity7 },
