@@ -1,6 +1,16 @@
 import { useEffect, useState } from 'react'
 import { Link, Outlet, useLocation } from 'react-router'
-import { Menu, X, Facebook, Youtube, Send } from 'lucide-react'
+import {
+  Menu,
+  X,
+  Facebook,
+  Youtube,
+  Send,
+  Phone,
+  Mail,
+  Clock,
+  MessageCircle,
+} from 'lucide-react'
 import { site, images } from '../data'
 
 const nav = [
@@ -37,6 +47,48 @@ function Brand({ light = false }: { light?: boolean }) {
           {site.academy}
         </span>
       </span>
+    </Link>
+  )
+}
+
+function TopBar() {
+  const phone = site.office.phones[0]
+  return (
+    <div className="hidden bg-primary text-white md:block">
+      <div className="mx-auto flex h-9 max-w-6xl items-center justify-between px-6 text-xs font-medium">
+        <div className="flex items-center gap-6">
+          <a
+            href={`tel:${phone.replace(/\s/g, '')}`}
+            className="flex items-center gap-1.5 text-white/80 transition-colors hover:text-white"
+          >
+            <Phone className="h-3.5 w-3.5" />
+            {phone}
+          </a>
+          <a
+            href={`mailto:${site.office.email}`}
+            className="flex items-center gap-1.5 text-white/80 transition-colors hover:text-white"
+          >
+            <Mail className="h-3.5 w-3.5" />
+            {site.office.email}
+          </a>
+        </div>
+        <span className="flex items-center gap-1.5 text-white/80">
+          <Clock className="h-3.5 w-3.5" />
+          Tue–Sat, {site.office.hours}
+        </span>
+      </div>
+    </div>
+  )
+}
+
+function FloatingContact() {
+  return (
+    <Link
+      to="/contact"
+      aria-label="Contact us"
+      className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gold text-primary shadow-lg transition-transform hover:scale-105"
+    >
+      <MessageCircle className="h-6 w-6" />
     </Link>
   )
 }
@@ -221,11 +273,13 @@ export default function Layout() {
   useScrollReveal()
   return (
     <div className="flex min-h-full flex-col bg-background text-foreground">
+      <TopBar />
       <Header />
       <main className="flex-1">
         <Outlet />
       </main>
       <Footer />
+      <FloatingContact />
     </div>
   )
 }
