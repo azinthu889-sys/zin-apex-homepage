@@ -24,6 +24,9 @@ import activity3 from './assets/activity3.jpg'
 import activity4 from './assets/activity4.jpg'
 import activity5 from './assets/activity5.jpg'
 import activity6 from './assets/activity6.jpg'
+import activity7 from './assets/activity7.jpg'
+import activity8 from './assets/activity8.jpg'
+import activity9 from './assets/activity9.jpg'
 import airportPhoto from './assets/airport.jpg'
 import heroArrivals from './assets/hero-arrivals.jpg'
 
@@ -463,7 +466,10 @@ export const activities = [
   { title: 'Welcome to Japan', image: activity1 },
   { title: 'Orientation ceremony', image: activity2 },
   { title: 'Exploring Japan together', image: activity3 },
+  { title: 'Arriving at Haneda Airport', image: activity7 },
   { title: 'Daily life in Japan', image: activity4 },
   { title: 'Student orientation', image: activity5 },
+  { title: 'Dinner with our student community', image: activity8 },
   { title: 'Arriving in the city', image: activity6 },
+  { title: 'Celebrating together in Japan', image: activity9 },
 ]
