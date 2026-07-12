@@ -156,15 +156,18 @@ function Hero() {
 
       {/* auto-scrolling photo film-strip */}
       <div className="marquee-mask animate-fade-up delay-3 relative mt-12 pb-20 md:mt-14">
-        <div className="animate-marquee flex w-max gap-5 pr-5">
+        <div className="animate-marquee flex w-max gap-6 pr-6">
           {[...activities, ...activities].map((a, i) => (
             <div
               key={`${a.title}-${i}`}
-              className={`h-48 w-72 shrink-0 overflow-hidden rounded-2xl border-4 border-white shadow-xl md:h-60 md:w-[22rem] ${
-                i % 2 === 0 ? '-rotate-1' : 'rotate-1'
-              }`}
+              className="group h-52 w-80 shrink-0 overflow-hidden rounded-2xl border-4 border-white shadow-lg md:h-64 md:w-[24rem]"
             >
-              <SmartImage src={a.image} alt={a.title} className="h-full w-full" />
+              <SmartImage
+                src={a.image}
+                alt={a.title}
+                className="h-full w-full"
+                imgClassName="transition-transform duration-700 group-hover:scale-105"
+              />
             </div>
           ))}
         </div>
