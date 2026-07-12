@@ -177,37 +177,31 @@ function SupportStrip() {
   return (
     <section className="border-b bg-card">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 lg:grid-cols-2">
-        {/* staggered photo collage */}
-        <div data-reveal className="grid grid-cols-2 gap-4">
-          <div className="space-y-4">
-            <div className="-rotate-1 overflow-hidden rounded-2xl border-4 border-white shadow-lg">
+        {/* clean bento photo grid */}
+        <div data-reveal className="space-y-4">
+          <div className="relative overflow-hidden rounded-3xl shadow-lg">
+            <SmartImage
+              src={images.support}
+              alt="ZAE students at the orientation ceremony"
+              className="aspect-[16/10] w-full"
+            />
+            <span className="absolute bottom-4 left-4 rounded-full bg-white/90 px-4 py-1.5 text-xs font-semibold text-primary backdrop-blur">
+              Orientation day — ZAE family
+            </span>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="relative overflow-hidden rounded-2xl shadow-md">
               <SmartImage
                 src={images.heroPhoto}
                 alt="ZAE students arriving in Japan"
-                className="aspect-[4/3] w-full"
+                className="aspect-[16/10] w-full"
               />
             </div>
-            <div className="rotate-1 overflow-hidden rounded-2xl border-4 border-white shadow-lg">
-              <SmartImage
-                src={images.haneda}
-                alt="Students arriving at Haneda Airport"
-                className="aspect-[3/4] w-full"
-              />
-            </div>
-          </div>
-          <div className="mt-10 space-y-4">
-            <div className="rotate-1 overflow-hidden rounded-2xl border-4 border-white shadow-lg">
-              <SmartImage
-                src={images.departure}
-                alt="Departure day — students heading to Japan"
-                className="aspect-[3/4] w-full"
-              />
-            </div>
-            <div className="-rotate-1 overflow-hidden rounded-2xl border-4 border-white shadow-lg">
+            <div className="relative overflow-hidden rounded-2xl shadow-md">
               <SmartImage
                 src={images.heroSecondary}
                 alt="Students under cherry blossoms in Japan"
-                className="aspect-[4/3] w-full"
+                className="aspect-[16/10] w-full"
               />
             </div>
           </div>
