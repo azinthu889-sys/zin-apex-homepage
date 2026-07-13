@@ -29,7 +29,7 @@ export default function StudyInJapan() {
           Documents typically required when applying to a Japanese language
           school. Exact requirements may vary by school and intake.
         </p>
-        <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+        <ul data-reveal className="mt-8 grid gap-3 sm:grid-cols-2">
           {requiredDocuments.map((doc, i) => (
             <li
               key={doc}
@@ -45,7 +45,7 @@ export default function StudyInJapan() {
       </section>
 
       <section className="border-y bg-card">
-        <div className="mx-auto grid max-w-6xl gap-6 px-6 py-24 md:grid-cols-2">
+        <div data-reveal className="mx-auto grid max-w-6xl gap-6 px-6 py-24 md:grid-cols-2">
           <div className="rounded-2xl border bg-background p-8">
             <Download className="h-7 w-7 text-primary" />
             <h3 className="mt-4 text-lg font-medium">Application form</h3>

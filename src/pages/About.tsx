@@ -17,7 +17,7 @@ export default function About() {
       </PageHero>
 
       <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="grid items-start gap-10 lg:grid-cols-[280px_1fr]">
+        <div data-reveal className="grid items-start gap-10 lg:grid-cols-[280px_1fr]">
           <div className="overflow-hidden rounded-2xl border bg-card text-center">
             <SmartImage
               src={images.torii}
@@ -61,7 +61,7 @@ export default function About() {
       </section>
 
       <section className="border-y bg-card">
-        <div className="mx-auto grid max-w-6xl gap-6 px-6 py-24 md:grid-cols-3">
+        <div data-reveal className="mx-auto grid max-w-6xl gap-6 px-6 py-24 md:grid-cols-3">
           <div className="rounded-xl border bg-background p-6">
             <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent text-accent-foreground">
               <Target className="h-5 w-5" />

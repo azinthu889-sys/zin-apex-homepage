@@ -61,7 +61,7 @@ export default function Contact() {
       </PageHero>
 
       <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.5fr]">
+        <div data-reveal className="grid gap-12 lg:grid-cols-[1fr_1.5fr]">
           <div className="space-y-8">
             <div>
               <h2 className="text-lg font-medium">{site.office.label}</h2>

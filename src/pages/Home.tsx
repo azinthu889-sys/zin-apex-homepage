@@ -63,6 +63,7 @@ export default function Home() {
       <CoursesSection />
       <StudySection />
       <StoriesSection />
+      <TestimonialsSection />
       <ActivitiesSection />
       <ResultsSection />
       <FaqSection />
@@ -756,6 +757,69 @@ function StoriesSection() {
             </div>
           </a>
         ))}
+      </div>
+    </section>
+  )
+}
+
+const testimonials = [
+  {
+    name: 'Ma Thiri',
+    intake: 'April 2025 · Tokyo',
+    quote:
+      'ZAE ကြောင့် COE ကအစ ဗီဇာအထိ တစ်ဆင့်မကျန် အဆင်ပြေခဲ့ပါတယ်။ ဂျပန်ရောက်တဲ့နေ့မှာလည်း လေဆိပ်မှာ လာကြိုပေးလို့ စိတ်အရမ်းချရပါတယ်။',
+  },
+  {
+    name: 'Ko Aung Khant',
+    intake: 'October 2024 · Shizuoka',
+    quote:
+      'ဆရာ ဆရာမတွေက မိသားစုလို ဂရုစိုက်ပြီး ကျောင်း interview အတွက်ပါ သေချာ training လုပ်ပေးပါတယ်။ ငွေကြေးကိစ္စတွေလည်း ပွင့်လင်းမြင်သာမှု အပြည့်ရှိပါတယ်။',
+  },
+  {
+    name: 'Ma Ei Phyu',
+    intake: 'July 2025 · Hamamatsu',
+    quote:
+      'နယ်ကဖြစ်လို့ စိုးရိမ်ခဲ့ပေမယ့် online system နဲ့ အကုန်လုံး အဆင်ပြေခဲ့ပါတယ်။ ဂျပန်ရောက်ပြီးနောက်မှာလည်း senior တွေက ဆက်လက် ကူညီပေးနေပါတယ်။',
+  },
+]
+
+function TestimonialsSection() {
+  return (
+    <section className="border-y bg-card">
+      <div className="mx-auto max-w-6xl px-6 py-24">
+        <SectionHeading
+          eyebrow="Testimonials"
+          title="What our students say"
+          subtitle="Real words from ZAE students now studying and living in Japan."
+        />
+        <div data-reveal className="mt-16 grid gap-6 md:grid-cols-3">
+          {testimonials.map((t) => (
+            <figure
+              key={t.name}
+              className="lift flex flex-col rounded-2xl border border-[#e5eaf2] bg-white p-7 shadow-sm"
+            >
+              <div className="flex gap-1 text-gold" aria-hidden>
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-current" />
+                ))}
+              </div>
+              <blockquote className="mt-4 flex-1 text-sm font-medium leading-relaxed text-muted-foreground">
+                “{t.quote}”
+              </blockquote>
+              <figcaption className="mt-6 flex items-center gap-3">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-sm font-bold text-gold">
+                  {t.name.split(' ').slice(-1)[0][0]}
+                </span>
+                <span>
+                  <span className="block text-sm font-bold text-primary">{t.name}</span>
+                  <span className="block text-xs font-medium text-muted-foreground">
+                    {t.intake}
+                  </span>
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </div>
     </section>
   )

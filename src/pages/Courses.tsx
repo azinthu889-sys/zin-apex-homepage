@@ -20,7 +20,7 @@ export default function Courses() {
       </PageHero>
 
       <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div data-reveal className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {courses.map((course) => (
             <div
               key={course.title}
@@ -55,7 +55,7 @@ export default function Courses() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 pb-8">
-        <div className="grid items-center gap-10 lg:grid-cols-2">
+        <div data-reveal className="grid items-center gap-10 lg:grid-cols-2">
           <img
             src={images.n4Textbooks}
             alt="N4 level textbooks and materials used in our courses"
@@ -81,7 +81,7 @@ export default function Courses() {
               Why our courses are effective
             </h2>
           </div>
-          <div className="mt-16 grid gap-6 md:grid-cols-2">
+          <div data-reveal className="mt-16 grid gap-6 md:grid-cols-2">
             {whyCoursesWork.map((item, i) => (
               <div
                 key={item.title}
