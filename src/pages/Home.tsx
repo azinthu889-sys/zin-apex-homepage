@@ -55,6 +55,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <QuickActions />
       <SupportStrip />
       <AboutSection />
       <ServicesSection />
@@ -89,8 +90,21 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-gradient-to-b from-[#e8f2fc] via-[#f2f7ff] to-card"
+      className="relative flex min-h-[82vh] items-center overflow-hidden bg-primary md:min-h-[88vh]"
     >
+      {/* full-viewport photo with slow zoom */}
+      <div className="absolute inset-0">
+        <SmartImage
+          src={images.heroPhoto}
+          alt="ZAE students arriving in Japan"
+          className="h-full w-full"
+          imgClassName="animate-kenburns"
+        />
+      </div>
+      {/* readability gradients — photo stays visible on the right */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/45 to-primary/5" />
+      <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-primary/85 to-transparent" />
+
       {/* falling sakura petals */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
         {sakuraPetals.map((p, i) => (
@@ -107,75 +121,114 @@ function Hero() {
           />
         ))}
       </div>
-      {/* soft floating accents */}
-      <div className="float-slow pointer-events-none absolute left-[8%] top-24 h-3 w-3 rounded-full bg-gold/80" />
-      <div className="float-slow pointer-events-none absolute right-[10%] top-32 h-4 w-4 rounded-full bg-secondary/50" style={{ animationDelay: '1.2s' }} />
-      <div className="float-slow pointer-events-none absolute right-[20%] top-64 text-xl text-gold" style={{ animationDelay: '0.6s' }}>★</div>
 
-      {/* centered text */}
-      <div className="relative mx-auto max-w-3xl px-6 pt-16 text-center md:pt-24">
-        <span className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-primary/10 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary backdrop-blur">
-          <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-          Now enrolling — 2026 intakes
-        </span>
-        <h1 className="animate-fade-up delay-1 mt-5 text-4xl font-bold leading-[1.08] tracking-tight text-primary md:text-6xl">
-          Your Gateway to{' '}
-          <span className="relative inline-block">
-            <span className="absolute inset-x-0 bottom-1 h-[38%] -rotate-1 rounded-md bg-gold/70" />
-            <span className="relative">Japan</span>
+      <div className="relative mx-auto w-full max-w-6xl px-6 pb-32 pt-16 md:pb-36">
+        <div className="max-w-2xl">
+          <span className="animate-fade-up inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-gold backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+            Now enrolling — 2026 intakes
           </span>
-        </h1>
-        <p className="animate-fade-up delay-2 mx-auto mt-4 max-w-xl text-base font-medium text-muted-foreground md:text-lg">
-          Helping Myanmar students study at top Japanese language schools — full
-          guidance and support from application to arrival.
-        </p>
-        <div className="animate-fade-up delay-3 mt-7 flex flex-wrap justify-center gap-3">
-          <Link
-            to="/contact"
-            className="btn-primary inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm"
-          >
-            Get Free Consultation
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-          <a
-            href="#courses"
-            className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-primary/15 bg-white/70 px-7 py-3.5 text-sm font-semibold tracking-wide text-primary backdrop-blur transition-colors hover:bg-accent"
-          >
-            Explore Courses
-          </a>
-        </div>
-        <div className="animate-fade-up delay-4 mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-sm font-medium text-muted-foreground">
-          <span className="text-gold">★</span>
-          <span>Trusted since 2023</span>
-          <span className="h-1 w-1 rounded-full bg-primary/20" />
-          <span>100+ placed in Japan</span>
-          <span className="h-1 w-1 rounded-full bg-primary/20" />
-          <span>97% COE success</span>
-        </div>
-      </div>
-
-      {/* full-width cinematic hero photo */}
-      <div className="animate-fade-up delay-3 relative mt-12 md:mt-14">
-        <div className="relative overflow-hidden">
-          <SmartImage
-            src={images.heroPhoto}
-            alt="ZAE students arriving in Japan"
-            className="h-[380px] w-full sm:h-[480px] md:h-[580px] lg:h-[680px]"
-            imgClassName="animate-kenburns"
-          />
-          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-primary/80 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0">
-            <div className="mx-auto flex max-w-6xl items-end justify-between px-6 pb-6">
-              <span className="text-base font-semibold text-white drop-shadow md:text-xl">
-                ZAE students arriving in Japan ✈️
-              </span>
-              <span className="hidden rounded-2xl bg-gold px-4 py-2.5 text-primary shadow-lg sm:block">
-                <span className="block text-lg font-extrabold leading-none tracking-tight">100+</span>
-                <span className="mt-0.5 block text-[0.65rem] font-bold uppercase tracking-wide">Students placed</span>
-              </span>
-            </div>
+          <h1 className="animate-fade-up delay-1 mt-5 text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl lg:text-7xl">
+            Your Gateway to <span className="text-gold">Japan</span>
+          </h1>
+          <p className="animate-fade-up delay-2 mt-5 max-w-xl text-base font-medium text-white/85 md:text-lg">
+            Helping Myanmar students study at top Japanese language schools — full
+            guidance and support from application to arrival.
+          </p>
+          <div className="animate-fade-up delay-3 mt-8 flex flex-wrap gap-3">
+            <Link
+              to="/contact"
+              className="btn-gold inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm"
+            >
+              Get Free Consultation
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <a
+              href="#courses"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-white/35 bg-white/10 px-7 py-3.5 text-sm font-semibold tracking-wide text-white backdrop-blur transition-colors hover:bg-white/20"
+            >
+              Explore Courses
+            </a>
+          </div>
+          <div className="animate-fade-up delay-4 mt-7 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm font-medium text-white/75">
+            <span className="text-gold">★</span>
+            <span>Trusted since 2023</span>
+            <span className="h-1 w-1 rounded-full bg-white/30" />
+            <span>100+ placed in Japan</span>
+            <span className="h-1 w-1 rounded-full bg-white/30" />
+            <span>97% COE success</span>
           </div>
         </div>
+      </div>
+    </section>
+  )
+}
+
+const quickActions = [
+  {
+    icon: MessageCircle,
+    title: 'Free Consultation',
+    description: 'Talk with our team about your study plan and best intake.',
+    href: '/contact',
+    internal: true,
+  },
+  {
+    icon: Download,
+    title: 'Application Form',
+    description: 'Download the ZAE application form (PDF) and apply today.',
+    href: '',
+    internal: false,
+  },
+  {
+    icon: FileCheck,
+    title: '2026 Intake Schedule',
+    description: 'April, July & October intakes — deadlines and COE dates.',
+    href: '/#study',
+    internal: false,
+  },
+]
+
+function QuickActions() {
+  return (
+    <section className="relative z-10 mx-auto -mt-24 w-full max-w-6xl px-6 md:-mt-28">
+      <div className="grid gap-4 md:grid-cols-3">
+        {quickActions.map((item) => {
+          const Icon = item.icon
+          const href = item.title === 'Application Form' ? site.formPdfUrl : item.href
+          const inner = (
+            <>
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary text-gold">
+                <Icon className="h-6 w-6" />
+              </span>
+              <span>
+                <span className="flex items-center gap-1.5 font-bold text-primary">
+                  {item.title}
+                  <ArrowRight className="h-4 w-4 text-secondary transition-transform group-hover:translate-x-1" />
+                </span>
+                <span className="mt-1 block text-sm font-medium text-muted-foreground">
+                  {item.description}
+                </span>
+              </span>
+            </>
+          )
+          const cardClass =
+            'lift group flex items-start gap-4 rounded-2xl border border-[#e5eaf2] bg-white p-6 shadow-xl'
+          return item.internal ? (
+            <Link key={item.title} to={href} className={cardClass}>
+              {inner}
+            </Link>
+          ) : (
+            <a
+              key={item.title}
+              href={href}
+              target={href.startsWith('http') ? '_blank' : undefined}
+              rel={href.startsWith('http') ? 'noreferrer' : undefined}
+              className={cardClass}
+            >
+              {inner}
+            </a>
+          )
+        })}
       </div>
     </section>
   )
@@ -846,7 +899,9 @@ function ContactCta() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-24">
       <div className="relative overflow-hidden rounded-3xl bg-primary shadow-lg">
-        <SmartImage src={images.mandalay} alt="Mandalay" className="absolute inset-0 h-full w-full opacity-60" />
+        <div className="absolute inset-0 opacity-60">
+          <SmartImage src={images.mandalay} alt="Mandalay" className="h-full w-full" />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/75 to-primary/55" />
         <div className="relative px-8 py-20 text-center text-white">
           <h2 className="mx-auto max-w-3xl text-3xl font-bold leading-tight tracking-tight md:text-5xl">

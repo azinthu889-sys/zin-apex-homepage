@@ -20,11 +20,9 @@ export default function CtaBanner({
   return (
     <section className="mx-auto max-w-6xl px-6 py-24">
       <div className="relative overflow-hidden rounded-3xl bg-primary shadow-lg">
-        <SmartImage
-          src={image}
-          alt=""
-          className="absolute inset-0 h-full w-full opacity-60"
-        />
+        <div className="absolute inset-0 opacity-60">
+          <SmartImage src={image} alt="" className="h-full w-full" />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/75 to-primary/55" />
         <div className="relative px-8 py-20 text-center text-white">
           <h2 className="mx-auto max-w-2xl text-3xl font-bold leading-tight tracking-tight md:text-4xl">
