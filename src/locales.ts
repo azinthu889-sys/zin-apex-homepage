@@ -944,14 +944,14 @@ const ja: typeof en = {
 
 const my: typeof en = {
   nav: {
-    home: 'ပင်မ',
-    about: 'အကြောင်း',
-    courses: 'သင်တန်း',
-    study: 'ဂျပန်ပညာရေး',
-    stories: 'အောင်မြင်မှု',
-    activities: 'လှုပ်ရှားမှု',
-    results: 'ရလဒ်',
-    contactUs: 'ဆက်သွယ်ရန်',
+    home: 'Home',
+    about: 'About',
+    courses: 'Courses',
+    study: 'Study in Japan',
+    stories: 'Stories',
+    activities: 'Activities',
+    results: 'Results',
+    contactUs: 'Contact Us',
   },
   topbar: { hours: 'အင်္ဂါ–စနေ၊ နံနက် ၈:၃၀ – ညနေ ၅:၃၀' },
   hero: {
