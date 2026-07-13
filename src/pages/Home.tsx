@@ -19,28 +19,21 @@ import {
 } from 'lucide-react'
 import SmartImage from '../components/SmartImage'
 import {
-  about,
   founder,
-  mission,
-  vision,
-  purpose,
   journey,
   services,
-  whyChooseUs,
   courses,
   learningFormats,
-  whyCoursesWork,
-  requiredDocuments,
   intakes,
   cities,
   achievements,
   coeResults,
   reviews,
   activities,
-  faqs,
   site,
   images,
 } from '../data'
+import { useLang } from '../lib/i18n'
 
 function useHashScroll() {
   useEffect(() => {
@@ -89,6 +82,7 @@ const sakuraPetals = [
 ]
 
 function Hero() {
+  const { t } = useLang()
   return (
     <section
       id="home"
@@ -128,37 +122,37 @@ function Hero() {
         <div className="max-w-2xl">
           <span className="animate-fade-up inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-gold backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-            Now enrolling — 2026 intakes
+            {t.hero.badge}
           </span>
           <h1 className="animate-fade-up delay-1 mt-5 text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl lg:text-7xl">
-            Your Gateway to <span className="text-gold">Japan</span>
+            {t.hero.titleLead}
+            <span className="text-gold">{t.hero.titleAccent}</span>
           </h1>
           <p className="animate-fade-up delay-2 mt-5 max-w-xl text-base font-medium text-white/85 md:text-lg">
-            Helping Myanmar students study at top Japanese language schools — full
-            guidance and support from application to arrival.
+            {t.hero.subtitle}
           </p>
           <div className="animate-fade-up delay-3 mt-8 flex flex-wrap gap-3">
             <Link
               to="/contact"
               className="btn-gold inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm"
             >
-              Get Free Consultation
+              {t.hero.cta1}
               <ArrowRight className="h-4 w-4" />
             </Link>
             <a
               href="#courses"
               className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-white/35 bg-white/10 px-7 py-3.5 text-sm font-semibold tracking-wide text-white backdrop-blur transition-colors hover:bg-white/20"
             >
-              Explore Courses
+              {t.hero.cta2}
             </a>
           </div>
           <div className="animate-fade-up delay-4 mt-7 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm font-medium text-white/75">
             <span className="text-gold">★</span>
-            <span>Trusted since 2023</span>
+            <span>{t.hero.trust1}</span>
             <span className="h-1 w-1 rounded-full bg-white/30" />
-            <span>100+ placed in Japan</span>
+            <span>{t.hero.trust2}</span>
             <span className="h-1 w-1 rounded-full bg-white/30" />
-            <span>97% COE success</span>
+            <span>{t.hero.trust3}</span>
           </div>
         </div>
       </div>
@@ -166,37 +160,21 @@ function Hero() {
   )
 }
 
-const quickActions = [
-  {
-    icon: MessageCircle,
-    title: 'Free Consultation',
-    description: 'Talk with our team about your study plan and best intake.',
-    href: '/contact',
-    internal: true,
-  },
-  {
-    icon: Download,
-    title: 'Application Form',
-    description: 'Download the ZAE application form (PDF) and apply today.',
-    href: '',
-    internal: false,
-  },
-  {
-    icon: FileCheck,
-    title: '2026 Intake Schedule',
-    description: 'April, July & October intakes — deadlines and COE dates.',
-    href: '/#study',
-    internal: false,
-  },
+const quickActionMeta = [
+  { icon: MessageCircle, href: '/contact', internal: true },
+  { icon: Download, href: '', internal: false },
+  { icon: FileCheck, href: '/#study', internal: false },
 ]
 
 function QuickActions() {
+  const { t } = useLang()
   return (
     <section className="relative z-10 mx-auto -mt-24 w-full max-w-6xl px-6 md:-mt-28">
       <div className="grid gap-4 md:grid-cols-3">
-        {quickActions.map((item) => {
+        {quickActionMeta.map((item, i) => {
           const Icon = item.icon
-          const href = item.title === 'Application Form' ? site.formPdfUrl : item.href
+          const text = t.quick[i]
+          const href = i === 1 ? site.formPdfUrl : item.href
           const inner = (
             <>
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary text-gold">
@@ -204,11 +182,11 @@ function QuickActions() {
               </span>
               <span>
                 <span className="flex items-center gap-1.5 font-bold text-primary">
-                  {item.title}
+                  {text.title}
                   <ArrowRight className="h-4 w-4 text-secondary transition-transform group-hover:translate-x-1" />
                 </span>
                 <span className="mt-1 block text-sm font-medium text-muted-foreground">
-                  {item.description}
+                  {text.description}
                 </span>
               </span>
             </>
@@ -216,12 +194,12 @@ function QuickActions() {
           const cardClass =
             'lift group flex items-start gap-4 rounded-2xl border border-[#e5eaf2] bg-white p-6 shadow-xl'
           return item.internal ? (
-            <Link key={item.title} to={href} className={cardClass}>
+            <Link key={text.title} to={href} className={cardClass}>
               {inner}
             </Link>
           ) : (
             <a
-              key={item.title}
+              key={text.title}
               href={href}
               target={href.startsWith('http') ? '_blank' : undefined}
               rel={href.startsWith('http') ? 'noreferrer' : undefined}
@@ -237,6 +215,7 @@ function QuickActions() {
 }
 
 function SupportStrip() {
+  const { t } = useLang()
   return (
     <section className="border-b bg-card">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 lg:grid-cols-2">
@@ -249,7 +228,7 @@ function SupportStrip() {
               className="aspect-[16/10] w-full"
             />
             <span className="absolute bottom-4 left-4 rounded-full bg-white/90 px-4 py-1.5 text-xs font-semibold text-primary backdrop-blur">
-              Orientation day — ZAE family
+              {t.support.photoCaption}
             </span>
           </div>
           <div className="grid grid-cols-2 gap-4">
@@ -274,18 +253,18 @@ function SupportStrip() {
         <div data-reveal>
           <span className="inline-flex items-center gap-2 rounded-full bg-secondary/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-secondary">
             <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
-            Support
+            {t.support.eyebrow}
           </span>
           <h2 className="heading-black mt-4 text-3xl md:text-4xl">
-            Complete Student Support
+            {t.support.title}
           </h2>
           <p className="mt-3 font-medium text-muted-foreground">
-            From enrollment to achievement — we're with you every step of the way.
+            {t.support.subtitle}
           </p>
           <div className="mt-8 grid grid-cols-2 gap-4">
-            {achievements.map((a) => (
+            {achievements.map((a, i) => (
               <div
-                key={a.label}
+                key={i}
                 className="rounded-2xl border border-[#e5eaf2] bg-background p-5"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-secondary/15 text-secondary">
@@ -294,7 +273,9 @@ function SupportStrip() {
                 <div className="mt-3 text-2xl font-extrabold tracking-tight text-primary">
                   {a.value}
                 </div>
-                <div className="text-sm font-medium text-muted-foreground">{a.label}</div>
+                <div className="text-sm font-medium text-muted-foreground">
+                  {t.achievements[i]}
+                </div>
               </div>
             ))}
           </div>
@@ -330,9 +311,10 @@ function SectionHeading({
 }
 
 function AboutSection() {
+  const { t } = useLang()
   return (
     <section id="about" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-24">
-      <SectionHeading eyebrow="About" title="About Zin Apex Education" />
+      <SectionHeading eyebrow={t.aboutSection.eyebrow} title={t.aboutSection.title} />
       <div data-reveal className="mt-12 grid items-center gap-12 lg:grid-cols-2">
         <SmartImage
           src={images.office}
@@ -340,8 +322,8 @@ function AboutSection() {
           className="aspect-[4/3] rounded-2xl border border-[#e5eaf2] shadow-sm"
         />
         <div>
-          <p className="font-medium text-muted-foreground">{about.intro}</p>
-          <p className="mt-4 font-medium text-muted-foreground">{about.detail}</p>
+          <p className="font-medium text-muted-foreground">{t.aboutSection.intro}</p>
+          <p className="mt-4 font-medium text-muted-foreground">{t.aboutSection.detail}</p>
 
           <div className="mt-8 rounded-2xl border border-[#e5eaf2] bg-white p-7 shadow-sm">
             <div className="flex items-center gap-4">
@@ -350,10 +332,14 @@ function AboutSection() {
               </span>
               <div>
                 <h3 className="font-bold tracking-tight">{founder.name}</h3>
-                <p className="text-sm font-medium text-muted-foreground">{founder.role}</p>
+                <p className="text-sm font-medium text-muted-foreground">
+                  {t.aboutSection.founderRole}
+                </p>
               </div>
             </div>
-            <p className="mt-4 text-sm font-medium text-muted-foreground">{founder.bio}</p>
+            <p className="mt-4 text-sm font-medium text-muted-foreground">
+              {t.aboutSection.founderBio}
+            </p>
             <a
               href={site.social.youtube}
               target="_blank"
@@ -361,16 +347,16 @@ function AboutSection() {
               className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-secondary hover:underline"
             >
               <Youtube className="h-4 w-4" />
-              Zin Japan Life on YouTube
+              {t.aboutSection.youtubeLink}
             </a>
           </div>
         </div>
       </div>
 
       <div data-reveal className="mt-12 grid gap-6 md:grid-cols-3">
-        <ValueCard icon={<Target className="h-5 w-5" />} title="Mission">
+        <ValueCard icon={<Target className="h-5 w-5" />} title={t.aboutSection.mission}>
           <ul className="space-y-2">
-            {mission.map((m) => (
+            {t.aboutSection.missionItems.map((m) => (
               <li key={m} className="flex items-start gap-2 text-sm text-muted-foreground">
                 <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                 {m}
@@ -378,12 +364,12 @@ function AboutSection() {
             ))}
           </ul>
         </ValueCard>
-        <ValueCard icon={<Eye className="h-5 w-5" />} title="Vision">
-          <p className="text-sm text-muted-foreground">{vision}</p>
+        <ValueCard icon={<Eye className="h-5 w-5" />} title={t.aboutSection.vision}>
+          <p className="text-sm text-muted-foreground">{t.aboutSection.visionText}</p>
         </ValueCard>
-        <ValueCard icon={<Compass className="h-5 w-5" />} title="Purpose">
+        <ValueCard icon={<Compass className="h-5 w-5" />} title={t.aboutSection.purpose}>
           <ul className="space-y-2">
-            {purpose.map((p) => (
+            {t.aboutSection.purposeItems.map((p) => (
               <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
                 <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                 {p}
@@ -417,40 +403,44 @@ function ValueCard({
 }
 
 function ServicesSection() {
+  const { t } = useLang()
   return (
     <section className="border-y bg-card">
       <div className="mx-auto max-w-6xl px-6 py-24">
         <SectionHeading
-          eyebrow="Our Services"
-          title="Complete support, every step"
-          subtitle="From your first application to your arrival in Japan."
+          eyebrow={t.servicesSection.eyebrow}
+          title={t.servicesSection.title}
+          subtitle={t.servicesSection.subtitle}
         />
         <div data-reveal className="mt-16 grid gap-6 sm:grid-cols-2">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="lift rounded-2xl border border-[#e5eaf2] bg-white p-8 shadow-sm"
-            >
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-white">
-                <service.icon className="h-6 w-6" />
+          {services.map((service, i) => {
+            const text = t.services[i]
+            return (
+              <div
+                key={text.title}
+                className="lift rounded-2xl border border-[#e5eaf2] bg-white p-8 shadow-sm"
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-white">
+                  <service.icon className="h-6 w-6" />
+                </div>
+                <h3 className="mt-5 text-lg font-bold tracking-tight">{text.title}</h3>
+                <ul className="mt-3 space-y-2">
+                  {text.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="mt-5 text-lg font-bold tracking-tight">{service.title}</h3>
-              <ul className="mt-3 space-y-2">
-                {service.items.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
         <div className="mt-16">
-          <SectionHeading title="Why choose Zin Apex Education?" />
+          <SectionHeading title={t.servicesSection.whyTitle} />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {whyChooseUs.map((item) => (
+            {t.whyChooseUs.map((item) => (
               <div key={item.title} className="lift rounded-2xl border border-[#e5eaf2] bg-white p-7 shadow-sm">
                 <h3 className="flex items-start gap-2.5 font-bold tracking-tight">
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-xl bg-gold/20 text-primary">
@@ -469,12 +459,13 @@ function ServicesSection() {
 }
 
 function JourneySection() {
+  const { t } = useLang()
   return (
     <section id="journey" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-24">
       <SectionHeading
-        eyebrow="How it works"
-        title="Your journey to Japan"
-        subtitle="A clear, guided process — from your first consultation to your first day in Japan."
+        eyebrow={t.journeySection.eyebrow}
+        title={t.journeySection.title}
+        subtitle={t.journeySection.subtitle}
       />
       <div data-reveal className="relative mt-16">
         {/* flying plane across the journey (desktop) */}
@@ -483,33 +474,36 @@ function JourneySection() {
         </span>
 
         <ol className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
-          {journey.map((item, i) => (
-            <li
-              key={item.step}
-              className="journey-step relative"
-              style={{ transitionDelay: `${i * 160}ms` }}
-            >
-              {/* connector line (desktop) */}
-              {i < journey.length - 1 && (
-                <span
-                  aria-hidden
-                  className="journey-line absolute left-[calc(50%+28px)] top-6 hidden h-0.5 w-[calc(100%-56px)] rounded-full bg-gradient-to-r from-secondary/50 to-gold/60 lg:block"
-                  style={{ transitionDelay: `${i * 160 + 220}ms` }}
-                />
-              )}
-              <div className="group flex items-start gap-4 lg:flex-col lg:items-center lg:text-center">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-secondary/40 bg-white text-sm font-bold text-secondary shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:border-gold group-hover:bg-gold group-hover:text-primary">
-                  {item.step}
-                </span>
-                <div className="lg:mt-4">
-                  <h3 className="font-bold tracking-tight">{item.title}</h3>
-                  <p className="mt-1.5 text-sm font-medium text-muted-foreground">
-                    {item.description}
-                  </p>
+          {journey.map((item, i) => {
+            const text = t.journey[i]
+            return (
+              <li
+                key={item.step}
+                className="journey-step relative"
+                style={{ transitionDelay: `${i * 160}ms` }}
+              >
+                {/* connector line (desktop) */}
+                {i < journey.length - 1 && (
+                  <span
+                    aria-hidden
+                    className="journey-line absolute left-[calc(50%+28px)] top-6 hidden h-0.5 w-[calc(100%-56px)] rounded-full bg-gradient-to-r from-secondary/50 to-gold/60 lg:block"
+                    style={{ transitionDelay: `${i * 160 + 220}ms` }}
+                  />
+                )}
+                <div className="group flex items-start gap-4 lg:flex-col lg:items-center lg:text-center">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-secondary/40 bg-white text-sm font-bold text-secondary shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:border-gold group-hover:bg-gold group-hover:text-primary">
+                    {item.step}
+                  </span>
+                  <div className="lg:mt-4">
+                    <h3 className="font-bold tracking-tight">{text.title}</h3>
+                    <p className="mt-1.5 text-sm font-medium text-muted-foreground">
+                      {text.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </li>
-          ))}
+              </li>
+            )
+          })}
         </ol>
       </div>
     </section>
@@ -517,75 +511,84 @@ function JourneySection() {
 }
 
 function CoursesSection() {
+  const { t } = useLang()
   return (
     <section id="courses" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-24">
       <SectionHeading
-        eyebrow="Courses"
-        title="Japanese Language Courses"
-        subtitle="Comprehensive JLPT preparation designed to take you from beginner to advanced proficiency."
+        eyebrow={t.coursesSection.eyebrow}
+        title={t.coursesSection.title}
+        subtitle={t.coursesSection.subtitle}
       />
       <div data-reveal className="mt-16 grid gap-6 md:grid-cols-2">
-        {courses.map((course) => (
-          <div
-            key={course.title}
-            className="lift flex flex-col overflow-hidden rounded-2xl border border-[#e5eaf2] bg-white shadow-sm"
-          >
-            <div className="relative">
-              <SmartImage src={course.image} alt={course.title} className="aspect-[16/9] w-full" />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
-              <span className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-gold text-sm font-bold text-primary">
-                {course.code}
-              </span>
-              <span className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary backdrop-blur">
-                {course.level}
-              </span>
-            </div>
-            <div className="flex flex-1 flex-col p-7">
-              <div className="flex items-center justify-between">
-                <h3 className="text-lg font-bold tracking-tight">{course.title}</h3>
-                <span className="text-sm font-semibold text-muted-foreground">{course.duration}</span>
+        {courses.map((course, ci) => {
+          const text = t.courses[ci]
+          return (
+            <div
+              key={text.title}
+              className="lift flex flex-col overflow-hidden rounded-2xl border border-[#e5eaf2] bg-white shadow-sm"
+            >
+              <div className="relative">
+                <SmartImage src={course.image} alt={text.title} className="aspect-[16/9] w-full" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
+                <span className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-gold text-sm font-bold text-primary">
+                  {course.code}
+                </span>
+                <span className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary backdrop-blur">
+                  {text.level}
+                </span>
               </div>
-              <p className="mt-2 text-sm text-muted-foreground">{course.description}</p>
-              <h4 className="mt-5 text-sm font-medium">Course Features</h4>
-              <ul className="mt-2 space-y-2">
-                {course.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                to="/contact"
-                className="btn-primary mt-6 inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium"
-              >
-                Enroll Now
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+              <div className="flex flex-1 flex-col p-7">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-bold tracking-tight">{text.title}</h3>
+                  <span className="text-sm font-semibold text-muted-foreground">{text.duration}</span>
+                </div>
+                <p className="mt-2 text-sm text-muted-foreground">{text.description}</p>
+                <h4 className="mt-5 text-sm font-medium">{t.coursesSection.features}</h4>
+                <ul className="mt-2 space-y-2">
+                  {text.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  to="/contact"
+                  className="btn-primary mt-6 inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium"
+                >
+                  {t.coursesSection.enroll}
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
 
       <div className="mt-12 rounded-2xl border border-[#e5eaf2] bg-white p-10 shadow-sm">
-        <h3 className="text-center text-xl font-bold tracking-tight">Flexible ways to learn</h3>
+        <h3 className="text-center text-xl font-bold tracking-tight">
+          {t.coursesSection.flexibleTitle}
+        </h3>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
-          {learningFormats.map((f) => (
-            <div key={f.title} className="text-center">
-              <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
-                <f.icon className="h-7 w-7" />
-              </span>
-              <h4 className="mt-4 font-bold tracking-tight">{f.title}</h4>
-              <p className="mt-1 text-sm text-muted-foreground">{f.description}</p>
-            </div>
-          ))}
+          {learningFormats.map((f, i) => {
+            const text = t.learningFormats[i]
+            return (
+              <div key={text.title} className="text-center">
+                <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
+                  <f.icon className="h-7 w-7" />
+                </span>
+                <h4 className="mt-4 font-bold tracking-tight">{text.title}</h4>
+                <p className="mt-1 text-sm text-muted-foreground">{text.description}</p>
+              </div>
+            )
+          })}
         </div>
       </div>
 
       <div className="mt-12">
-        <SectionHeading title="Why our courses are effective" />
+        <SectionHeading title={t.coursesSection.whyTitle} />
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {whyCoursesWork.map((item, i) => (
+          {t.whyCoursesWork.map((item, i) => (
             <div key={item.title} className="lift flex gap-4 rounded-2xl border border-[#e5eaf2] bg-white p-7 shadow-sm">
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary text-sm font-bold text-white">
                 {i + 1}
@@ -603,21 +606,22 @@ function CoursesSection() {
 }
 
 function StudySection() {
+  const { t } = useLang()
   return (
     <section id="study" className="scroll-mt-20 border-y bg-card">
       <div className="mx-auto max-w-6xl px-6 py-24">
         <SectionHeading
-          eyebrow="Study in Japan"
-          title="Your path to a Japanese language school"
-          subtitle="Everything you need to know to apply with Zin Apex Education."
+          eyebrow={t.studySection.eyebrow}
+          title={t.studySection.title}
+          subtitle={t.studySection.subtitle}
         />
 
         <div className="mt-16 flex items-center gap-3">
           <FileCheck className="h-6 w-6 text-primary" />
-          <h3 className="text-xl font-semibold tracking-tight">Required documents (sample)</h3>
+          <h3 className="text-xl font-semibold tracking-tight">{t.studySection.docsTitle}</h3>
         </div>
         <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-          {requiredDocuments.map((doc, i) => (
+          {t.requiredDocuments.map((doc, i) => (
             <li key={doc} className="flex items-start gap-3 rounded-xl border bg-background p-4 text-sm">
               <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-semibold text-primary">
                 {i + 1}
@@ -632,10 +636,9 @@ function StudySection() {
             <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
               <Download className="h-7 w-7" />
             </span>
-            <h3 className="mt-5 text-lg font-bold tracking-tight">Application form</h3>
+            <h3 className="mt-5 text-lg font-bold tracking-tight">{t.studySection.formTitle}</h3>
             <p className="mt-2 text-sm font-medium text-muted-foreground">
-              Download our application form (PDF), fill it out, and send it back to
-              us. All required attachments are in the Google Drive folder.
+              {t.studySection.formBody}
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <a
@@ -644,7 +647,7 @@ function StudySection() {
                 rel="noreferrer"
                 className="btn-primary inline-flex h-12 items-center gap-2 px-6 text-sm"
               >
-                Download form
+                {t.studySection.download}
                 <Download className="h-4 w-4" />
               </a>
               <a
@@ -653,7 +656,7 @@ function StudySection() {
                 rel="noreferrer"
                 className="inline-flex h-12 items-center gap-2 rounded-2xl border-2 border-[#e5eaf2] px-5 text-sm font-semibold transition-colors hover:bg-accent"
               >
-                View sample
+                {t.studySection.viewSample}
               </a>
             </div>
             <a
@@ -662,7 +665,7 @@ function StudySection() {
               rel="noreferrer"
               className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-secondary hover:underline"
             >
-              Open Drive folder &amp; attachments
+              {t.studySection.driveLink}
               <ArrowRight className="h-3.5 w-3.5" />
             </a>
           </div>
@@ -670,10 +673,11 @@ function StudySection() {
             <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
               <ClipboardList className="h-7 w-7" />
             </span>
-            <h3 className="mt-5 text-lg font-bold tracking-tight">Student orientation</h3>
+            <h3 className="mt-5 text-lg font-bold tracking-tight">
+              {t.studySection.orientationTitle}
+            </h3>
             <p className="mt-2 text-sm font-medium text-muted-foreground">
-              Register through our Google Form to join the orientation briefing and
-              get important information about the application process.
+              {t.studySection.orientationBody}
             </p>
             <a
               href={site.orientationFormUrl}
@@ -681,32 +685,34 @@ function StudySection() {
               rel="noreferrer"
               className="mt-6 inline-flex h-12 items-center gap-2 rounded-2xl border-2 border-[#e5eaf2] px-6 text-sm font-semibold transition-colors hover:bg-accent"
             >
-              Register now
+              {t.studySection.register}
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
         </div>
 
-        <h3 className="mt-12 text-xl font-semibold tracking-tight">Intake schedules</h3>
+        <h3 className="mt-12 text-xl font-semibold tracking-tight">{t.studySection.intakeTitle}</h3>
         <div className="mt-6 overflow-x-auto rounded-xl border">
           <table className="w-full min-w-[640px] text-sm">
             <thead className="bg-accent/60">
               <tr className="text-left">
-                <th className="px-5 py-3 font-medium">Intake</th>
-                <th className="px-5 py-3 font-medium">Registration Deadline</th>
-                <th className="px-5 py-3 font-medium">COE Submission</th>
-                <th className="px-5 py-3 font-medium">COE Result</th>
+                {t.studySection.intakeHead.map((h) => (
+                  <th key={h} className="px-5 py-3 font-medium">{h}</th>
+                ))}
               </tr>
             </thead>
             <tbody>
-              {intakes.map((row) => (
-                <tr key={row.intake} className="border-t bg-background">
-                  <td className="px-5 py-3 font-medium">{row.intake}</td>
-                  <td className="px-5 py-3 text-muted-foreground">{row.registration}</td>
-                  <td className="px-5 py-3 text-muted-foreground">{row.coeSubmission}</td>
-                  <td className="px-5 py-3 text-muted-foreground">{row.coeResult}</td>
-                </tr>
-              ))}
+              {intakes.map((row, i) => {
+                const text = t.intakes[i]
+                return (
+                  <tr key={row.intake} className="border-t bg-background">
+                    <td className="px-5 py-3 font-medium">{text.intake}</td>
+                    <td className="px-5 py-3 text-muted-foreground">{text.registration}</td>
+                    <td className="px-5 py-3 text-muted-foreground">{text.coeSubmission}</td>
+                    <td className="px-5 py-3 text-muted-foreground">{text.coeResult}</td>
+                  </tr>
+                )
+              })}
             </tbody>
           </table>
         </div>
@@ -714,21 +720,21 @@ function StudySection() {
         <div className="mt-12 flex items-center gap-3">
           <MapPin className="h-6 w-6 text-primary" />
           <h3 className="text-xl font-semibold tracking-tight">
-            Cities where you can apply with us
+            {t.studySection.citiesTitle}
           </h3>
         </div>
         <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-          {cities.map((city) => (
+          {cities.map((city, i) => (
             <div key={city.name} className="group relative overflow-hidden rounded-xl border">
               <SmartImage
                 src={city.image}
-                alt={city.name}
+                alt={t.cities[i]}
                 className="aspect-[3/4] w-full"
                 imgClassName="transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent" />
               <span className="absolute bottom-3 left-3 text-sm font-medium text-white">
-                {city.name}
+                {t.cities[i]}
               </span>
             </div>
           ))}
@@ -739,12 +745,13 @@ function StudySection() {
 }
 
 function StoriesSection() {
+  const { t } = useLang()
   return (
     <section id="stories" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-24">
       <SectionHeading
-        eyebrow="Student Stories"
-        title="Student Reviews"
-        subtitle="See how our students benefited from our support services and achieved their study-abroad goals."
+        eyebrow={t.storiesSection.eyebrow}
+        title={t.storiesSection.title}
+        subtitle={t.storiesSection.subtitle}
       />
       <div data-reveal className="mt-16 grid gap-6 md:grid-cols-3">
         {reviews.map((r, i) => (
@@ -756,7 +763,7 @@ function StoriesSection() {
             className="lift group overflow-hidden rounded-2xl border border-[#e5eaf2] bg-white shadow-sm"
           >
             <div className="relative">
-              <SmartImage src={r.image} alt={r.name} className="aspect-video w-full" />
+              <SmartImage src={r.image} alt={t.storiesSection.storyName} className="aspect-video w-full" />
               <div className="absolute inset-0 flex items-center justify-center bg-primary/35 transition-colors group-hover:bg-primary/50">
                 <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gold text-primary shadow-sm transition-transform duration-300 group-hover:scale-110">
                   <Play className="h-6 w-6 fill-current" />
@@ -764,9 +771,13 @@ function StoriesSection() {
               </div>
             </div>
             <div className="p-6">
-              <h3 className="font-bold tracking-tight">{r.name}</h3>
-              <p className="mt-1 text-sm font-medium text-muted-foreground">{r.school}</p>
-              <p className="text-sm font-medium text-muted-foreground">{r.program}</p>
+              <h3 className="font-bold tracking-tight">{t.storiesSection.storyName}</h3>
+              <p className="mt-1 text-sm font-medium text-muted-foreground">
+                {t.storiesSection.schools[i]}
+              </p>
+              <p className="text-sm font-medium text-muted-foreground">
+                {t.storiesSection.programs[i]}
+              </p>
             </div>
           </a>
         ))}
@@ -775,40 +786,20 @@ function StoriesSection() {
   )
 }
 
-const testimonials = [
-  {
-    name: 'Ma Thiri',
-    intake: 'April 2025 · Tokyo',
-    quote:
-      'ZAE ကြောင့် COE ကအစ ဗီဇာအထိ တစ်ဆင့်မကျန် အဆင်ပြေခဲ့ပါတယ်။ ဂျပန်ရောက်တဲ့နေ့မှာလည်း လေဆိပ်မှာ လာကြိုပေးလို့ စိတ်အရမ်းချရပါတယ်။',
-  },
-  {
-    name: 'Ko Aung Khant',
-    intake: 'October 2024 · Shizuoka',
-    quote:
-      'ဆရာ ဆရာမတွေက မိသားစုလို ဂရုစိုက်ပြီး ကျောင်း interview အတွက်ပါ သေချာ training လုပ်ပေးပါတယ်။ ငွေကြေးကိစ္စတွေလည်း ပွင့်လင်းမြင်သာမှု အပြည့်ရှိပါတယ်။',
-  },
-  {
-    name: 'Ma Ei Phyu',
-    intake: 'July 2025 · Hamamatsu',
-    quote:
-      'နယ်ကဖြစ်လို့ စိုးရိမ်ခဲ့ပေမယ့် online system နဲ့ အကုန်လုံး အဆင်ပြေခဲ့ပါတယ်။ ဂျပန်ရောက်ပြီးနောက်မှာလည်း senior တွေက ဆက်လက် ကူညီပေးနေပါတယ်။',
-  },
-]
-
 function TestimonialsSection() {
+  const { t } = useLang()
   return (
     <section className="border-y bg-card">
       <div className="mx-auto max-w-6xl px-6 py-24">
         <SectionHeading
-          eyebrow="Testimonials"
-          title="What our students say"
-          subtitle="Real words from ZAE students now studying and living in Japan."
+          eyebrow={t.testimonialsSection.eyebrow}
+          title={t.testimonialsSection.title}
+          subtitle={t.testimonialsSection.subtitle}
         />
         <div data-reveal className="mt-16 grid gap-6 md:grid-cols-3">
-          {testimonials.map((t) => (
+          {t.testimonials.map((item) => (
             <figure
-              key={t.name}
+              key={item.name}
               className="lift flex flex-col rounded-2xl border border-[#e5eaf2] bg-white p-7 shadow-sm"
             >
               <div className="flex gap-1 text-gold" aria-hidden>
@@ -817,16 +808,16 @@ function TestimonialsSection() {
                 ))}
               </div>
               <blockquote className="mt-4 flex-1 text-sm font-medium leading-relaxed text-muted-foreground">
-                “{t.quote}”
+                “{item.quote}”
               </blockquote>
               <figcaption className="mt-6 flex items-center gap-3">
                 <span className="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-sm font-bold text-gold">
-                  {t.name.split(' ').slice(-1)[0][0]}
+                  {item.name.split(' ').slice(-1)[0][0]}
                 </span>
                 <span>
-                  <span className="block text-sm font-bold text-primary">{t.name}</span>
+                  <span className="block text-sm font-bold text-primary">{item.name}</span>
                   <span className="block text-xs font-medium text-muted-foreground">
-                    {t.intake}
+                    {item.intake}
                   </span>
                 </span>
               </figcaption>
@@ -839,13 +830,14 @@ function TestimonialsSection() {
 }
 
 function ActivitiesSection() {
+  const { t } = useLang()
   return (
     <section id="activities" className="scroll-mt-20 border-y bg-card">
       <div className="mx-auto max-w-6xl px-6 py-24">
         <SectionHeading
-          eyebrow="Activities"
-          title="Our Activities"
-          subtitle="Discover how we support students at every step of their study-abroad journey through our activities and programs."
+          eyebrow={t.activitiesSection.eyebrow}
+          title={t.activitiesSection.title}
+          subtitle={t.activitiesSection.subtitle}
         />
         <div data-reveal className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-3">
           {activities.map((a, i) => (
@@ -857,7 +849,7 @@ function ActivitiesSection() {
             >
               <SmartImage
                 src={a.image}
-                alt={a.title}
+                alt={t.activities[i]}
                 className={`w-full ${
                   i === 0 ? 'h-full min-h-[280px] md:min-h-[460px]' : 'aspect-[4/3]'
                 }`}
@@ -869,19 +861,19 @@ function ActivitiesSection() {
                   i === 0 ? 'text-lg' : 'text-sm'
                 }`}
               >
-                {a.title}
+                {t.activities[i]}
               </span>
             </div>
           ))}
         </div>
         <div className="mt-10 text-center">
-          <p className="font-medium text-muted-foreground">Want to share your success story? We'd love to feature you.</p>
+          <p className="font-medium text-muted-foreground">{t.activitiesSection.shareText}</p>
           <Link
             to="/contact"
             className="btn-primary mt-5 inline-flex h-12 items-center gap-2 px-6 text-sm"
           >
             <MessageCircle className="h-4 w-4" />
-            Contact us to share your story
+            {t.activitiesSection.shareCta}
           </Link>
         </div>
       </div>
@@ -890,23 +882,26 @@ function ActivitiesSection() {
 }
 
 function ResultsSection() {
+  const { t } = useLang()
   return (
     <section id="results" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-24">
       <SectionHeading
-        eyebrow="Results"
-        title="Our COE Result"
-        subtitle="This track record demonstrates Zin Apex Education's commitment and capability in guiding students successfully through the Japanese immigration and study application process."
+        eyebrow={t.resultsSection.eyebrow}
+        title={t.resultsSection.title}
+        subtitle={t.resultsSection.subtitle}
       />
       <div data-reveal className="mt-16 grid grid-cols-2 gap-6 md:grid-cols-4">
-        {achievements.map((a) => (
-          <div key={a.label} className="lift rounded-2xl border border-[#e5eaf2] bg-white p-7 text-center shadow-sm">
+        {achievements.map((a, i) => (
+          <div key={i} className="lift rounded-2xl border border-[#e5eaf2] bg-white p-7 text-center shadow-sm">
             <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
               <a.icon className="h-7 w-7" />
             </span>
             <div className="mt-4 text-4xl font-bold tracking-tight text-primary">
               {a.value}
             </div>
-            <div className="mt-1 text-sm font-medium text-muted-foreground">{a.label}</div>
+            <div className="mt-1 text-sm font-medium text-muted-foreground">
+              {t.achievements[i]}
+            </div>
           </div>
         ))}
       </div>
@@ -917,15 +912,15 @@ function ResultsSection() {
         className="mx-auto mt-12 max-w-3xl rounded-2xl border border-[#e5eaf2] bg-white p-6 shadow-sm md:p-8"
       >
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <h3 className="font-bold tracking-tight">COE results by year</h3>
+          <h3 className="font-bold tracking-tight">{t.resultsSection.chartTitle}</h3>
           <div className="flex items-center gap-4 text-xs font-medium text-muted-foreground">
             <span className="flex items-center gap-1.5">
               <span className="h-3 w-3 rounded-sm bg-secondary/30" />
-              Applicants
+              {t.resultsSection.legendApplicants}
             </span>
             <span className="flex items-center gap-1.5">
               <span className="h-3 w-3 rounded-sm bg-gold" />
-              Successful COE
+              {t.resultsSection.legendSuccessful}
             </span>
           </div>
         </div>
@@ -969,7 +964,7 @@ function ResultsSection() {
                 </span>
                 {pending && (
                   <span className="mt-1 rounded-full bg-accent px-2 py-0.5 text-[10px] font-semibold text-primary">
-                    9 pending
+                    {t.resultsSection.pending}
                   </span>
                 )}
               </div>
@@ -982,13 +977,14 @@ function ResultsSection() {
 }
 
 function FaqSection() {
+  const { t } = useLang()
   const [open, setOpen] = useState<number | null>(0)
   return (
     <section id="faq" className="scroll-mt-20 border-t bg-card">
       <div className="mx-auto max-w-3xl px-6 py-24">
-        <SectionHeading eyebrow="FAQ" title="Frequently asked questions" />
+        <SectionHeading eyebrow={t.faqSection.eyebrow} title={t.faqSection.title} />
         <div className="mt-12 space-y-3">
-          {faqs.map((faq, i) => {
+          {t.faqs.map((faq, i) => {
             const isOpen = open === i
             return (
               <div key={faq.q} className="overflow-hidden rounded-xl border border-[#e5eaf2] bg-white shadow-sm">
@@ -1019,6 +1015,7 @@ function FaqSection() {
 }
 
 function ContactCta() {
+  const { t } = useLang()
   return (
     <section className="mx-auto max-w-6xl px-6 py-24">
       <div className="relative overflow-hidden rounded-3xl bg-primary shadow-lg">
@@ -1028,17 +1025,17 @@ function ContactCta() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/75 to-primary/55" />
         <div className="relative px-8 py-20 text-center text-white">
           <h2 className="mx-auto max-w-3xl text-3xl font-bold leading-tight tracking-tight md:text-5xl">
-            Ready to begin your journey to{' '}
-            <span className="text-gold">Japan?</span>
+            {t.contactCta.title}
+            <span className="text-gold">{t.contactCta.titleAccent}</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl font-medium text-white/80">
-            Get in touch with our team for clear guidance and full support.
+            {t.contactCta.subtitle}
           </p>
           <Link
             to="/contact"
             className="btn-gold mt-9 inline-flex h-14 items-center gap-2 px-8 text-sm"
           >
-            Get Free Consultation
+            {t.contactCta.button}
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
