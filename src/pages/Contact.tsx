@@ -13,11 +13,13 @@ import {
 } from 'lucide-react'
 import PageHero from '../components/PageHero'
 import { db } from '../lib/firebase'
-import { courses, site, images } from '../data'
+import { site, images } from '../data'
+import { useLang } from '../lib/i18n'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
 export default function Contact() {
+  const { t } = useLang()
   const [status, setStatus] = useState<Status>('idle')
   const [form, setForm] = useState({
     name: '',
@@ -50,45 +52,42 @@ export default function Contact() {
   return (
     <>
       <PageHero
-        title="Contact us"
+        title={t.contactPage.heroTitle}
         image={images.mandalay}
         imageAlt="Mandalay, home of our office"
       >
-        <p>
-          Ready to apply or have a question? Send us a message and our team will
-          get back to you shortly.
-        </p>
+        <p>{t.contactPage.heroSub}</p>
       </PageHero>
 
       <section className="mx-auto max-w-6xl px-6 py-24">
         <div data-reveal className="grid gap-12 lg:grid-cols-[1fr_1.5fr]">
           <div className="space-y-8">
             <div>
-              <h2 className="text-lg font-medium">{site.office.label}</h2>
+              <h2 className="text-lg font-medium">{t.footer.office}</h2>
               <div className="mt-5 space-y-5">
-                <InfoRow icon={<MapPin className="h-5 w-5" />} title="Address">
+                <InfoRow icon={<MapPin className="h-5 w-5" />} title={t.contactPage.address}>
                   {site.office.address}
                 </InfoRow>
-                <InfoRow icon={<Phone className="h-5 w-5" />} title="Phone">
+                <InfoRow icon={<Phone className="h-5 w-5" />} title={t.contactPage.phone}>
                   {site.office.phones.join(' / ')}
                 </InfoRow>
-                <InfoRow icon={<Mail className="h-5 w-5" />} title="Email">
+                <InfoRow icon={<Mail className="h-5 w-5" />} title={t.contactPage.email}>
                   {site.office.email}
                 </InfoRow>
-                <InfoRow icon={<Clock className="h-5 w-5" />} title="Office hours">
-                  {site.office.hours}
+                <InfoRow icon={<Clock className="h-5 w-5" />} title={t.contactPage.officeHours}>
+                  {t.topbar.hours}
                 </InfoRow>
                 <InfoRow
                   icon={<CalendarOff className="h-5 w-5" />}
-                  title="Holiday"
+                  title={t.contactPage.holiday}
                 >
-                  {site.office.holiday}
+                  {t.contactPage.holidayValue}
                 </InfoRow>
               </div>
             </div>
 
             <div>
-              <h3 className="font-medium">Follow us</h3>
+              <h3 className="font-medium">{t.contactPage.followUs}</h3>
               <div className="mt-4 flex gap-3">
                 <Social href={site.social.facebook} label="Facebook">
                   <Facebook className="h-4 w-4" />
@@ -110,31 +109,31 @@ export default function Contact() {
             {status === 'success' ? (
               <div className="flex flex-col items-center py-12 text-center">
                 <CheckCircle2 className="h-12 w-12 text-primary" />
-                <h3 className="mt-4 text-xl font-medium">Thank you!</h3>
+                <h3 className="mt-4 text-xl font-medium">{t.contactPage.successTitle}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  We've received your message and will be in touch soon.
+                  {t.contactPage.successBody}
                 </p>
                 <button
                   onClick={() => setStatus('idle')}
                   className="mt-6 rounded-lg border px-4 py-2 text-sm transition-colors hover:bg-accent"
                 >
-                  Send another message
+                  {t.contactPage.sendAnother}
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid gap-5 sm:grid-cols-2">
-                  <Field label="Full name">
+                  <Field label={t.contactPage.fullName}>
                     <input
                       required
                       type="text"
                       value={form.name}
                       onChange={(e) => update('name', e.target.value)}
                       className="input"
-                      placeholder="Your name"
+                      placeholder={t.contactPage.namePlaceholder}
                     />
                   </Field>
-                  <Field label="Phone">
+                  <Field label={t.contactPage.phone}>
                     <input
                       required
                       type="tel"
@@ -145,7 +144,7 @@ export default function Contact() {
                     />
                   </Field>
                 </div>
-                <Field label="Email">
+                <Field label={t.contactPage.email}>
                   <input
                     required
                     type="email"
@@ -155,33 +154,33 @@ export default function Contact() {
                     placeholder="you@example.com"
                   />
                 </Field>
-                <Field label="Course of interest">
+                <Field label={t.contactPage.course}>
                   <select
                     value={form.course}
                     onChange={(e) => update('course', e.target.value)}
                     className="input"
                   >
-                    <option value="">Select a course</option>
-                    {courses.map((c) => (
+                    <option value="">{t.contactPage.coursePlaceholder}</option>
+                    {t.courses.map((c) => (
                       <option key={c.title} value={c.title}>
                         {c.title}
                       </option>
                     ))}
                   </select>
                 </Field>
-                <Field label="Message">
+                <Field label={t.contactPage.message}>
                   <textarea
                     value={form.message}
                     onChange={(e) => update('message', e.target.value)}
                     rows={4}
                     className="input resize-none"
-                    placeholder="Tell us how we can help"
+                    placeholder={t.contactPage.messagePlaceholder}
                   />
                 </Field>
 
                 {status === 'error' && (
                   <p className="text-sm text-destructive">
-                    Something went wrong. Please try again or call us directly.
+                    {t.contactPage.error}
                   </p>
                 )}
 
@@ -190,7 +189,7 @@ export default function Contact() {
                   disabled={status === 'submitting'}
                   className="btn-primary w-full rounded-xl px-4 py-3 font-medium disabled:opacity-60"
                 >
-                  {status === 'submitting' ? 'Sending...' : 'Send message'}
+                  {status === 'submitting' ? t.contactPage.sending : t.contactPage.send}
                 </button>
               </form>
             )}

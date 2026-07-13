@@ -12,18 +12,22 @@ import {
   MessageCircle,
 } from 'lucide-react'
 import { site, images } from '../data'
+import { useLang, LangSwitcher } from '../lib/i18n'
 
-const nav = [
-  { label: 'Home', href: '/#home' },
-  { label: 'About', href: '/#about' },
-  { label: 'Courses', href: '/#courses' },
-  { label: 'Study in Japan', href: '/#study' },
-  { label: 'Stories', href: '/#stories' },
-  { label: 'Activities', href: '/#activities' },
-  { label: 'Results', href: '/#results' },
-]
+function useNav() {
+  const { t } = useLang()
+  return [
+    { label: t.nav.home, href: '/#home' },
+    { label: t.nav.about, href: '/#about' },
+    { label: t.nav.courses, href: '/#courses' },
+    { label: t.nav.study, href: '/#study' },
+    { label: t.nav.stories, href: '/#stories' },
+    { label: t.nav.activities, href: '/#activities' },
+    { label: t.nav.results, href: '/#results' },
+  ]
+}
 
-function Brand({ light = false }: { light?: boolean }) {
+function Brand({ light = false, logoOnlyMobile = false }: { light?: boolean; logoOnlyMobile?: boolean }) {
   return (
     <Link to="/" className="flex items-center gap-3">
       <img
@@ -31,9 +35,9 @@ function Brand({ light = false }: { light?: boolean }) {
         alt="Zin Apex Education logo"
         className="h-11 w-11 rounded-2xl object-contain ring-1 ring-gold/50"
       />
-      <span className="leading-tight">
+      <span className={`leading-tight ${logoOnlyMobile ? 'hidden sm:block' : ''}`}>
         <span
-          className={`block font-bold tracking-tight ${
+          className={`block whitespace-nowrap font-bold tracking-tight ${
             light ? 'text-white' : 'text-primary'
           }`}
         >
@@ -52,6 +56,7 @@ function Brand({ light = false }: { light?: boolean }) {
 }
 
 function TopBar() {
+  const { t } = useLang()
   const phone = site.office.phones[0]
   return (
     <div className="hidden bg-primary text-white md:block">
@@ -74,7 +79,7 @@ function TopBar() {
         </div>
         <span className="flex items-center gap-1.5 text-white/80">
           <Clock className="h-3.5 w-3.5" />
-          Tue–Sat, {site.office.hours}
+          {t.topbar.hours}
         </span>
       </div>
     </div>
@@ -82,10 +87,11 @@ function TopBar() {
 }
 
 function FloatingContact() {
+  const { t } = useLang()
   return (
     <Link
       to="/contact"
-      aria-label="Contact us"
+      aria-label={t.nav.contactUs}
       className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gold text-primary shadow-lg transition-transform hover:scale-105"
     >
       <MessageCircle className="h-6 w-6" />
@@ -94,14 +100,16 @@ function FloatingContact() {
 }
 
 function Header() {
+  const { t } = useLang()
+  const nav = useNav()
   const [open, setOpen] = useState(false)
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#e5eaf2] bg-white/90 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Brand />
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
+        <Brand logoOnlyMobile />
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-6 lg:flex">
           {nav.map((item) => (
             <a
               key={item.href}
@@ -113,20 +121,26 @@ function Header() {
           ))}
         </nav>
 
-        <Link
-          to="/contact"
-          className="btn-primary hidden h-10 items-center px-5 text-sm lg:inline-flex"
-        >
-          Contact Us
-        </Link>
+        <div className="hidden items-center gap-3 lg:flex">
+          <LangSwitcher />
+          <Link
+            to="/contact"
+            className="btn-primary inline-flex h-10 items-center px-5 text-sm"
+          >
+            {t.nav.contactUs}
+          </Link>
+        </div>
 
-        <button
-          className="text-primary lg:hidden"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        <div className="flex items-center gap-3 lg:hidden">
+          <LangSwitcher compact />
+          <button
+            className="text-primary"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Toggle menu"
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -147,7 +161,7 @@ function Header() {
               onClick={() => setOpen(false)}
               className="btn-primary mt-2 inline-flex h-11 items-center justify-center text-sm"
             >
-              Contact Us
+              {t.nav.contactUs}
             </Link>
           </nav>
         </div>
@@ -157,14 +171,14 @@ function Header() {
 }
 
 function Footer() {
+  const { t } = useLang()
   return (
     <footer className="bg-primary text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2 lg:col-span-1">
           <Brand light />
           <p className="mt-4 max-w-xs text-sm font-medium text-white/70">
-            Your trusted partner for Japanese language learning and study-in-Japan
-            support — helping students achieve their dreams since {site.since}.
+            {t.footer.tagline}
           </p>
           <div className="mt-5 flex gap-3">
             <Social href={site.social.facebook} label="Facebook">
@@ -183,39 +197,38 @@ function Footer() {
         </div>
 
         <div>
-          <h4 className="font-semibold text-gold">Quick Links</h4>
+          <h4 className="font-semibold text-gold">{t.footer.quickLinks}</h4>
           <ul className="mt-4 space-y-2 text-sm font-medium text-white/70">
-            <li><a href="/#about" className="hover:text-white">About</a></li>
-            <li><a href="/#courses" className="hover:text-white">Japanese Courses</a></li>
-            <li><a href="/#study" className="hover:text-white">Study in Japan</a></li>
-            <li><a href="/#stories" className="hover:text-white">Student Stories</a></li>
-            <li><a href="/#results" className="hover:text-white">Our COE Result</a></li>
+            <li><a href="/#about" className="hover:text-white">{t.footer.linkAbout}</a></li>
+            <li><a href="/#courses" className="hover:text-white">{t.footer.linkCourses}</a></li>
+            <li><a href="/#study" className="hover:text-white">{t.footer.linkStudy}</a></li>
+            <li><a href="/#stories" className="hover:text-white">{t.footer.linkStories}</a></li>
+            <li><a href="/#results" className="hover:text-white">{t.footer.linkResults}</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="font-semibold text-gold">Our Services</h4>
+          <h4 className="font-semibold text-gold">{t.footer.ourServices}</h4>
           <ul className="mt-4 space-y-2 text-sm font-medium text-white/70">
-            <li>Student Placement &amp; Documentation</li>
-            <li>Visa &amp; Travel Arrangements</li>
-            <li>Arrival Support in Japan</li>
-            <li>Japanese Language &amp; Skills Training</li>
+            {t.footer.serviceItems.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
           </ul>
         </div>
 
         <div>
-          <h4 className="font-semibold text-gold">{site.office.label}</h4>
+          <h4 className="font-semibold text-gold">{t.footer.office}</h4>
           <ul className="mt-4 space-y-2 text-sm font-medium text-white/70">
             <li>{site.office.address}</li>
             <li>{site.office.phones.join(' / ')}</li>
             <li>{site.office.email}</li>
-            <li>{site.office.hours}</li>
+            <li>{t.topbar.hours}</li>
           </ul>
         </div>
       </div>
       <div className="border-t border-white/10">
         <p className="mx-auto max-w-6xl px-6 py-6 text-sm font-medium text-white/60">
-          © {new Date().getFullYear()} {site.name}. All rights reserved.
+          © {new Date().getFullYear()} {site.name}. {t.footer.rights}
         </p>
       </div>
     </footer>

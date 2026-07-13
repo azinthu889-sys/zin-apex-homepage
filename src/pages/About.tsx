@@ -2,18 +2,20 @@ import { Check, Target, Eye, Compass, Youtube } from 'lucide-react'
 import SmartImage from '../components/SmartImage'
 import PageHero from '../components/PageHero'
 import CtaBanner from '../components/CtaBanner'
-import { about, founder, mission, vision, purpose, site, images } from '../data'
+import { founder, site, images } from '../data'
+import { useLang } from '../lib/i18n'
 
 export default function About() {
+  const { t } = useLang()
   return (
     <>
       <PageHero
-        title="About Zin Apex Education"
+        title={t.aboutPage.heroTitle}
         image={images.kyotoStreet}
         imageAlt="Traditional street in Japan"
       >
-        <p>{about.intro}</p>
-        <p className="mt-3">{about.detail}</p>
+        <p>{t.aboutSection.intro}</p>
+        <p className="mt-3">{t.aboutSection.detail}</p>
       </PageHero>
 
       <section className="mx-auto max-w-6xl px-6 py-24">
@@ -29,7 +31,7 @@ export default function About() {
                 {founder.initials}
               </div>
               <h3 className="mt-5 text-lg font-medium">{founder.name}</h3>
-              <p className="text-sm text-muted-foreground">{founder.role}</p>
+              <p className="text-sm text-muted-foreground">{t.aboutSection.founderRole}</p>
               <a
                 href={site.social.youtube}
                 target="_blank"
@@ -43,13 +45,13 @@ export default function About() {
           </div>
           <div>
             <h2 className="text-2xl font-semibold tracking-tight">
-              Founder profile
+              {t.aboutPage.founderTitle}
             </h2>
-            <p className="mt-4 text-muted-foreground">{founder.bio}</p>
-            <p className="mt-4 text-muted-foreground">{founder.youtube}</p>
-            <h3 className="mt-8 font-medium">Qualifications</h3>
+            <p className="mt-4 text-muted-foreground">{t.aboutSection.founderBio}</p>
+            <p className="mt-4 text-muted-foreground">{t.aboutPage.founderYoutube}</p>
+            <h3 className="mt-8 font-medium">{t.aboutPage.qualifications}</h3>
             <ul className="mt-3 space-y-2">
-              {founder.qualifications.map((q) => (
+              {t.aboutPage.qualificationItems.map((q) => (
                 <li key={q} className="flex items-start gap-2 text-sm">
                   <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                   {q}
@@ -66,9 +68,9 @@ export default function About() {
             <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent text-accent-foreground">
               <Target className="h-5 w-5" />
             </div>
-            <h3 className="mt-5 font-medium">Mission</h3>
+            <h3 className="mt-5 font-medium">{t.aboutSection.mission}</h3>
             <ul className="mt-3 space-y-2">
-              {mission.map((m) => (
+              {t.aboutSection.missionItems.map((m) => (
                 <li
                   key={m}
                   className="flex items-start gap-2 text-sm text-muted-foreground"
@@ -83,16 +85,16 @@ export default function About() {
             <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent text-accent-foreground">
               <Eye className="h-5 w-5" />
             </div>
-            <h3 className="mt-5 font-medium">Vision</h3>
-            <p className="mt-3 text-sm text-muted-foreground">{vision}</p>
+            <h3 className="mt-5 font-medium">{t.aboutSection.vision}</h3>
+            <p className="mt-3 text-sm text-muted-foreground">{t.aboutSection.visionText}</p>
           </div>
           <div className="rounded-xl border bg-background p-6">
             <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent text-accent-foreground">
               <Compass className="h-5 w-5" />
             </div>
-            <h3 className="mt-5 font-medium">Purpose</h3>
+            <h3 className="mt-5 font-medium">{t.aboutSection.purpose}</h3>
             <ul className="mt-3 space-y-2">
-              {purpose.map((p) => (
+              {t.aboutSection.purposeItems.map((p) => (
                 <li
                   key={p}
                   className="flex items-start gap-2 text-sm text-muted-foreground"
@@ -107,9 +109,9 @@ export default function About() {
       </section>
 
       <CtaBanner
-        title="Join the Zin Apex Education community"
-        subtitle="Let us guide you towards a successful future in Japan."
-        buttonLabel="Contact us"
+        title={t.aboutPage.ctaTitle}
+        subtitle={t.aboutPage.ctaSub}
+        buttonLabel={t.aboutPage.ctaBtn}
         to="/contact"
         image={images.cherryBlossom}
       />
