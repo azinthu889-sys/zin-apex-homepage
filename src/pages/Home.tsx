@@ -834,25 +834,71 @@ function ResultsSection() {
         ))}
       </div>
 
-      <div className="mx-auto mt-12 max-w-2xl overflow-hidden rounded-xl border">
-        <table className="w-full text-sm">
-          <thead className="bg-accent/60">
-            <tr className="text-left">
-              <th className="px-5 py-3 font-medium">Year</th>
-              <th className="px-5 py-3 font-medium">Applicants</th>
-              <th className="px-5 py-3 font-medium">Successful COE</th>
-            </tr>
-          </thead>
-          <tbody>
-            {coeResults.map((row) => (
-              <tr key={row.year} className="border-t">
-                <td className="px-5 py-3">{row.year}</td>
-                <td className="px-5 py-3">{row.applicants}</td>
-                <td className="px-5 py-3 font-medium text-primary">{row.successful}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      {/* COE results bar chart */}
+      <div
+        data-reveal
+        className="mx-auto mt-12 max-w-3xl rounded-2xl border border-[#e5eaf2] bg-white p-6 shadow-sm md:p-8"
+      >
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <h3 className="font-bold tracking-tight">COE results by year</h3>
+          <div className="flex items-center gap-4 text-xs font-medium text-muted-foreground">
+            <span className="flex items-center gap-1.5">
+              <span className="h-3 w-3 rounded-sm bg-secondary/30" />
+              Applicants
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="h-3 w-3 rounded-sm bg-gold" />
+              Successful COE
+            </span>
+          </div>
+        </div>
+
+        <div className="mt-8 flex items-end justify-between gap-3 md:gap-8">
+          {coeResults.map((row, gi) => {
+            const successful = parseInt(row.successful, 10) || 0
+            const pending = row.successful.includes('pending')
+            const max = Math.max(...coeResults.map((r) => r.applicants))
+            const yearLabel = row.year.replace(' (Oct intake)', '')
+            return (
+              <div key={row.year} className="flex flex-1 flex-col items-center">
+                <div className="flex h-44 items-end gap-1.5 md:h-56 md:gap-2">
+                  <div className="flex h-full flex-col items-center justify-end">
+                    <span className="mb-1 text-[11px] font-bold text-secondary">
+                      {row.applicants}
+                    </span>
+                    <div
+                      className="chart-bar w-5 rounded-t-md bg-secondary/30 md:w-8"
+                      style={{
+                        height: `${(row.applicants / max) * 100}%`,
+                        transitionDelay: `${gi * 120}ms`,
+                      }}
+                    />
+                  </div>
+                  <div className="flex h-full flex-col items-center justify-end">
+                    <span className="mb-1 text-[11px] font-bold text-primary">
+                      {successful}
+                    </span>
+                    <div
+                      className="chart-bar w-5 rounded-t-md bg-gold md:w-8"
+                      style={{
+                        height: `${Math.max((successful / max) * 100, 2)}%`,
+                        transitionDelay: `${gi * 120 + 60}ms`,
+                      }}
+                    />
+                  </div>
+                </div>
+                <span className="mt-3 text-xs font-semibold text-muted-foreground md:text-sm">
+                  {yearLabel}
+                </span>
+                {pending && (
+                  <span className="mt-1 rounded-full bg-accent px-2 py-0.5 text-[10px] font-semibold text-primary">
+                    9 pending
+                  </span>
+                )}
+              </div>
+            )
+          })}
+        </div>
       </div>
     </section>
   )
