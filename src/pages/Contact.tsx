@@ -19,8 +19,11 @@ import { useLang } from '../lib/i18n'
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
 export default function Contact() {
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const [status, setStatus] = useState<Status>('idle')
+  // Spam guards: bots fill the invisible field and submit instantly.
+  const [honeypot, setHoneypot] = useState('')
+  const [openedAt] = useState(() => Date.now())
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -35,10 +38,15 @@ export default function Contact() {
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()
+    if (honeypot !== '' || Date.now() - openedAt < 3000) {
+      setStatus('success')
+      return
+    }
     setStatus('submitting')
     try {
       await addDoc(collection(db, 'enrollments'), {
         ...form,
+        lang,
         createdAt: serverTimestamp(),
       })
       setStatus('success')
@@ -122,6 +130,18 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="absolute left-[-9999px] top-[-9999px]" aria-hidden="true">
+                  <label>
+                    Website
+                    <input
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={honeypot}
+                      onChange={(e) => setHoneypot(e.target.value)}
+                    />
+                  </label>
+                </div>
                 <div className="grid gap-5 sm:grid-cols-2">
                   <Field label={t.contactPage.fullName}>
                     <input

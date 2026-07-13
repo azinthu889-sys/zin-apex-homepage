@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zin-apex-home-page.web.app/sitemap.xml

@@ -95,6 +95,7 @@ function Hero() {
           alt="ZAE students arriving in Japan"
           className="h-full w-full"
           imgClassName="animate-kenburns"
+          priority
         />
       </div>
       {/* readability gradients — photo stays visible on the right */}
