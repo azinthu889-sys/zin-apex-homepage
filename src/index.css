@@ -178,6 +178,42 @@ body {
   html { scroll-behavior: auto; }
 }
 
+/* Journey section: staggered steps, drawing line, flying plane */
+.js-ready [data-reveal] .journey-step {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.js-ready [data-reveal].revealed .journey-step {
+  opacity: 1;
+  transform: none;
+}
+.js-ready [data-reveal] .journey-line {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s ease;
+}
+.js-ready [data-reveal].revealed .journey-line {
+  transform: scaleX(1);
+}
+@keyframes journey-fly {
+  0% { left: -6%; transform: translateY(0) rotate(45deg); }
+  25% { transform: translateY(-10px) rotate(45deg); }
+  50% { transform: translateY(0) rotate(45deg); }
+  75% { transform: translateY(-10px) rotate(45deg); }
+  100% { left: 103%; transform: translateY(0) rotate(45deg); }
+}
+.journey-plane {
+  position: absolute;
+  animation: journey-fly 8s linear infinite;
+  will-change: left, transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js-ready [data-reveal] .journey-step,
+  .js-ready [data-reveal] .journey-line { opacity: 1; transform: none; transition: none; }
+  .journey-plane { display: none; }
+}
+
 /* Bar chart grow-in (pairs with scroll reveal) */
 .js-ready [data-reveal] .chart-bar {
   transform: scaleY(0);

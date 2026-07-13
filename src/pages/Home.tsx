@@ -5,6 +5,7 @@ import {
   Check,
   Star,
   Play,
+  Plane,
   Download,
   FileCheck,
   ClipboardList,
@@ -469,36 +470,48 @@ function ServicesSection() {
 
 function JourneySection() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-24">
+    <section id="journey" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-24">
       <SectionHeading
         eyebrow="How it works"
         title="Your journey to Japan"
         subtitle="A clear, guided process — from your first consultation to your first day in Japan."
       />
-      <ol data-reveal className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
-        {journey.map((item, i) => (
-          <li key={item.step} className="relative">
-            {/* connector line (desktop) */}
-            {i < journey.length - 1 && (
-              <span
-                aria-hidden
-                className="absolute left-[calc(50%+28px)] top-6 hidden h-px w-[calc(100%-56px)] bg-[#e5eaf2] lg:block"
-              />
-            )}
-            <div className="flex items-start gap-4 lg:flex-col lg:items-center lg:text-center">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-secondary/30 bg-white text-sm font-bold text-secondary">
-                {item.step}
-              </span>
-              <div className="lg:mt-4">
-                <h3 className="font-bold tracking-tight">{item.title}</h3>
-                <p className="mt-1.5 text-sm font-medium text-muted-foreground">
-                  {item.description}
-                </p>
+      <div data-reveal className="relative mt-16">
+        {/* flying plane across the journey (desktop) */}
+        <span className="journey-plane -top-12 hidden text-secondary lg:block" aria-hidden>
+          <Plane className="h-7 w-7 fill-current" />
+        </span>
+
+        <ol className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
+          {journey.map((item, i) => (
+            <li
+              key={item.step}
+              className="journey-step relative"
+              style={{ transitionDelay: `${i * 160}ms` }}
+            >
+              {/* connector line (desktop) */}
+              {i < journey.length - 1 && (
+                <span
+                  aria-hidden
+                  className="journey-line absolute left-[calc(50%+28px)] top-6 hidden h-0.5 w-[calc(100%-56px)] rounded-full bg-gradient-to-r from-secondary/50 to-gold/60 lg:block"
+                  style={{ transitionDelay: `${i * 160 + 220}ms` }}
+                />
+              )}
+              <div className="group flex items-start gap-4 lg:flex-col lg:items-center lg:text-center">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-secondary/40 bg-white text-sm font-bold text-secondary shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:border-gold group-hover:bg-gold group-hover:text-primary">
+                  {item.step}
+                </span>
+                <div className="lg:mt-4">
+                  <h3 className="font-bold tracking-tight">{item.title}</h3>
+                  <p className="mt-1.5 text-sm font-medium text-muted-foreground">
+                    {item.description}
+                  </p>
+                </div>
               </div>
-            </div>
-          </li>
-        ))}
-      </ol>
+            </li>
+          ))}
+        </ol>
+      </div>
     </section>
   )
 }
