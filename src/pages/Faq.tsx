@@ -18,7 +18,7 @@ export default function Faq() {
       </PageHero>
 
       <section className="mx-auto max-w-3xl px-6 py-24">
-        <div className="space-y-3">
+        <div data-reveal className="space-y-3">
           {faqs.map((faq, i) => {
             const isOpen = open === i
             return (
