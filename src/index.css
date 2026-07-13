@@ -9,8 +9,8 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   font-size: var(--font-size);
-  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-    Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Inter", "Noto Sans Myanmar", "Noto Sans JP", ui-sans-serif,
+    system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -18,6 +18,33 @@ body {
 h1, h2, h3, h4 {
   font-weight: 700;
   letter-spacing: -0.01em;
+}
+
+/* Japanese: browser-native JP fonts before generic fallback */
+html[lang="ja"] body {
+  font-family: "Inter", "Noto Sans JP", "Hiragino Sans", "Yu Gothic",
+    "Meiryo", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Myanmar script needs taller lines for stacked diacritics and no negative
+   letter-spacing — override the tight latin defaults everywhere. */
+html[lang="my"] body {
+  font-family: "Inter", "Noto Sans Myanmar", "Padauk", "Myanmar Text",
+    ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.85;
+}
+html[lang="my"] h1,
+html[lang="my"] h2,
+html[lang="my"] h3,
+html[lang="my"] h4,
+html[lang="my"] .heading-black {
+  line-height: 1.5 !important;
+  letter-spacing: 0 !important;
+}
+html[lang="my"] p,
+html[lang="my"] li,
+html[lang="my"] blockquote {
+  line-height: 1.85;
 }
 
 /* Bold heading helper (title case) */
