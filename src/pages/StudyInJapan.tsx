@@ -133,6 +133,8 @@ export default function StudyInJapan() {
             <img
               src={images.japanMap}
               alt="Map of Japan showing the cities where you can apply with us"
+              loading="lazy"
+              decoding="async"
               className="aspect-[21/10] w-full object-cover object-top"
             />
           </div>

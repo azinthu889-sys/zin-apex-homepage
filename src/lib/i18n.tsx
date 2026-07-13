@@ -24,6 +24,15 @@ function initialLang(): Lang {
     }
     const stored = localStorage.getItem('zae-lang')
     if (stored === 'en' || stored === 'ja' || stored === 'my') return stored
+    // First visit: match the browser language (most visitors are from Myanmar)
+    const preferred = (
+      navigator.languages?.length ? navigator.languages : [navigator.language]
+    ).map((l) => (l || '').toLowerCase())
+    for (const l of preferred) {
+      if (l.startsWith('my')) return 'my'
+      if (l.startsWith('ja')) return 'ja'
+      if (l.startsWith('en')) return 'en'
+    }
   } catch {
     /* SSR/privacy mode */
   }

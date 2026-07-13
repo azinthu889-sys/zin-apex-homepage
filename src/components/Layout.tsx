@@ -257,13 +257,51 @@ function Social({
   )
 }
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void
+  }
+}
+
+/** Per-route, per-language document title + meta description, and SPA
+    page_view events for Google Analytics. */
+function usePageMeta() {
+  const { pathname } = useLocation()
+  const { t, lang } = useLang()
+
+  useEffect(() => {
+    const pages: Record<string, { title: string; description: string }> = {
+      '/': {
+        title: `${site.name} — ${t.hero.titleLead}${t.hero.titleAccent}`,
+        description: t.hero.subtitle,
+      },
+      '/about': { title: `${t.nav.about} | ${site.name}`, description: t.aboutSection.intro },
+      '/courses': { title: `${t.nav.courses} | ${site.name}`, description: t.coursesPage.heroSub },
+      '/study-in-japan': { title: `${t.nav.study} | ${site.name}`, description: t.studyPage.heroSub },
+      '/faq': { title: `${t.faqPage.heroTitle} | ${site.name}`, description: t.faqPage.stillBody },
+      '/contact': { title: `${t.nav.contactUs} | ${site.name}`, description: t.contactPage.heroSub },
+    }
+    const meta = pages[pathname] ?? pages['/']
+    document.title = meta.title
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute('content', meta.description)
+
+    window.gtag?.('event', 'page_view', {
+      page_path: pathname,
+      page_title: meta.title,
+      page_language: lang,
+    })
+  }, [pathname, t, lang])
+}
+
 function useScrollReveal() {
   const { pathname } = useLocation()
   useEffect(() => {
-    const els = Array.from(document.querySelectorAll('[data-reveal]'))
-    if (els.length === 0) return
     if (!('IntersectionObserver' in window)) {
-      els.forEach((el) => el.classList.add('revealed'))
+      document
+        .querySelectorAll('[data-reveal]')
+        .forEach((el) => el.classList.add('revealed'))
       return
     }
     const io = new IntersectionObserver(
@@ -277,12 +315,25 @@ function useScrollReveal() {
       },
       { rootMargin: '0px 0px -8% 0px', threshold: 0.08 },
     )
-    els.forEach((el) => io.observe(el))
-    return () => io.disconnect()
+    const observeAll = () => {
+      document
+        .querySelectorAll('[data-reveal]:not(.revealed)')
+        .forEach((el) => io.observe(el))
+    }
+    observeAll()
+    // Lazy-loaded routes render after this effect runs — watch for the new
+    // [data-reveal] elements so they still animate in.
+    const mo = new MutationObserver(observeAll)
+    mo.observe(document.body, { childList: true, subtree: true })
+    return () => {
+      mo.disconnect()
+      io.disconnect()
+    }
   }, [pathname])
 }
 
 export default function Layout() {
+  usePageMeta()
   useScrollReveal()
   return (
     <div className="flex min-h-full flex-col bg-background text-foreground">

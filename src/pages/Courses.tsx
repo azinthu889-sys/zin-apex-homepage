@@ -61,6 +61,8 @@ export default function Courses() {
           <img
             src={images.n4Textbooks}
             alt="N4 level textbooks and materials used in our courses"
+            loading="lazy"
+            decoding="async"
             className="w-full rounded-2xl border shadow-sm"
           />
           <div>

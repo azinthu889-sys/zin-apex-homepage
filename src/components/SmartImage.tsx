@@ -5,6 +5,8 @@ type Props = {
   alt: string
   className?: string
   imgClassName?: string
+  /** Load immediately with high priority — use for above-the-fold imagery. */
+  priority?: boolean
 }
 
 // Renders a brand-tinted gradient that an image fades in over. If the remote
@@ -14,6 +16,7 @@ export default function SmartImage({
   alt,
   className = '',
   imgClassName = '',
+  priority = false,
 }: Props) {
   const [loaded, setLoaded] = useState(false)
   const [failed, setFailed] = useState(false)
@@ -26,7 +29,9 @@ export default function SmartImage({
         <img
           src={src}
           alt={alt}
-          loading="lazy"
+          loading={priority ? 'eager' : 'lazy'}
+          fetchPriority={priority ? 'high' : undefined}
+          decoding={priority ? 'sync' : 'async'}
           onLoad={() => setLoaded(true)}
           onError={() => setFailed(true)}
           className={`h-full w-full object-cover transition-opacity duration-700 ${
