@@ -33,7 +33,7 @@ function Brand({ light = false, logoOnlyMobile = false }: { light?: boolean; log
       <img
         src={images.logo}
         alt="Zin Apex Education logo"
-        className="h-11 w-11 rounded-2xl object-contain ring-1 ring-gold/50 transition-all duration-300 group-hover:-rotate-3 group-hover:scale-105 group-hover:ring-gold"
+        className="h-11 w-11 rounded-2xl object-contain ring-1 ring-gold/50 transition-all duration-300 group-hover:scale-105 group-hover:ring-2 group-hover:ring-gold"
       />
       <span className={`leading-tight ${logoOnlyMobile ? 'hidden sm:block' : ''}`}>
         <span
@@ -226,12 +226,12 @@ function Header() {
       >
         <Brand logoOnlyMobile />
 
-        <nav className="hidden items-center gap-6 lg:flex">
+        <nav className="hidden items-center gap-5 lg:flex xl:gap-6">
           {nav.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="nav-link text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              className="nav-link whitespace-nowrap text-[0.9rem] font-semibold text-[#1c2b4a] hover:text-primary"
             >
               {item.label}
             </a>
@@ -242,7 +242,7 @@ function Header() {
           <LangSwitcher />
           <Link
             to="/contact"
-            className="btn-primary btn-shine inline-flex h-10 items-center px-5 text-sm"
+            className="btn-primary btn-shine inline-flex h-10 items-center whitespace-nowrap px-5 text-sm"
           >
             {t.nav.contactUs}
           </Link>
@@ -260,7 +260,12 @@ function Header() {
         </div>
       </div>
 
-      <span className="header-accent" aria-hidden />
+      <span
+        aria-hidden
+        className={`pointer-events-none absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent transition-opacity duration-300 ${
+          scrolled ? 'opacity-70' : 'opacity-0'
+        }`}
+      />
 
 
       {open && (

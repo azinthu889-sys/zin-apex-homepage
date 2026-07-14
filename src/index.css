@@ -211,51 +211,30 @@ body {
 
 /* ===================== Header animations ===================== */
 
-/* One-time entrance: the header slides down and fades in on first load */
-@keyframes headerDown {
-  from { opacity: 0; transform: translateY(-100%); }
+/* One-time entrance: a gentle fade + rise on first load */
+@keyframes headerIn {
+  from { opacity: 0; transform: translateY(-12px); }
   to { opacity: 1; transform: none; }
 }
-.animate-header { animation: headerDown 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.animate-header { animation: headerIn 0.5s ease both; }
 
-/* Nav links: a gradient underline that wipes in from the left on hover */
-.nav-link { position: relative; }
+/* Nav links: the label lifts and a gold dot pops up beneath it on hover */
+.nav-link { position: relative; transition: color 0.2s ease, transform 0.2s ease; }
+.nav-link:hover { transform: translateY(-2px); }
 .nav-link::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: -5px;
-  height: 2px;
-  width: 100%;
-  border-radius: 2px;
-  background: linear-gradient(90deg, var(--primary), var(--gold));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.32s cubic-bezier(0.2, 0.7, 0.2, 1);
+  left: 50%;
+  bottom: -7px;
+  height: 5px;
+  width: 5px;
+  border-radius: 9999px;
+  background: var(--gold);
+  opacity: 0;
+  transform: translate(-50%, 5px);
+  transition: opacity 0.25s ease, transform 0.28s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
-.nav-link:hover::after { transform: scaleX(1); }
-
-/* A slow gold→navy sheen that drifts along the bottom edge of the header */
-.header-accent {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 2px;
-  pointer-events: none;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    color-mix(in srgb, var(--gold) 85%, transparent),
-    color-mix(in srgb, var(--primary) 70%, transparent),
-    color-mix(in srgb, var(--gold) 85%, transparent),
-    transparent
-  );
-  background-size: 200% 100%;
-  animation: headerSheen 7s linear infinite;
-  opacity: 0.55;
-}
-@keyframes headerSheen { to { background-position: -200% 0; } }
+.nav-link:hover::after { opacity: 1; transform: translate(-50%, 0); }
 
 /* Button shine sweep on hover */
 .btn-shine { position: relative; overflow: hidden; }
@@ -279,7 +258,7 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .animate-header { animation: none; }
-  .header-accent { animation: none; }
+  .nav-link:hover { transform: none; }
   .nav-link::after, .btn-shine::before { transition: none; }
 }
 
