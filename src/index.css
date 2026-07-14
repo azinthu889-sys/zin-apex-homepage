@@ -9,7 +9,7 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   font-size: var(--font-size);
-  font-family: "Inter", "Noto Serif Myanmar", "Noto Sans JP", ui-sans-serif,
+  font-family: "Inter", "Noto Sans Myanmar", "Noto Sans JP", ui-sans-serif,
     system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -29,15 +29,19 @@ html[lang="ja"] body {
 /* Myanmar script needs taller lines for stacked diacritics and no negative
    letter-spacing — override the tight latin defaults everywhere. */
 html[lang="my"] body {
-  font-family: "Inter", "Noto Serif Myanmar", "Myanmar Text", "Padauk",
-    ui-serif, Georgia, serif;
+  font-family: "Inter", "Noto Sans Myanmar", "Padauk", "Myanmar Text",
+    ui-sans-serif, system-ui, sans-serif;
   line-height: 1.85;
 }
+/* Headings use the serif Myanmar face for a dignified look; body copy stays
+   in the cleaner sans face for readability. */
 html[lang="my"] h1,
 html[lang="my"] h2,
 html[lang="my"] h3,
 html[lang="my"] h4,
 html[lang="my"] .heading-black {
+  font-family: "Inter", "Noto Serif Myanmar", "Noto Sans Myanmar",
+    ui-serif, Georgia, serif;
   line-height: 1.5 !important;
   letter-spacing: 0 !important;
 }
