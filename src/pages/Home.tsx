@@ -52,6 +52,7 @@ export default function Home() {
       <QuickActions />
       <SupportStrip />
       <AboutSection />
+      <VideoSection />
       <ServicesSection />
       <JourneySection />
       <CoursesSection />
@@ -378,6 +379,88 @@ function AboutSection() {
             ))}
           </ul>
         </ValueCard>
+      </div>
+    </section>
+  )
+}
+
+function YouTubeFacade({
+  id,
+  title,
+  large = false,
+}: {
+  id: string
+  title: string
+  large?: boolean
+}) {
+  const [playing, setPlaying] = useState(false)
+  return (
+    <div className="relative aspect-video overflow-hidden rounded-3xl border border-white/15 shadow-2xl">
+      {playing ? (
+        <iframe
+          className="absolute inset-0 h-full w-full"
+          src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`}
+          title={title}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      ) : (
+        <button
+          type="button"
+          onClick={() => setPlaying(true)}
+          className="group absolute inset-0 h-full w-full"
+          aria-label={`Play video: ${title}`}
+        >
+          <img
+            src={`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`}
+            alt={title}
+            loading="lazy"
+            onError={(e) => {
+              e.currentTarget.src = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`
+            }}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <span className="absolute inset-0 bg-primary/25 transition-colors group-hover:bg-primary/40" />
+          <span
+            className={`absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-gold text-primary shadow-xl transition-transform duration-300 group-hover:scale-110 ${
+              large ? 'h-20 w-20' : 'h-14 w-14'
+            }`}
+          >
+            <Play className={`fill-current ${large ? 'ml-1 h-8 w-8' : 'ml-0.5 h-6 w-6'}`} />
+          </span>
+        </button>
+      )}
+    </div>
+  )
+}
+
+function VideoSection() {
+  const { t } = useLang()
+  return (
+    <section className="bg-primary">
+      <div className="mx-auto max-w-5xl px-6 py-24">
+        <div data-reveal className="mx-auto max-w-2xl text-center">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-2 text-xs font-semibold uppercase tracking-widest text-gold">
+            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+            {t.videoSection.eyebrow}
+          </span>
+          <h2 className="heading-black mt-5 text-3xl text-white md:text-5xl">
+            {t.videoSection.title}
+          </h2>
+          <p className="mt-4 font-medium text-white/75">{t.videoSection.subtitle}</p>
+        </div>
+
+        <div data-reveal className="mt-12">
+          <YouTubeFacade id={site.promoVideoId} title={t.videoSection.title} large />
+        </div>
+
+        {site.moreVideoIds.length > 0 && (
+          <div data-reveal className="mt-6 grid gap-6 sm:grid-cols-2">
+            {site.moreVideoIds.map((vid) => (
+              <YouTubeFacade key={vid} id={vid} title={t.videoSection.title} />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   )

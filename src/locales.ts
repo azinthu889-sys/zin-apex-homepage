@@ -53,6 +53,12 @@ const en = {
     'Trusted since',
     'Partner cities in Japan',
   ],
+  videoSection: {
+    eyebrow: 'Watch',
+    title: 'Get to know Zin Apex Education',
+    subtitle:
+      'A quick look at who we are and how we guide students all the way to Japan.',
+  },
   aboutSection: {
     eyebrow: 'About',
     title: 'About Zin Apex Education',
@@ -571,6 +577,12 @@ const ja: typeof en = {
     photoCaption: 'オリエンテーションの日 — ZAEファミリー',
   },
   achievements: ['COE合格率', '日本へ送り出した学生数', '創業年', '日本の提携都市'],
+  videoSection: {
+    eyebrow: '動画',
+    title: 'Zin Apex Educationを動画で紹介',
+    subtitle:
+      '私たちがどんな存在で、学生を日本までどう導くのかを、ぜひ動画でご覧ください。',
+  },
   aboutSection: {
     eyebrow: '私たちについて',
     title: 'Zin Apex Educationについて',
@@ -995,6 +1007,12 @@ const my: typeof en = {
     'စတင်တည်ထောင်သည့်နှစ်',
     'ဂျပန်ရှိ မိတ်ဖက်မြို့များ',
   ],
+  videoSection: {
+    eyebrow: 'ဗီဒီယို',
+    title: 'Zin Apex Education ကို မိတ်ဆက်ပါရစေ',
+    subtitle:
+      'ကျွန်ုပ်တို့ ဘယ်သူဘယ်ဝါဆိုတာနဲ့ ကျောင်းသားတွေကို ဂျပန်အထိ ဘယ်လို လမ်းညွှန်ပေးလဲဆိုတာ ဗီဒီယိုလေးနဲ့ ကြည့်ရှုလိုက်ပါ။',
+  },
   aboutSection: {
     eyebrow: 'အကြောင်း',
     title: 'Zin Apex Education အကြောင်း',
