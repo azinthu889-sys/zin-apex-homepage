@@ -46,6 +46,8 @@ export const site = {
   formSampleUrl:
     'https://drive.google.com/file/d/1IJabKHY_KPiOrv-Jt5SLry_Oefvz8saU/view?usp=sharing',
   orientationFormUrl: 'https://forms.gle/Rk8dxPJeJgLSfRpx5',
+  promoVideoId: 'k_TSE2nYfec',
+  moreVideoIds: ['iNrPONtDoE0', 'smdPEuCUfxA'],
   office: {
     label: 'Mandalay Office',
     address:
