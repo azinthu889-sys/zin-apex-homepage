@@ -88,14 +88,113 @@ function TopBar() {
 
 function FloatingContact() {
   const { t } = useLang()
+  const [open, setOpen] = useState(false)
+
+  const actions = [
+    {
+      label: t.nav.contactUs,
+      href: '/contact',
+      internal: true,
+      color: 'bg-primary text-white',
+      icon: <MessageCircle className="h-5 w-5" />,
+    },
+    {
+      label: 'Facebook',
+      href: site.social.facebook,
+      color: 'bg-[#1877F2] text-white',
+      icon: <Facebook className="h-5 w-5" />,
+    },
+    {
+      label: 'YouTube',
+      href: site.social.youtube,
+      color: 'bg-[#FF0000] text-white',
+      icon: <Youtube className="h-5 w-5" />,
+    },
+    {
+      label: 'Telegram',
+      href: site.social.telegram,
+      color: 'bg-[#229ED9] text-white',
+      icon: <Send className="h-5 w-5" />,
+    },
+    {
+      label: 'TikTok',
+      href: site.social.tiktok,
+      color: 'bg-black text-white',
+      icon: <span className="text-xs font-bold">TT</span>,
+    },
+  ]
+
   return (
-    <Link
-      to="/contact"
-      aria-label={t.nav.contactUs}
-      className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gold text-primary shadow-lg transition-transform hover:scale-105"
-    >
-      <MessageCircle className="h-6 w-6" />
-    </Link>
+    <>
+      {open && (
+        <button
+          aria-hidden
+          tabIndex={-1}
+          onClick={() => setOpen(false)}
+          className="fixed inset-0 z-40 cursor-default bg-primary/10 backdrop-blur-[1px]"
+        />
+      )}
+      <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
+        <div className="flex flex-col items-end gap-3">
+          {actions.map((a, i) => {
+            const delay = open ? `${(actions.length - 1 - i) * 45}ms` : '0ms'
+            const inner = (
+              <>
+                <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-primary shadow-md">
+                  {a.label}
+                </span>
+                <span
+                  className={`flex h-12 w-12 items-center justify-center rounded-full shadow-lg ${a.color}`}
+                >
+                  {a.icon}
+                </span>
+              </>
+            )
+            const cls = `flex items-center gap-2.5 transition-all duration-300 ${
+              open
+                ? 'translate-y-0 opacity-100'
+                : 'pointer-events-none translate-y-3 opacity-0'
+            }`
+            return a.internal ? (
+              <Link
+                key={a.label}
+                to={a.href}
+                onClick={() => setOpen(false)}
+                className={cls}
+                style={{ transitionDelay: delay }}
+              >
+                {inner}
+              </Link>
+            ) : (
+              <a
+                key={a.label}
+                href={a.href}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setOpen(false)}
+                className={cls}
+                style={{ transitionDelay: delay }}
+              >
+                {inner}
+              </a>
+            )
+          })}
+        </div>
+
+        <button
+          onClick={() => setOpen((v) => !v)}
+          aria-label={open ? 'Close menu' : t.nav.contactUs}
+          aria-expanded={open}
+          className="flex h-14 w-14 items-center justify-center rounded-full bg-gold text-primary shadow-lg transition-transform hover:scale-105"
+        >
+          {open ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <MessageCircle className="h-6 w-6" />
+          )}
+        </button>
+      </div>
+    </>
   )
 }
 
