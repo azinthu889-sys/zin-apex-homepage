@@ -209,6 +209,80 @@ body {
   html { scroll-behavior: auto; }
 }
 
+/* ===================== Header animations ===================== */
+
+/* One-time entrance: the header slides down and fades in on first load */
+@keyframes headerDown {
+  from { opacity: 0; transform: translateY(-100%); }
+  to { opacity: 1; transform: none; }
+}
+.animate-header { animation: headerDown 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+
+/* Nav links: a gradient underline that wipes in from the left on hover */
+.nav-link { position: relative; }
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--gold));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.32s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.nav-link:hover::after { transform: scaleX(1); }
+
+/* A slow gold→navy sheen that drifts along the bottom edge of the header */
+.header-accent {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--gold) 85%, transparent),
+    color-mix(in srgb, var(--primary) 70%, transparent),
+    color-mix(in srgb, var(--gold) 85%, transparent),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: headerSheen 7s linear infinite;
+  opacity: 0.55;
+}
+@keyframes headerSheen { to { background-position: -200% 0; } }
+
+/* Button shine sweep on hover */
+.btn-shine { position: relative; overflow: hidden; }
+.btn-shine::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 45%;
+  height: 100%;
+  transform: skewX(-20deg);
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+.btn-shine:hover::before { left: 130%; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-header { animation: none; }
+  .header-accent { animation: none; }
+  .nav-link::after, .btn-shine::before { transition: none; }
+}
+
 /* Journey section: staggered steps, drawing line, flying plane */
 .js-ready [data-reveal] .journey-step {
   opacity: 0;

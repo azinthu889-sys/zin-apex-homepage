@@ -29,11 +29,11 @@ function useNav() {
 
 function Brand({ light = false, logoOnlyMobile = false }: { light?: boolean; logoOnlyMobile?: boolean }) {
   return (
-    <Link to="/" className="flex items-center gap-3">
+    <Link to="/" className="group flex items-center gap-3">
       <img
         src={images.logo}
         alt="Zin Apex Education logo"
-        className="h-11 w-11 rounded-2xl object-contain ring-1 ring-gold/50"
+        className="h-11 w-11 rounded-2xl object-contain ring-1 ring-gold/50 transition-all duration-300 group-hover:-rotate-3 group-hover:scale-105 group-hover:ring-gold"
       />
       <span className={`leading-tight ${logoOnlyMobile ? 'hidden sm:block' : ''}`}>
         <span
@@ -202,10 +202,28 @@ function Header() {
   const { t } = useLang()
   const nav = useNav()
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#e5eaf2] bg-white/90 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
+    <header
+      className={`animate-header sticky top-0 z-50 border-b backdrop-blur-xl transition-all duration-300 ${
+        scrolled
+          ? 'border-[#e5eaf2] bg-white/95 shadow-[0_6px_28px_-16px_rgba(13,27,62,0.35)]'
+          : 'border-[#e5eaf2]/60 bg-white/85'
+      }`}
+    >
+      <div
+        className={`mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 transition-all duration-300 sm:px-6 ${
+          scrolled ? 'h-14' : 'h-16'
+        }`}
+      >
         <Brand logoOnlyMobile />
 
         <nav className="hidden items-center gap-6 lg:flex">
@@ -213,7 +231,7 @@ function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              className="nav-link text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
             >
               {item.label}
             </a>
@@ -224,7 +242,7 @@ function Header() {
           <LangSwitcher />
           <Link
             to="/contact"
-            className="btn-primary inline-flex h-10 items-center px-5 text-sm"
+            className="btn-primary btn-shine inline-flex h-10 items-center px-5 text-sm"
           >
             {t.nav.contactUs}
           </Link>
@@ -233,7 +251,7 @@ function Header() {
         <div className="flex items-center gap-3 lg:hidden">
           <LangSwitcher compact />
           <button
-            className="text-primary"
+            className="text-primary transition-transform active:scale-90"
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
           >
@@ -241,6 +259,9 @@ function Header() {
           </button>
         </div>
       </div>
+
+      <span className="header-accent" aria-hidden />
+
 
       {open && (
         <div className="border-t border-[#e5eaf2] bg-white lg:hidden">
