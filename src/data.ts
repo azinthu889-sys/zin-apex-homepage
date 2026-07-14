@@ -47,7 +47,7 @@ export const site = {
     'https://drive.google.com/file/d/1IJabKHY_KPiOrv-Jt5SLry_Oefvz8saU/view?usp=sharing',
   orientationFormUrl: 'https://forms.gle/Rk8dxPJeJgLSfRpx5',
   promoVideoId: 'k_TSE2nYfec',
-  moreVideoIds: ['iNrPONtDoE0', 'smdPEuCUfxA'],
+  reviewVideoIds: ['iNrPONtDoE0', 'smdPEuCUfxA'],
   office: {
     label: 'Mandalay Office',
     address:
@@ -299,28 +299,6 @@ export const achievements = [
   { icon: Users, value: '100+', label: 'Students placed in Japan' },
   { icon: Award, value: '2023', label: 'Trusted since' },
   { icon: Building2, value: '5', label: 'Partner cities in Japan' },
-]
-
-// Placeholder student reviews — real video reviews to be supplied via Drive.
-export const reviews = [
-  {
-    name: 'Student Success Story',
-    school: 'Tokyo Language School',
-    program: 'April 2024 Intake',
-    image: heroArrivals,
-  },
-  {
-    name: 'Student Success Story',
-    school: 'Shizuoka Language School',
-    program: 'July 2024 Intake',
-    image: airportPhoto,
-  },
-  {
-    name: 'Student Success Story',
-    school: 'Hamamatsu Language School',
-    program: 'October 2024 Intake',
-    image: activity10,
-  },
 ]
 
 export const activities = [

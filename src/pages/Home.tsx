@@ -28,7 +28,6 @@ import {
   cities,
   achievements,
   coeResults,
-  reviews,
   activities,
   site,
   images,
@@ -453,14 +452,6 @@ function VideoSection() {
         <div data-reveal className="mt-12">
           <YouTubeFacade id={site.promoVideoId} title={t.videoSection.title} large />
         </div>
-
-        {site.moreVideoIds.length > 0 && (
-          <div data-reveal className="mt-6 grid gap-6 sm:grid-cols-2">
-            {site.moreVideoIds.map((vid) => (
-              <YouTubeFacade key={vid} id={vid} title={t.videoSection.title} />
-            ))}
-          </div>
-        )}
       </div>
     </section>
   )
@@ -837,33 +828,14 @@ function StoriesSection() {
         title={t.storiesSection.title}
         subtitle={t.storiesSection.subtitle}
       />
-      <div data-reveal className="mt-16 grid gap-6 md:grid-cols-3">
-        {reviews.map((r, i) => (
-          <a
-            key={i}
-            href={site.social.youtube}
-            target="_blank"
-            rel="noreferrer"
-            className="lift group overflow-hidden rounded-2xl border border-[#e5eaf2] bg-white shadow-sm"
-          >
-            <div className="relative">
-              <SmartImage src={r.image} alt={t.storiesSection.storyName} className="aspect-video w-full" />
-              <div className="absolute inset-0 flex items-center justify-center bg-primary/35 transition-colors group-hover:bg-primary/50">
-                <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gold text-primary shadow-sm transition-transform duration-300 group-hover:scale-110">
-                  <Play className="h-6 w-6 fill-current" />
-                </span>
-              </div>
-            </div>
-            <div className="p-6">
-              <h3 className="font-bold tracking-tight">{t.storiesSection.storyName}</h3>
-              <p className="mt-1 text-sm font-medium text-muted-foreground">
-                {t.storiesSection.schools[i]}
-              </p>
-              <p className="text-sm font-medium text-muted-foreground">
-                {t.storiesSection.programs[i]}
-              </p>
-            </div>
-          </a>
+      <div data-reveal className="mx-auto mt-16 grid max-w-4xl gap-8 md:grid-cols-2">
+        {site.reviewVideoIds.map((vid) => (
+          <div key={vid}>
+            <YouTubeFacade id={vid} title={t.storiesSection.storyName} />
+            <p className="mt-4 text-center font-bold tracking-tight text-primary">
+              {t.storiesSection.storyName}
+            </p>
+          </div>
         ))}
       </div>
     </section>
