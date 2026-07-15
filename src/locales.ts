@@ -345,22 +345,28 @@ const en = {
   },
   testimonials: [
     {
-      name: 'Ma Thiri',
-      intake: 'April 2025 · Tokyo',
+      name: 'Myint Myat Theingi',
+      intake: 'Recommended on Facebook',
       quote:
-        'Thanks to ZAE, everything from my COE to my visa went smoothly. They even welcomed me at the airport on the day I arrived in Japan — I felt completely at ease.',
+        'Working with this agency was truly reassuring. From the day I arrived in Japan, the founder personally took care of everything, and the office team handled all my documents flawlessly. Once in Japan, they introduced me to seniors so I would never feel alone — it gave me so much confidence.',
     },
     {
-      name: 'Ko Aung Khant',
-      intake: 'October 2024 · Shizuoka',
+      name: 'Nwe Nwe Khaing',
+      intake: 'Recommended on Facebook',
       quote:
-        'The teachers cared for us like family and even gave thorough training for the school interview. Everything about the fees was fully transparent too.',
+        'Thank you to the whole ZIN APEX family for helping with every single thing. Even though it is an online service, there were no gaps — they patiently explained everything right up until I reached Japan. With Sensei Zin himself based in Japan, it could not be more reassuring.',
     },
     {
-      name: 'Ma Ei Phyu',
-      intake: 'July 2025 · Hamamatsu',
+      name: 'Ingyin Pwint Phyu',
+      intake: 'Recommended on Facebook',
       quote:
-        'I was worried because I live far from the office, but everything worked smoothly through their online system. Even after arriving in Japan, the seniors keep helping me.',
+        'The senseis are so patient and kind. They handled everything without a single mistake and supported me all the way to Japan. 100% trustworthy.',
+    },
+    {
+      name: 'Htet Myat',
+      intake: 'Recommended on Facebook',
+      quote:
+        'I moved on to Japan from Thailand, and everything was handled entirely online. Because I checked them thoroughly and they genuinely delivered — actually getting me to Japan — I wholeheartedly recommend ZIN APEX Education to anyone considering the journey.',
     },
   ],
   activitiesSection: {
@@ -785,22 +791,28 @@ const ja: typeof en = {
   },
   testimonials: [
     {
-      name: 'Ma Thiri',
-      intake: '2025年4月入学 · 東京',
+      name: 'Myint Myat Theingi',
+      intake: 'Facebookで推薦',
       quote:
-        'ZAEのおかげでCOEからビザまで一つ残らずスムーズに進みました。日本到着の日には空港まで迎えに来てくれて、本当に安心できました。',
+        'この機関に任せて本当に安心できました。日本到着の日から創設者ご本人が何もかも面倒を見てくださり、事務所の皆さんも書類を一つのミスもなく丁寧に進めてくださいました。日本に着いてからも先輩を紹介してくださり、心細さを感じずに済みました。',
     },
     {
-      name: 'Ko Aung Khant',
-      intake: '2024年10月入学 · 静岡',
+      name: 'Nwe Nwe Khaing',
+      intake: 'Facebookで推薦',
       quote:
-        '先生方は家族のように親身で、学校の面接対策までしっかり指導してくれました。費用面も完全に透明で信頼できます。',
+        '何から何まで支えてくださったZIN APEXの皆さまに心から感謝します。オンラインサービスでも抜かりなく、日本到着まで根気強く説明してくださいました。Sensei Zinご本人が日本にいらっしゃるので、これ以上ない安心感です。',
     },
     {
-      name: 'Ma Ei Phyu',
-      intake: '2025年7月入学 · 浜松',
+      name: 'Ingyin Pwint Phyu',
+      intake: 'Facebookで推薦',
       quote:
-        '地方在住で不安でしたが、オンラインシステムで全て問題なく進みました。日本に来てからも先輩たちがずっと助けてくれています。',
+        '先生方はとても辛抱強く、親切です。すべてをミスなく進めてくださり、日本到着まで支えてくださいました。100%信頼できます。',
+    },
+    {
+      name: 'Htet Myat',
+      intake: 'Facebookで推薦',
+      quote:
+        '私はタイから日本へ進んだ学生で、手続きはすべてオンラインで行いました。しっかり調べたうえで、本当に私を日本まで送り出してくれた実績のある機関なので、これから検討する方にはZIN APEX Educationを心からおすすめします。',
     },
   ],
   activitiesSection: {
@@ -1281,22 +1293,28 @@ const my: typeof en = {
   },
   testimonials: [
     {
-      name: 'မသီရိ',
-      intake: '၂၀၂၅ ဧပြီ · တိုကျို',
+      name: 'Myint Myat Theingi',
+      intake: 'Facebook တွင် အကြံပြုထားသည်',
       quote:
-        'ZAE ကြောင့် COE ကအစ ဗီဇာအထိ တစ်ဆင့်မကျန် အဆင်ပြေခဲ့ပါတယ်။ ဂျပန်ရောက်တဲ့နေ့မှာလည်း လေဆိပ်မှာ လာကြိုပေးလို့ စိတ်အရမ်းချရပါတယ်။',
+        'အေဂျင်စီနဲ့ လက်တွဲခဲ့ရတာ တကယ်ကို စိတ်ချမ်းသာစရာ ကောင်းပါတယ်။ Founder ကိုယ်တိုင် ဂျပန်ရောက်တဲ့နေ့ကစပြီး လိုလေသေးမရှိ ဆောင်ရွက်ပေးသလို၊ ရုံးက အစ်မတွေကလည်း စာရွက်စာတမ်းတွေကို အမှားအယွင်းမရှိအောင် စနစ်တကျ လုပ်ပေးကြပါတယ်။ ဂျပန်ရောက်တဲ့အခါ စီနီယာတွေနဲ့ မိတ်ဆက်ပေးပြီး အထီးမကျန်အောင် ဂရုစိုက်ပေးလို့ အားရှိခဲ့ရပါတယ်။',
     },
     {
-      name: 'ကိုအောင်ခန့်',
-      intake: '၂၀၂၄ အောက်တိုဘာ · ရှိဇုအိုကာ',
+      name: 'Nwe Nwe Khaing',
+      intake: 'Facebook တွင် အကြံပြုထားသည်',
       quote:
-        'ဆရာ ဆရာမတွေက မိသားစုလို ဂရုစိုက်ပြီး ကျောင်း interview အတွက်ပါ သေချာ training လုပ်ပေးပါတယ်။ ငွေကြေးကိစ္စတွေလည်း ပွင့်လင်းမြင်သာမှု အပြည့်ရှိပါတယ်။',
+        'အစအရာရာ အဆင်ပြေအောင် ကူညီပေးခဲ့တဲ့အတွက် ZIN APEX EDUCATION မိသားစုတစ်ခုလုံးကို ကျေးဇူးတင်ပါတယ်။ Online service ဆိုပေမဲ့ လစ်ဟာမှုမရှိ၊ ဂျပန်ရောက်တဲ့အချိန်ထိ စိတ်ရှည်လက်ရှည် ရှင်းပြပေးကြပါတယ်။ Sensei Zin ကိုယ်တိုင် ဂျပန်မှာ ရှိနေတာဆိုတော့ အဆင်ပြေဆုံးပါ။ အေးချမ်းစွာနဲ့ ဂျပန်ကို လာချင်ရင် Zin APEX ကိုပဲ recommend ပေးပါရစေ။',
     },
     {
-      name: 'မအိဖြူ',
-      intake: '၂၀၂၅ ဇူလိုင် · ဟာမာမတ်ဆု',
+      name: 'Ingyin Pwint Phyu',
+      intake: 'Facebook တွင် အကြံပြုထားသည်',
       quote:
-        'နယ်ကဖြစ်လို့ စိုးရိမ်ခဲ့ပေမယ့် online system နဲ့ အကုန်လုံး အဆင်ပြေခဲ့ပါတယ်။ ဂျပန်ရောက်ပြီးနောက်မှာလည်း senior တွေက ဆက်လက် ကူညီပေးနေပါတယ်။',
+        'Sensei တွေ အရမ်းစိတ်ရှည်ပြီး သဘောလည်းကောင်းပါတယ်။ အစအရာရာ လိုလေသေးမရှိ၊ မမှားယွင်းအောင် လုပ်ပေးပြီး ဂျပန်ရောက်တဲ့ထိ ကူညီပေးပါတယ်။ 100% ယုံကြည်စိတ်ချရပါတယ်။',
+    },
+    {
+      name: 'Htet Myat',
+      intake: 'Facebook တွင် အကြံပြုထားသည်',
+      quote:
+        'ကျွန်တော်က ထိုင်းနိုင်ငံကနေ တစ်ဆင့် ဂျပန်ကို ကူးတဲ့ ကျောင်းသားဖြစ်ပြီး ကိစ္စအဝဝကို online ကနေပဲ ဆောင်ရွက်ခဲ့ရပါတယ်။ ကိုယ်တိုင် စုံစမ်းစစ်ဆေးပြီး၊ တကယ် အလုပ်လုပ်နေတဲ့၊ ကျွန်တော့်ကို ဂျပန်အထိ တကယ် ပို့ဆောင်ပေးခဲ့တဲ့ အေဂျင်စီ ဖြစ်လို့ နောက်လာမယ့်သူတွေကို ZIN APEX Education ကိုပဲ ညွှန်းချင်ပါတယ်။',
     },
   ],
   activitiesSection: {
