@@ -16,6 +16,7 @@ import {
   Youtube,
   ChevronDown,
   MessageCircle,
+  Facebook,
 } from 'lucide-react'
 import SmartImage from '../components/SmartImage'
 import {
@@ -415,7 +416,10 @@ function YouTubeFacade({
             alt={title}
             loading="lazy"
             onError={(e) => {
-              e.currentTarget.src = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`
+              const img = e.currentTarget
+              if (img.dataset.fallback) return
+              img.dataset.fallback = '1'
+              img.src = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`
             }}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
@@ -852,16 +856,19 @@ function TestimonialsSection() {
           title={t.testimonialsSection.title}
           subtitle={t.testimonialsSection.subtitle}
         />
-        <div data-reveal className="mt-16 grid gap-6 md:grid-cols-3">
+        <div data-reveal className="mx-auto mt-16 grid max-w-5xl gap-6 md:grid-cols-2">
           {t.testimonials.map((item) => (
             <figure
               key={item.name}
               className="lift flex flex-col rounded-2xl border border-[#e5eaf2] bg-white p-7 shadow-sm"
             >
-              <div className="flex gap-1 text-gold" aria-hidden>
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
-                ))}
+              <div className="flex items-center justify-between">
+                <div className="flex gap-1 text-gold" aria-hidden>
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-current" />
+                  ))}
+                </div>
+                <Facebook className="h-4 w-4 text-[#1877F2]" aria-hidden />
               </div>
               <blockquote className="mt-4 flex-1 text-sm font-medium leading-relaxed text-muted-foreground">
                 “{item.quote}”
