@@ -7,7 +7,7 @@ import {
   MonitorPlay,
   Layers,
   Award,
-  Users,
+  Wifi,
   TrendingUp,
   Building2,
   type LucideIcon,
@@ -296,7 +296,7 @@ export const learningFormats = [
 
 export const achievements = [
   { icon: TrendingUp, value: '97%', label: 'Overall COE success rate' },
-  { icon: Users, value: '100+', label: 'Students placed in Japan' },
+  { icon: Wifi, value: '100%', label: 'Online application support' },
   { icon: Award, value: '2023', label: 'Trusted since' },
   { icon: Building2, value: '5', label: 'Partner cities in Japan' },
 ]
