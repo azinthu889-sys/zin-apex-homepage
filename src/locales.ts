@@ -15,11 +15,10 @@ const en = {
   banner: { meetInJapan: "Your effort, our guidance — we'll meet in Japan." },
   hero: {
     badge: 'Now enrolling — 2026 intakes',
-    titleLead: 'Your Gateway to ',
-    titleAccent: 'Japan',
+    titleLead: "Together, we'll cross what seems impossible — ",
+    titleAccent: 'one sure step at a time.',
     subtitle:
       'Helping Myanmar students study at top Japanese language schools — full guidance and support from application to arrival.',
-    tagline: "Together, we'll cross what seems impossible — one sure step at a time.",
     cta1: 'Get Free Consultation',
     cta2: 'Explore Courses',
     trust1: 'Trusted since 2023',
@@ -586,11 +585,10 @@ const ja: typeof en = {
   banner: { meetInJapan: 'あなたの努力と私たちの導きで、日本で会いましょう。' },
   hero: {
     badge: '2026年度 入学生募集中',
-    titleLead: '日本留学への',
-    titleAccent: '架け橋',
+    titleLead: '不可能に見えることも、確かな一歩ずつ、',
+    titleAccent: '一緒に乗り越えよう。',
     subtitle:
       'ミャンマーの学生が日本の優良な日本語学校で学べるよう、出願から日本到着まで一貫してサポートします。',
-    tagline: '不可能に見えることも、確かな一歩ずつ、一緒に乗り越えよう。',
     cta1: '無料相談する',
     cta2: 'コースを見る',
     trust1: '2023年創業',
@@ -1035,11 +1033,10 @@ const my: typeof en = {
   banner: { meetInJapan: 'မင်းရဲ့ ကြိုးစားမှုနဲ့ ငါတို့ရဲ့ လမ်းပြမှု၊ ဂျပန်နိုင်ငံမှာ ဆုံတွေ့ကြမယ်။' },
   hero: {
     badge: '၂၀၂၆ ဝင်ခွင့်များ လက်ခံနေပါပြီ',
-    titleLead: 'ဂျပန်အိပ်မက်ကို ',
-    titleAccent: 'အကောင်အထည်ဖော်ပေးမယ်',
+    titleLead: 'မဖြစ်နိုင်ဘူးလို့ ထင်ရတဲ့အရာတွေကို သေချာတဲ့ခြေလှမ်းတွေနဲ့ ',
+    titleAccent: 'အတူတူ ဖြတ်ကျော်ကြစို့။',
     subtitle:
       'မြန်မာကျောင်းသားတွေ ဂျပန်မှာ ပညာသင်နိုင်ဖို့ — လျှောက်လွှာကနေ ဂျပန်ရောက်သည်အထိ အစအဆုံး လမ်းညွှန် ကူညီပေးပါတယ်။',
-    tagline: 'မဖြစ်နိုင်ဘူးလို့ ထင်ရတဲ့အရာတွေကို သေချာတဲ့ခြေလှမ်းတွေနဲ့ အတူတူ ဖြတ်ကျော်ကြစို့။',
     cta1: 'အခမဲ့ တိုင်ပင်ဆွေးနွေးရန်',
     cta2: 'သင်တန်းများ ကြည့်ရန်',
     trust1: '၂၀၂၃ ကတည်းက ယုံကြည်စိတ်ချရ',
