@@ -59,6 +59,7 @@ export default function Home() {
       <JourneySection />
       <CoursesSection />
       <StudySection />
+      <MeetInJapanBanner />
       <StoriesSection />
       <TestimonialsSection />
       <ActivitiesSection />
@@ -132,7 +133,10 @@ function Hero() {
             {t.hero.titleLead}
             <span className="text-gold">{t.hero.titleAccent}</span>
           </h1>
-          <p className="animate-fade-up delay-2 mt-5 max-w-xl text-base font-medium text-white/85 md:text-lg">
+          <p className="animate-fade-up delay-2 mt-5 max-w-xl text-lg font-semibold leading-snug text-white md:text-xl">
+            {t.hero.tagline}
+          </p>
+          <p className="animate-fade-up delay-2 mt-3 max-w-xl text-sm font-medium text-white/75 md:text-base">
             {t.hero.subtitle}
           </p>
           <div className="animate-fade-up delay-3 mt-8 flex flex-wrap gap-3">
@@ -825,6 +829,32 @@ function StudySection() {
   )
 }
 
+function MeetInJapanBanner() {
+  const { t } = useLang()
+  return (
+    <section className="relative overflow-hidden scroll-mt-20" id="community">
+      <div className="absolute inset-0">
+        <SmartImage
+          src={images.shibuya}
+          alt=""
+          className="h-full w-full"
+          imgClassName="animate-kenburns"
+        />
+      </div>
+      <div className="absolute inset-0 bg-primary/75" />
+      <div className="relative mx-auto max-w-4xl px-6 py-28 text-center md:py-36">
+        <span className="mx-auto mb-6 block h-1 w-14 rounded-full bg-gold" aria-hidden />
+        <p
+          data-reveal
+          className="heading-black text-2xl leading-snug text-white md:text-4xl"
+        >
+          {t.banner.meetInJapan}
+        </p>
+      </div>
+    </section>
+  )
+}
+
 function StoriesSection() {
   const { t } = useLang()
   return (
@@ -955,7 +985,13 @@ function ResultsSection() {
         title={t.resultsSection.title}
         subtitle={t.resultsSection.subtitle}
       />
-      <div data-reveal className="mt-16 grid grid-cols-2 gap-6 md:grid-cols-4">
+      <p
+        data-reveal
+        className="mx-auto mt-8 max-w-3xl rounded-2xl bg-primary px-6 py-5 text-center text-base font-bold leading-snug text-white shadow-sm md:text-lg"
+      >
+        {t.resultsSection.tagline}
+      </p>
+      <div data-reveal className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
         {achievements.map((a, i) => (
           <div key={i} className="lift rounded-2xl border border-[#e5eaf2] bg-white p-7 text-center shadow-sm">
             <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">

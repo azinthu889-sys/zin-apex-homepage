@@ -12,12 +12,14 @@ const en = {
     contactUs: 'Contact Us',
   },
   topbar: { hours: 'Tue–Sat, 8:30 AM – 5:30 PM' },
+  banner: { meetInJapan: "Your effort, our guidance — we'll meet in Japan." },
   hero: {
     badge: 'Now enrolling — 2026 intakes',
     titleLead: 'Your Gateway to ',
     titleAccent: 'Japan',
     subtitle:
       'Helping Myanmar students study at top Japanese language schools — full guidance and support from application to arrival.',
+    tagline: "Together, we'll cross what seems impossible — one sure step at a time.",
     cta1: 'Get Free Consultation',
     cta2: 'Explore Courses',
     trust1: 'Trusted since 2023',
@@ -394,6 +396,7 @@ const en = {
   resultsSection: {
     eyebrow: 'Results',
     title: 'Our COE Results',
+    tagline: 'The right choice, precise guidance, a guaranteed path to Japan.',
     subtitle:
       "This track record demonstrates Zin Apex Education's commitment and capability in guiding students successfully through the Japanese immigration and study application process.",
     chartTitle: 'COE results by year',
@@ -580,12 +583,14 @@ const ja: typeof en = {
     contactUs: 'お問い合わせ',
   },
   topbar: { hours: '火〜土 8:30〜17:30' },
+  banner: { meetInJapan: 'あなたの努力と私たちの導きで、日本で会いましょう。' },
   hero: {
     badge: '2026年度 入学生募集中',
     titleLead: '日本留学への',
     titleAccent: '架け橋',
     subtitle:
       'ミャンマーの学生が日本の優良な日本語学校で学べるよう、出願から日本到着まで一貫してサポートします。',
+    tagline: '不可能に見えることも、確かな一歩ずつ、一緒に乗り越えよう。',
     cta1: '無料相談する',
     cta2: 'コースを見る',
     trust1: '2023年創業',
@@ -863,6 +868,7 @@ const ja: typeof en = {
   resultsSection: {
     eyebrow: '実績',
     title: 'COE取得実績',
+    tagline: '正しい選択、的確な指導、安心の日本留学。',
     subtitle:
       'この実績は、日本の入管手続きと留学出願を確実に導くZin Apex Educationの取り組みと実力を示しています。',
     chartTitle: '年度別COE実績',
@@ -1026,12 +1032,14 @@ const my: typeof en = {
     contactUs: 'Contact Us',
   },
   topbar: { hours: 'အင်္ဂါ–စနေ၊ နံနက် ၈:၃၀ – ညနေ ၅:၃၀' },
+  banner: { meetInJapan: 'မင်းရဲ့ ကြိုးစားမှုနဲ့ ငါတို့ရဲ့ လမ်းပြမှု၊ ဂျပန်နိုင်ငံမှာ ဆုံတွေ့ကြမယ်။' },
   hero: {
     badge: '၂၀၂၆ ဝင်ခွင့်များ လက်ခံနေပါပြီ',
     titleLead: 'ဂျပန်အိပ်မက်ကို ',
     titleAccent: 'အကောင်အထည်ဖော်ပေးမယ်',
     subtitle:
       'မြန်မာကျောင်းသားတွေ ဂျပန်မှာ ပညာသင်နိုင်ဖို့ — လျှောက်လွှာကနေ ဂျပန်ရောက်သည်အထိ အစအဆုံး လမ်းညွှန် ကူညီပေးပါတယ်။',
+    tagline: 'မဖြစ်နိုင်ဘူးလို့ ထင်ရတဲ့အရာတွေကို သေချာတဲ့ခြေလှမ်းတွေနဲ့ အတူတူ ဖြတ်ကျော်ကြစို့။',
     cta1: 'အခမဲ့ တိုင်ပင်ဆွေးနွေးရန်',
     cta2: 'သင်တန်းများ ကြည့်ရန်',
     trust1: '၂၀၂၃ ကတည်းက ယုံကြည်စိတ်ချရ',
@@ -1390,6 +1398,7 @@ const my: typeof en = {
   resultsSection: {
     eyebrow: 'ရလဒ်များ',
     title: 'ကျွန်ုပ်တို့၏ COE ရလဒ်',
+    tagline: 'မှန်ကန်တဲ့ ရွေးချယ်မှု၊ တိကျတဲ့ လမ်းညွှန်မှု၊ အာမခံချက်ရှိတဲ့ ဂျပန်ခရီးစဉ်။',
     subtitle:
       'ဒီမှတ်တမ်းက ဂျပန် လူဝင်မှုကြီးကြပ်ရေးနဲ့ ကျောင်းလျှောက်ထားမှု လုပ်ငန်းစဉ်တွေမှာ ကျောင်းသားတွေကို အောင်မြင်စွာ လမ်းညွှန်နိုင်တဲ့ Zin Apex Education ရဲ့ စွမ်းရည်နဲ့ တာဝန်ယူမှုကို သက်သေပြပါတယ်။',
     chartTitle: 'နှစ်အလိုက် COE ရလဒ်များ',
