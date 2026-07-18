@@ -276,6 +276,22 @@ export const coeResults = [
   { year: '2027 (Oct intake)', applicants: 10, successful: '1 · 9 pending' },
 ]
 
+const passedCount = (successful: string) => parseInt(successful, 10) || 0
+
+// Headline figures are DERIVED from the table above so they can never drift
+// out of sync. Success rate uses completed intakes only (no pending results).
+const completedResults = coeResults.filter(
+  (r) => !r.successful.includes('pending'),
+)
+const totalApplied = completedResults.reduce((s, r) => s + r.applicants, 0)
+const totalPassed = completedResults.reduce(
+  (s, r) => s + passedCount(r.successful),
+  0,
+)
+export const coeSuccessRate = Math.round((totalPassed / totalApplied) * 100) // 96
+const placedTotal = coeResults.reduce((s, r) => s + passedCount(r.successful), 0)
+export const studentsPlaced = `${Math.floor(placedTotal / 100) * 100}+` // 100+
+
 export const learningFormats = [
   {
     icon: Video,
@@ -295,7 +311,7 @@ export const learningFormats = [
 ]
 
 export const achievements = [
-  { icon: TrendingUp, value: '97%', label: 'Overall COE success rate' },
+  { icon: TrendingUp, value: `${coeSuccessRate}%`, label: 'Overall COE success rate' },
   { icon: Wifi, value: '100%', label: 'Online application support' },
   { icon: Award, value: '2023', label: 'Trusted since' },
   { icon: Building2, value: '5', label: 'Partner cities in Japan' },
