@@ -24,19 +24,16 @@ function initialLang(): Lang {
     }
     const stored = localStorage.getItem('zae-lang')
     if (stored === 'en' || stored === 'ja' || stored === 'my') return stored
-    // First visit: match the browser language (most visitors are from Myanmar)
+    // A Japanese-locale visitor gets Japanese; everyone else defaults to
+    // Burmese — the primary audience, whose phones are often set to English.
     const preferred = (
       navigator.languages?.length ? navigator.languages : [navigator.language]
     ).map((l) => (l || '').toLowerCase())
-    for (const l of preferred) {
-      if (l.startsWith('my')) return 'my'
-      if (l.startsWith('ja')) return 'ja'
-      if (l.startsWith('en')) return 'en'
-    }
+    if (preferred.some((l) => l.startsWith('ja'))) return 'ja'
   } catch {
     /* SSR/privacy mode */
   }
-  return 'en'
+  return 'my'
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
@@ -66,6 +63,15 @@ export function useLang(): LangContextValue {
   const ctx = useContext(LangContext)
   if (!ctx) throw new Error('useLang must be used within LanguageProvider')
   return ctx
+}
+
+const myanmarDigits = '၀၁၂၃၄၅၆၇၈၉'
+
+/** Render a number in the given language's numerals (Myanmar digits for `my`). */
+export function localizeNumber(value: number | string, lang: Lang): string {
+  const s = String(value)
+  if (lang !== 'my') return s
+  return s.replace(/\d/g, (d) => myanmarDigits[Number(d)])
 }
 
 const langLabels: Record<Lang, string> = {

@@ -29,11 +29,12 @@ import {
   cities,
   achievements,
   coeResults,
+  coeSuccessRate,
   activities,
   site,
   images,
 } from '../data'
-import { useLang } from '../lib/i18n'
+import { useLang, localizeNumber } from '../lib/i18n'
 
 function useHashScroll() {
   useEffect(() => {
@@ -83,7 +84,7 @@ const sakuraPetals = [
 ]
 
 function Hero() {
-  const { t } = useLang()
+  const { t, lang } = useLang()
   return (
     <section
       id="home"
@@ -154,7 +155,7 @@ function Hero() {
             <span className="h-1 w-1 rounded-full bg-white/30" />
             <span>{t.hero.trust2}</span>
             <span className="h-1 w-1 rounded-full bg-white/30" />
-            <span>{t.hero.trust3}</span>
+            <span>{t.hero.trust3.replace('{rate}', localizeNumber(coeSuccessRate, lang))}</span>
           </div>
         </div>
       </div>
