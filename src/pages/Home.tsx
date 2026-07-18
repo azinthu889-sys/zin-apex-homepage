@@ -129,7 +129,7 @@ function Hero() {
             <span className="h-1.5 w-1.5 rounded-full bg-gold" />
             {t.hero.badge}
           </span>
-          <h1 className="animate-fade-up delay-1 mt-5 text-3xl font-bold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
+          <h1 className="animate-fade-up delay-1 mt-5 max-w-xl text-2xl font-bold leading-snug tracking-tight text-white sm:text-3xl md:text-4xl">
             {t.hero.titleLead}
             <span className="text-gold">{t.hero.titleAccent}</span>
           </h1>
