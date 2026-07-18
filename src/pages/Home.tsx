@@ -19,6 +19,7 @@ import {
   Facebook,
 } from 'lucide-react'
 import SmartImage from '../components/SmartImage'
+import LeadForm from '../components/LeadForm'
 import {
   founder,
   journey,
@@ -63,7 +64,7 @@ export default function Home() {
       <ActivitiesSection />
       <ResultsSection />
       <FaqSection />
-      <ContactCta />
+      <LeadSection />
     </>
   )
 }
@@ -135,13 +136,13 @@ function Hero() {
             {t.hero.subtitle}
           </p>
           <div className="animate-fade-up delay-3 mt-8 flex flex-wrap gap-3">
-            <Link
-              to="/contact"
+            <a
+              href="#consultation"
               className="btn-gold inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm"
             >
               {t.hero.cta1}
               <ArrowRight className="h-4 w-4" />
-            </Link>
+            </a>
             <a
               href="#courses"
               className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-white/35 bg-white/10 px-7 py-3.5 text-sm font-semibold tracking-wide text-white backdrop-blur transition-colors hover:bg-white/20"
@@ -1078,30 +1079,44 @@ function FaqSection() {
   )
 }
 
-function ContactCta() {
-  const { t } = useLang()
+function LeadSection() {
+  const { t, lang } = useLang()
+  const points = [
+    t.hero.trust1,
+    t.hero.trust2,
+    t.hero.trust3.replace('{rate}', localizeNumber(coeSuccessRate, lang)),
+  ]
   return (
-    <section className="mx-auto max-w-6xl px-6 py-24">
-      <div className="relative overflow-hidden rounded-3xl bg-primary shadow-lg">
-        <div className="absolute inset-0 opacity-60">
-          <SmartImage src={images.mandalay} alt="Mandalay" className="h-full w-full" />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/75 to-primary/55" />
-        <div className="relative px-8 py-20 text-center text-white">
-          <h2 className="mx-auto max-w-3xl text-3xl font-bold leading-tight tracking-tight md:text-5xl">
-            {t.contactCta.title}
-            <span className="text-gold">{t.contactCta.titleAccent}</span>
+    <section id="consultation" className="relative scroll-mt-20 overflow-hidden bg-primary">
+      <div className="absolute inset-0 opacity-25">
+        <SmartImage src={images.mandalay} alt="" className="h-full w-full" />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary/70" />
+      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 py-24 lg:grid-cols-2">
+        <div data-reveal className="text-white">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-2 text-xs font-semibold uppercase tracking-widest text-gold">
+            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+            {t.leadForm.eyebrow}
+          </span>
+          <h2 className="heading-black mt-5 text-3xl md:text-4xl">
+            {t.leadForm.title}
           </h2>
-          <p className="mx-auto mt-5 max-w-xl font-medium text-white/80">
-            {t.contactCta.subtitle}
+          <p className="mt-4 max-w-md font-medium text-white/80">
+            {t.leadForm.subtitle}
           </p>
-          <Link
-            to="/contact"
-            className="btn-gold mt-9 inline-flex h-14 items-center gap-2 px-8 text-sm"
-          >
-            {t.contactCta.button}
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+          <ul className="mt-7 space-y-2.5">
+            {points.map((p) => (
+              <li key={p} className="flex items-center gap-2.5 text-sm font-medium text-white/90">
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold/20 text-gold">
+                  <Check className="h-3.5 w-3.5" />
+                </span>
+                {p}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div data-reveal>
+          <LeadForm />
         </div>
       </div>
     </section>
