@@ -620,9 +620,9 @@ function CoursesSection() {
                 </span>
               </div>
               <div className="flex flex-1 flex-col p-7">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-3">
                   <h3 className="text-lg font-bold tracking-tight">{text.title}</h3>
-                  <span className="text-sm font-semibold text-muted-foreground">{text.duration}</span>
+                  <span className="shrink-0 text-sm font-semibold text-muted-foreground">{text.duration}</span>
                 </div>
                 <p className="mt-2 text-sm text-muted-foreground">{text.description}</p>
                 <h4 className="mt-5 text-sm font-medium">{t.coursesSection.features}</h4>
