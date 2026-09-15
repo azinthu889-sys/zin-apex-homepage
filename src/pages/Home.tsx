@@ -325,9 +325,9 @@ function SectionHeading({
 function AboutSection() {
   const { t } = useLang()
   return (
-    <section id="about" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-24">
+    <section id="about" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-16 md:py-24">
       <SectionHeading eyebrow={t.aboutSection.eyebrow} title={t.aboutSection.title} />
-      <div data-reveal className="mt-12 grid items-center gap-12 lg:grid-cols-2">
+      <div data-reveal className="mt-8 md:mt-12 grid items-center gap-12 lg:grid-cols-2">
         <SmartImage
           src={images.office}
           alt="Zin Apex Education office in Mandalay"
@@ -337,7 +337,7 @@ function AboutSection() {
           <p className="font-medium text-muted-foreground">{t.aboutSection.intro}</p>
           <p className="mt-4 font-medium text-muted-foreground">{t.aboutSection.detail}</p>
 
-          <div className="mt-8 rounded-2xl border border-[#e5eaf2] bg-white p-7 shadow-sm">
+          <div className="mt-8 rounded-2xl border border-[#e5eaf2] bg-white p-6 md:p-7 shadow-sm">
             <div className="flex items-center gap-4">
               <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-lg font-bold text-gold">
                 {founder.initials}
@@ -365,7 +365,7 @@ function AboutSection() {
         </div>
       </div>
 
-      <div data-reveal className="mt-12 grid gap-6 md:grid-cols-3">
+      <div data-reveal className="rail mt-8 md:mt-12 grid gap-6 md:grid-cols-3">
         <ValueCard icon={<Target className="h-5 w-5" />} title={t.aboutSection.mission}>
           <ul className="space-y-2">
             {t.aboutSection.missionItems.map((m) => (
@@ -451,7 +451,7 @@ function VideoSection() {
   const { t } = useLang()
   return (
     <section className="bg-primary">
-      <div className="mx-auto max-w-5xl px-6 py-24">
+      <div className="mx-auto max-w-5xl px-6 py-16 md:py-24">
         <div data-reveal className="mx-auto max-w-2xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-2 text-xs font-semibold uppercase tracking-widest text-gold">
             <span className="h-1.5 w-1.5 rounded-full bg-gold" />
@@ -463,7 +463,7 @@ function VideoSection() {
           <p className="mt-4 font-medium text-white/75">{t.videoSection.subtitle}</p>
         </div>
 
-        <div data-reveal className="mt-12">
+        <div data-reveal className="mt-8 md:mt-12">
           <YouTubeFacade id={site.promoVideoId} title={t.videoSection.title} large />
         </div>
       </div>
@@ -481,7 +481,7 @@ function ValueCard({
   children: React.ReactNode
 }) {
   return (
-    <div className="lift rounded-2xl border border-[#e5eaf2] bg-white p-8 shadow-sm">
+    <div className="lift rounded-2xl border border-[#e5eaf2] bg-white p-6 md:p-8 shadow-sm">
       <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
         {icon}
       </div>
@@ -495,19 +495,19 @@ function ServicesSection() {
   const { t } = useLang()
   return (
     <section className="border-y bg-card">
-      <div className="mx-auto max-w-6xl px-6 py-24">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
         <SectionHeading
           eyebrow={t.servicesSection.eyebrow}
           title={t.servicesSection.title}
           subtitle={t.servicesSection.subtitle}
         />
-        <div data-reveal className="mt-16 grid gap-6 sm:grid-cols-2">
+        <div data-reveal className="rail mt-10 md:mt-16 grid gap-6 sm:grid-cols-2">
           {services.map((service, i) => {
             const text = t.services[i]
             return (
               <div
                 key={text.title}
-                className="lift rounded-2xl border border-[#e5eaf2] bg-white p-8 shadow-sm"
+                className="lift rounded-2xl border border-[#e5eaf2] bg-white p-6 md:p-8 shadow-sm"
               >
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-white">
                   <service.icon className="h-6 w-6" />
@@ -526,11 +526,11 @@ function ServicesSection() {
           })}
         </div>
 
-        <div className="mt-16">
+        <div className="mt-10 md:mt-16">
           <SectionHeading title={t.servicesSection.whyTitle} />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="rail mt-8 md:mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {t.whyChooseUs.map((item) => (
-              <div key={item.title} className="lift rounded-2xl border border-[#e5eaf2] bg-white p-7 shadow-sm">
+              <div key={item.title} className="lift rounded-2xl border border-[#e5eaf2] bg-white p-6 md:p-7 shadow-sm">
                 <h3 className="flex items-start gap-2.5 font-bold tracking-tight">
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-xl bg-gold/20 text-primary">
                     <Check className="h-4 w-4" />
@@ -550,13 +550,13 @@ function ServicesSection() {
 function JourneySection() {
   const { t } = useLang()
   return (
-    <section id="journey" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-24">
+    <section id="journey" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-16 md:py-24">
       <SectionHeading
         eyebrow={t.journeySection.eyebrow}
         title={t.journeySection.title}
         subtitle={t.journeySection.subtitle}
       />
-      <div data-reveal className="relative mt-16">
+      <div data-reveal className="relative mt-10 md:mt-16">
         {/* flying plane across the journey (desktop) */}
         <span className="journey-plane -top-12 hidden text-secondary lg:block" aria-hidden>
           <Plane className="h-7 w-7 fill-current" />
@@ -602,13 +602,13 @@ function JourneySection() {
 function CoursesSection() {
   const { t } = useLang()
   return (
-    <section id="courses" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-24">
+    <section id="courses" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-16 md:py-24">
       <SectionHeading
         eyebrow={t.coursesSection.eyebrow}
         title={t.coursesSection.title}
         subtitle={t.coursesSection.subtitle}
       />
-      <div data-reveal className="mt-16 grid gap-6 md:grid-cols-2">
+      <div data-reveal className="rail mt-10 md:mt-16 grid gap-6 md:grid-cols-2">
         {courses.map((course, ci) => {
           const text = t.courses[ci]
           return (
@@ -626,7 +626,7 @@ function CoursesSection() {
                   {text.level}
                 </span>
               </div>
-              <div className="flex flex-1 flex-col p-7">
+              <div className="flex flex-1 flex-col p-6 md:p-7">
                 <div className="flex items-center justify-between gap-3">
                   <h3 className="text-lg font-bold tracking-tight">{text.title}</h3>
                   <span className="shrink-0 text-sm font-semibold text-muted-foreground">{text.duration}</span>
@@ -654,11 +654,11 @@ function CoursesSection() {
         })}
       </div>
 
-      <div className="mt-12 rounded-2xl border border-[#e5eaf2] bg-white p-10 shadow-sm">
+      <div className="mt-8 md:mt-12 rounded-2xl border border-[#e5eaf2] bg-white p-6 shadow-sm md:p-10">
         <h3 className="text-center text-xl font-bold tracking-tight">
           {t.coursesSection.flexibleTitle}
         </h3>
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
+        <div className="rail rail-sm mt-8 grid gap-6 md:grid-cols-3">
           {learningFormats.map((f, i) => {
             const text = t.learningFormats[i]
             return (
@@ -674,11 +674,11 @@ function CoursesSection() {
         </div>
       </div>
 
-      <div className="mt-12">
+      <div className="mt-8 md:mt-12">
         <SectionHeading title={t.coursesSection.whyTitle} />
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+        <div className="rail mt-8 md:mt-12 grid gap-6 md:grid-cols-2">
           {t.whyCoursesWork.map((item, i) => (
-            <div key={item.title} className="lift flex gap-4 rounded-2xl border border-[#e5eaf2] bg-white p-7 shadow-sm">
+            <div key={item.title} className="lift flex gap-4 rounded-2xl border border-[#e5eaf2] bg-white p-6 md:p-7 shadow-sm">
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary text-sm font-bold text-white">
                 {i + 1}
               </span>
@@ -698,14 +698,14 @@ function StudySection() {
   const { t } = useLang()
   return (
     <section id="study" className="scroll-mt-20 border-y bg-card">
-      <div className="mx-auto max-w-6xl px-6 py-24">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
         <SectionHeading
           eyebrow={t.studySection.eyebrow}
           title={t.studySection.title}
           subtitle={t.studySection.subtitle}
         />
 
-        <div className="mt-16 flex items-center gap-3">
+        <div className="mt-10 md:mt-16 flex items-center gap-3">
           <FileCheck className="h-6 w-6 text-primary" />
           <h3 className="text-xl font-semibold tracking-tight">{t.studySection.docsTitle}</h3>
         </div>
@@ -720,8 +720,8 @@ function StudySection() {
           ))}
         </ul>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border border-[#e5eaf2] bg-white p-9 shadow-sm">
+        <div className="mt-8 md:mt-12 grid gap-6 md:grid-cols-2">
+          <div className="rounded-2xl border border-[#e5eaf2] bg-white p-6 md:p-9 shadow-sm">
             <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
               <Download className="h-7 w-7" />
             </span>
@@ -758,7 +758,7 @@ function StudySection() {
               <ArrowRight className="h-3.5 w-3.5" />
             </a>
           </div>
-          <div className="rounded-2xl border border-[#e5eaf2] bg-white p-9 shadow-sm">
+          <div className="rounded-2xl border border-[#e5eaf2] bg-white p-6 md:p-9 shadow-sm">
             <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
               <ClipboardList className="h-7 w-7" />
             </span>
@@ -780,10 +780,10 @@ function StudySection() {
           </div>
         </div>
 
-        <h3 className="mt-12 text-xl font-semibold tracking-tight">{t.studySection.intakeTitle}</h3>
+        <h3 className="mt-8 md:mt-12 text-xl font-semibold tracking-tight">{t.studySection.intakeTitle}</h3>
         <IntakeSchedule className="mt-6" headClassName="bg-accent/60" rowClassName="bg-background" />
 
-        <div className="mt-12 flex items-center gap-3">
+        <div className="mt-8 md:mt-12 flex items-center gap-3">
           <MapPin className="h-6 w-6 text-primary" />
           <h3 className="text-xl font-semibold tracking-tight">
             {t.studySection.citiesTitle}
@@ -824,13 +824,13 @@ function MeetInJapanBanner() {
 function StoriesSection() {
   const { t } = useLang()
   return (
-    <section id="stories" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-24">
+    <section id="stories" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-16 md:py-24">
       <SectionHeading
         eyebrow={t.storiesSection.eyebrow}
         title={t.storiesSection.title}
         subtitle={t.storiesSection.subtitle}
       />
-      <div data-reveal className="mx-auto mt-16 grid max-w-4xl gap-8 md:grid-cols-2">
+      <div data-reveal className="rail mx-auto mt-10 md:mt-16 grid max-w-4xl gap-8 md:grid-cols-2">
         {site.reviewVideoIds.map((vid) => (
           <div key={vid}>
             <YouTubeFacade id={vid} title={t.storiesSection.storyName} />
@@ -848,17 +848,17 @@ function TestimonialsSection() {
   const { t } = useLang()
   return (
     <section className="border-y bg-card">
-      <div className="mx-auto max-w-6xl px-6 py-24">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
         <SectionHeading
           eyebrow={t.testimonialsSection.eyebrow}
           title={t.testimonialsSection.title}
           subtitle={t.testimonialsSection.subtitle}
         />
-        <div data-reveal className="mx-auto mt-16 grid max-w-5xl gap-6 md:grid-cols-2">
+        <div data-reveal className="rail mx-auto mt-10 md:mt-16 grid max-w-5xl gap-6 md:grid-cols-2">
           {t.testimonials.map((item) => (
             <figure
               key={item.name}
-              className="lift flex flex-col rounded-2xl border border-[#e5eaf2] bg-white p-7 shadow-sm"
+              className="lift flex flex-col rounded-2xl border border-[#e5eaf2] bg-white p-6 md:p-7 shadow-sm"
             >
               <div className="flex items-center justify-between">
                 <div className="flex gap-1 text-gold" aria-hidden>
@@ -894,32 +894,32 @@ function ActivitiesSection() {
   const { t } = useLang()
   return (
     <section id="activities" className="scroll-mt-20 border-y bg-card">
-      <div className="mx-auto max-w-6xl px-6 py-24">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
         <SectionHeading
           eyebrow={t.activitiesSection.eyebrow}
           title={t.activitiesSection.title}
           subtitle={t.activitiesSection.subtitle}
         />
-        <div data-reveal className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-3">
+        <div data-reveal className="rail mt-10 md:mt-16 grid grid-cols-2 gap-4 md:grid-cols-3">
           {activities.map((a, i) => (
             <div
               key={a.title}
               className={`lift group relative overflow-hidden rounded-2xl border border-[#e5eaf2] shadow-sm ${
-                i === 0 ? 'col-span-2 row-span-2' : ''
+                i === 0 ? 'md:col-span-2 md:row-span-2' : ''
               }`}
             >
               <SmartImage
                 src={a.image}
                 alt={t.activities[i]}
                 className={`w-full ${
-                  i === 0 ? 'h-full min-h-[280px] md:min-h-[460px]' : 'aspect-[4/3]'
+                  i === 0 ? 'aspect-[4/3] md:aspect-auto md:h-full md:min-h-[460px]' : 'aspect-[4/3]'
                 }`}
                 imgClassName="transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
               <span
                 className={`absolute bottom-4 left-5 right-5 font-bold tracking-tight text-white drop-shadow ${
-                  i === 0 ? 'text-lg' : 'text-sm'
+                  i === 0 ? 'text-sm md:text-lg' : 'text-sm'
                 }`}
               >
                 {t.activities[i]}
@@ -943,9 +943,9 @@ function ActivitiesSection() {
 }
 
 function ResultsSection() {
-  const { t } = useLang()
+  const { t, lang } = useLang()
   return (
-    <section id="results" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-24">
+    <section id="results" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-16 md:py-24">
       <SectionHeading
         eyebrow={t.resultsSection.eyebrow}
         title={t.resultsSection.title}
@@ -957,9 +957,9 @@ function ResultsSection() {
       >
         {t.resultsSection.tagline}
       </p>
-      <div data-reveal className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
+      <div data-reveal className="mt-8 md:mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
         {achievements.map((a, i) => (
-          <div key={i} className="lift rounded-2xl border border-[#e5eaf2] bg-white p-7 text-center shadow-sm">
+          <div key={i} className="lift rounded-2xl border border-[#e5eaf2] bg-white p-6 md:p-7 text-center shadow-sm">
             <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/15 text-secondary">
               <a.icon className="h-7 w-7" />
             </span>
@@ -976,7 +976,7 @@ function ResultsSection() {
       {/* COE results bar chart */}
       <div
         data-reveal
-        className="mx-auto mt-12 max-w-3xl rounded-2xl border border-[#e5eaf2] bg-white p-6 shadow-sm md:p-8"
+        className="mx-auto mt-8 md:mt-12 max-w-3xl rounded-2xl border border-[#e5eaf2] bg-white p-6 shadow-sm md:p-8"
       >
         <div className="flex flex-wrap items-center justify-between gap-3">
           <h3 className="font-bold tracking-tight">{t.resultsSection.chartTitle}</h3>
@@ -996,8 +996,8 @@ function ResultsSection() {
           {coeResults.map((row, gi) => {
             const successful = parseInt(row.successful, 10) || 0
             const pending = row.successful.includes('pending')
+            const pendingCount = parseInt(row.successful.split('·')[1] ?? '', 10) || 0
             const max = Math.max(...coeResults.map((r) => r.applicants))
-            const yearLabel = row.year.replace(' (Oct intake)', '')
             return (
               <div key={row.year} className="flex flex-1 flex-col items-center">
                 <div className="flex h-44 items-end gap-1.5 md:h-56 md:gap-2">
@@ -1015,7 +1015,7 @@ function ResultsSection() {
                   </div>
                   <div className="flex h-full flex-col items-center justify-end">
                     <span className="mb-1 text-[11px] font-bold text-primary">
-                      {successful}
+                      {pending && successful === 0 ? '—' : successful}
                     </span>
                     <div
                       className="chart-bar w-5 rounded-t-md bg-gold md:w-8"
@@ -1027,11 +1027,11 @@ function ResultsSection() {
                   </div>
                 </div>
                 <span className="mt-3 text-xs font-semibold text-muted-foreground md:text-sm">
-                  {yearLabel}
+                  {row.year}
                 </span>
                 {pending && (
                   <span className="mt-1 rounded-full bg-accent px-2 py-0.5 text-[10px] font-semibold text-primary">
-                    {t.resultsSection.pending}
+                    {t.resultsSection.pending.replace('{n}', localizeNumber(pendingCount, lang))}
                   </span>
                 )}
               </div>
@@ -1048,9 +1048,9 @@ function FaqSection() {
   const [open, setOpen] = useState<number | null>(0)
   return (
     <section id="faq" className="scroll-mt-20 border-t bg-card">
-      <div className="mx-auto max-w-3xl px-6 py-24">
+      <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
         <SectionHeading eyebrow={t.faqSection.eyebrow} title={t.faqSection.title} />
-        <div className="mt-12 space-y-3">
+        <div className="mt-8 md:mt-12 space-y-3">
           {t.faqs.map((faq, i) => {
             const isOpen = open === i
             return (
@@ -1094,7 +1094,7 @@ function LeadSection() {
         <SmartImage src={images.mandalay} alt="" className="h-full w-full" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary/70" />
-      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 py-24 lg:grid-cols-2">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:py-24 lg:grid-cols-2">
         <div data-reveal className="text-white">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-2 text-xs font-semibold uppercase tracking-widest text-gold">
             <span className="h-1.5 w-1.5 rounded-full bg-gold" />

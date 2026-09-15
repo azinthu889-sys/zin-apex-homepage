@@ -7,26 +7,21 @@ type Props = {
   overlayClassName?: string
 }
 
-// Partner-city tiles with a real landmark from each city. On phones the seventh
-// tile spans both columns instead of sitting alone.
+// Partner-city tiles with a real landmark from each city; a swipe rail on phones.
 export default function CityGrid({ className = '', overlayClassName = 'from-primary/75' }: Props) {
   const { t } = useLang()
-  const last = cities.length - 1
-
   return (
     <div className={className}>
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-7">
+      <div className="rail rail-sm grid gap-4 md:grid-cols-4 lg:grid-cols-7">
         {cities.map((city, i) => (
           <div
             key={city.name}
-            className={`group relative overflow-hidden rounded-xl border ${
-              i === last && cities.length % 2 === 1 ? 'col-span-2 sm:col-span-1' : ''
-            }`}
+            className="group relative overflow-hidden rounded-xl border"
           >
             <SmartImage
               src={city.image}
               alt={t.cities[i]}
-              className={`w-full ${i === last && cities.length % 2 === 1 ? 'aspect-[3/2] sm:aspect-[3/4]' : 'aspect-[3/4]'}`}
+              className="aspect-[3/4] w-full"
               imgClassName="transition-transform duration-500 group-hover:scale-105"
             />
             <div className={`absolute inset-0 bg-gradient-to-t ${overlayClassName} to-transparent`} />
