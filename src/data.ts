@@ -16,7 +16,6 @@ import logoUrl from './assets/logo.png'
 import officePhoto from './assets/office.webp'
 import mandalayPhoto from './assets/mandalay.webp'
 import mandalayHillPhoto from './assets/mandalay2.webp'
-import japanMapImg from './assets/japan-map.jpg'
 import n4TextbooksImg from './assets/n4-textbooks.webp'
 import activity1 from './assets/activity1.webp'
 import activity2 from './assets/activity2.webp'
@@ -30,6 +29,13 @@ import activity9 from './assets/activity9.webp'
 import activity10 from './assets/activity10.webp'
 import airportPhoto from './assets/airport.webp'
 import heroArrivals from './assets/hero-arrivals.webp'
+import tokyoPhoto from './assets/cities/tokyo.webp'
+import chibaPhoto from './assets/cities/chiba.webp'
+import shizuokaPhoto from './assets/cities/shizuoka.webp'
+import hamamatsuPhoto from './assets/cities/hamamatsu.webp'
+import osakaPhoto from './assets/cities/osaka.webp'
+import kobePhoto from './assets/cities/kobe.webp'
+import fukuokaPhoto from './assets/cities/fukuoka.webp'
 
 const unsplash = (id: string, w = 1200) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`
@@ -90,7 +96,7 @@ export const journey = [
     step: '02',
     title: 'Choose Your School',
     description:
-      'We match you with a reputable language school in one of our five partner cities.',
+      'We match you with a reputable language school in one of our seven partner cities.',
   },
   {
     step: '03',
@@ -220,22 +226,22 @@ export const courses = [
 
 export const intakes = [
   {
-    intake: 'April Intake, 2026',
-    registration: 'September 2025',
-    coeSubmission: 'October 2025',
-    coeResult: 'February 2026',
+    intake: 'April Intake, 2027',
+    registration: 'September 2026',
+    coeSubmission: 'October 2026',
+    coeResult: 'February 2027',
   },
   {
-    intake: 'July Intake, 2026',
-    registration: 'December 2025',
-    coeSubmission: 'January 2026',
-    coeResult: 'May 2026',
+    intake: 'July Intake, 2027',
+    registration: 'December 2026',
+    coeSubmission: 'January 2027',
+    coeResult: 'May 2027',
   },
   {
-    intake: 'October Intake, 2026',
-    registration: 'March 2026',
-    coeSubmission: 'April 2026',
-    coeResult: 'August 2026',
+    intake: 'October Intake, 2027',
+    registration: 'March 2027',
+    coeSubmission: 'April 2027',
+    coeResult: 'August 2027',
   },
 ]
 
@@ -249,11 +255,10 @@ export const images = {
   heroSecondary: activity3,
   departure: airportPhoto,
   haneda: activity7,
-  japanMap: japanMapImg,
   n4Textbooks: n4TextbooksImg,
-  shibuya: unsplash('1480796927426-f609979314bd', 1400),
+  // Real ZAE photos read as more trustworthy than stock scenery
+  japanLife: activity6,
   torii: unsplash('1545569341-9eb8b30979d9', 1400),
-  kyotoStreet: unsplash('1528360983277-13d401cdc186', 1400),
   cherryBlossom: unsplash('1522383225653-ed111181a951', 1400),
   study: unsplash('1456513080510-7bf3a84b82f8', 1200),
   graduation: unsplash('1523050854058-8df90110c9f1', 1400),
@@ -261,11 +266,22 @@ export const images = {
 }
 
 export const cities = [
-  { name: 'Tokyo', image: unsplash('1480796927426-f609979314bd', 900) },
-  { name: 'Shizuoka', image: unsplash('1493976040374-85c8e12f0c0e', 900) },
-  { name: 'Hamamatsu', image: unsplash('1528360983277-13d401cdc186', 900) },
-  { name: 'Okayama', image: unsplash('1545569341-9eb8b30979d9', 900) },
-  { name: 'Kobe', image: unsplash('1542051841857-5f90071e7989', 900) },
+  { name: 'Tokyo', image: tokyoPhoto },
+  { name: 'Chiba', image: chibaPhoto },
+  { name: 'Shizuoka', image: shizuokaPhoto },
+  { name: 'Hamamatsu', image: hamamatsuPhoto },
+  { name: 'Osaka', image: osakaPhoto },
+  { name: 'Kobe', image: kobePhoto },
+  { name: 'Fukuoka', image: fukuokaPhoto },
+]
+
+// Photos under CC BY / CC BY-SA must be credited where they appear
+export const cityPhotoCredits = [
+  { label: 'Naritasan Shinshō-ji — Manish Prabhune (CC BY 2.0)', url: 'https://commons.wikimedia.org/wiki/File:Naritasan_Shinshoji_Temple.jpg' },
+  { label: 'Mt Fuji over Fuji City — Kramertron (CC BY 3.0)', url: 'https://commons.wikimedia.org/wiki/File:Fuji_City_Panorama.jpg' },
+  { label: 'Hamamatsu Castle — Saigen Jiro (CC0)', url: 'https://commons.wikimedia.org/wiki/File:Hamamatsu_Castle,_enkei-3.jpg' },
+  { label: 'Kobe Port Tower — Martin Falbisoner (CC BY-SA 4.0)', url: 'https://commons.wikimedia.org/wiki/File:Kobe_Port_Tower_and_Maritime_Museum,_November_2016.jpg' },
+  { label: 'Tokyo, Osaka & Fukuoka — Unsplash', url: 'https://unsplash.com/license' },
 ]
 
 export const coeResults = [
@@ -314,7 +330,7 @@ export const achievements = [
   { icon: TrendingUp, value: `${coeSuccessRate}%`, label: 'Overall COE success rate' },
   { icon: Wifi, value: '100%', label: 'Online application support' },
   { icon: Award, value: '2023', label: 'Trusted since' },
-  { icon: Building2, value: '5', label: 'Partner cities in Japan' },
+  { icon: Building2, value: String(cities.length), label: 'Partner cities in Japan' },
 ]
 
 export const activities = [

@@ -1,8 +1,11 @@
 import { ArrowRight, Download, FileCheck, ClipboardList, MapPin } from 'lucide-react'
 import SmartImage from '../components/SmartImage'
 import PageHero from '../components/PageHero'
+import IntakeSchedule from '../components/IntakeSchedule'
+import CityGrid from '../components/CityGrid'
+import JapanMap from '../components/JapanMap'
 import CtaBanner from '../components/CtaBanner'
-import { intakes, cities, site, images } from '../data'
+import { site, images } from '../data'
 import { useLang } from '../lib/i18n'
 
 export default function StudyInJapan() {
@@ -83,36 +86,7 @@ export default function StudyInJapan() {
         <h2 className="text-2xl font-semibold tracking-tight">
           {t.studySection.intakeTitle}
         </h2>
-        <div className="mt-8 overflow-x-auto rounded-xl border">
-          <table className="w-full min-w-[640px] text-sm">
-            <thead className="bg-card">
-              <tr className="text-left">
-                {t.studySection.intakeHead.map((h) => (
-                  <th key={h} className="px-5 py-3 font-medium">{h}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {intakes.map((row, i) => {
-                const text = t.intakes[i]
-                return (
-                  <tr key={row.intake} className="border-t">
-                    <td className="px-5 py-3 font-medium">{text.intake}</td>
-                    <td className="px-5 py-3 text-muted-foreground">
-                      {text.registration}
-                    </td>
-                    <td className="px-5 py-3 text-muted-foreground">
-                      {text.coeSubmission}
-                    </td>
-                    <td className="px-5 py-3 text-muted-foreground">
-                      {text.coeResult}
-                    </td>
-                  </tr>
-                )
-              })}
-            </tbody>
-          </table>
-        </div>
+        <IntakeSchedule className="mt-8" headClassName="bg-card" />
         <p className="mt-4 text-sm text-muted-foreground">
           {t.studyPage.intakeNote}
         </p>
@@ -129,34 +103,8 @@ export default function StudyInJapan() {
           <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
             {t.studyPage.citiesSub}
           </p>
-          <div className="mt-8 overflow-hidden rounded-2xl border bg-white">
-            <img
-              src={images.japanMap}
-              alt="Map of Japan showing the cities where you can apply with us"
-              loading="lazy"
-              decoding="async"
-              className="aspect-[21/10] w-full object-cover object-top"
-            />
-          </div>
-          <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-            {cities.map((city, i) => (
-              <div
-                key={city.name}
-                className="group relative overflow-hidden rounded-xl border"
-              >
-                <SmartImage
-                  src={city.image}
-                  alt={t.cities[i]}
-                  className="aspect-[3/4] w-full"
-                  imgClassName="transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <span className="absolute bottom-3 left-3 text-sm font-medium text-white">
-                  {t.cities[i]}
-                </span>
-              </div>
-            ))}
-          </div>
+          <JapanMap className="mt-8" />
+          <CityGrid className="mt-6" overlayClassName="from-black/60" />
         </div>
       </section>
 
@@ -165,7 +113,7 @@ export default function StudyInJapan() {
         subtitle={t.studyPage.ctaSub}
         buttonLabel={t.studyPage.ctaBtn}
         to="/contact"
-        image={images.shibuya}
+        image={images.japanLife}
       />
     </>
   )

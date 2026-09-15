@@ -20,10 +20,23 @@ h1, h2, h3, h4 {
   letter-spacing: -0.01em;
 }
 
+/* Headings wrap into even lines instead of leaving a lone word behind */
+h1, h2 {
+  text-wrap: balance;
+}
+
 /* Japanese: browser-native JP fonts before generic fallback */
 html[lang="ja"] body {
   font-family: "Inter", "Noto Sans JP", "Hiragino Sans", "Yu Gothic",
     "Meiryo", ui-sans-serif, system-ui, sans-serif;
+}
+/* Japanese has no spaces, so browsers split words mid-phrase (確か / な一歩).
+   auto-phrase breaks at natural phrase boundaries; older browsers ignore it. */
+html[lang="ja"] h1,
+html[lang="ja"] h2,
+html[lang="ja"] h3 {
+  word-break: auto-phrase;
+  line-break: strict;
 }
 
 /* Myanmar script needs taller lines for stacked diacritics and no negative

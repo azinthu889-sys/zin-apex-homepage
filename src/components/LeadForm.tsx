@@ -1,7 +1,5 @@
 import { useState, type FormEvent, type ReactNode } from 'react'
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
-import { db } from '../lib/firebase'
 import { useLang } from '../lib/i18n'
 import { locales } from '../locales'
 import { site } from '../data'
@@ -42,9 +40,12 @@ export default function LeadForm() {
     }
     setStatus('submitting')
     try {
+      // Firebase is fetched only when someone submits, keeping it out of the
+      // initial page load (it is the largest JS chunk on the site).
+      const { submitEnrollment } = await import('../lib/submitEnrollment')
       // Writes to the same collection the contact form already uses, so it
       // works under the existing Firestore rules. `source` distinguishes leads.
-      await addDoc(collection(db, 'enrollments'), {
+      await submitEnrollment({
         source: 'lead-form',
         name: form.name,
         phone: form.phone,
@@ -52,7 +53,6 @@ export default function LeadForm() {
         level: canonical('levelOptions', form.level),
         intake: canonical('intakeOptions', form.intake),
         lang,
-        createdAt: serverTimestamp(),
       })
       setStatus('success')
       setForm({ name: '', phone: '', goal: '', level: '', intake: '' })

@@ -134,7 +134,7 @@ function FloatingContact() {
           className="fixed inset-0 z-40 cursor-default bg-primary/10 backdrop-blur-[1px]"
         />
       )}
-      <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
+      <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-3 md:bottom-5 md:right-5">
         <div className="flex flex-col items-end gap-3">
           {actions.map((a, i) => {
             const delay = open ? `${(actions.length - 1 - i) * 45}ms` : '0ms'
@@ -185,7 +185,7 @@ function FloatingContact() {
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? 'Close menu' : t.nav.contactUs}
           aria-expanded={open}
-          className="flex h-14 w-14 items-center justify-center rounded-full bg-gold text-primary shadow-lg transition-transform hover:scale-105"
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-gold text-primary shadow-lg transition-transform hover:scale-105 md:h-14 md:w-14"
         >
           {open ? (
             <X className="h-6 w-6" />
