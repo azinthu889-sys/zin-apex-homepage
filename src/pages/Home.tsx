@@ -20,14 +20,14 @@ import {
 } from 'lucide-react'
 import SmartImage from '../components/SmartImage'
 import LeadForm from '../components/LeadForm'
+import IntakeSchedule from '../components/IntakeSchedule'
+import CityGrid from '../components/CityGrid'
 import {
   founder,
   journey,
   services,
   courses,
   learningFormats,
-  intakes,
-  cities,
   achievements,
   coeResults,
   coeSuccessRate,
@@ -152,12 +152,19 @@ function Hero() {
             </a>
           </div>
           <div className="animate-fade-up delay-4 mt-7 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm font-medium text-white/75">
-            <span className="text-gold">★</span>
-            <span>{t.hero.trust1}</span>
-            <span className="h-1 w-1 rounded-full bg-white/30" />
-            <span>{t.hero.trust2}</span>
-            <span className="h-1 w-1 rounded-full bg-white/30" />
-            <span>{t.hero.trust3.replace('{rate}', localizeNumber(coeSuccessRate, lang))}</span>
+            {/* Each dot is grouped with its item so none dangles at a line end on phones */}
+            <span className="inline-flex items-center gap-2">
+              <span className="text-gold">★</span>
+              {t.hero.trust1}
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <span className="h-1 w-1 shrink-0 rounded-full bg-white/30" />
+              {t.hero.trust2}
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <span className="h-1 w-1 shrink-0 rounded-full bg-white/30" />
+              {t.hero.trust3.replace('{rate}', localizeNumber(coeSuccessRate, lang))}
+            </span>
           </div>
         </div>
       </div>
@@ -774,30 +781,7 @@ function StudySection() {
         </div>
 
         <h3 className="mt-12 text-xl font-semibold tracking-tight">{t.studySection.intakeTitle}</h3>
-        <div className="mt-6 overflow-x-auto rounded-xl border">
-          <table className="w-full min-w-[640px] text-sm">
-            <thead className="bg-accent/60">
-              <tr className="text-left">
-                {t.studySection.intakeHead.map((h) => (
-                  <th key={h} className="px-5 py-3 font-medium">{h}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {intakes.map((row, i) => {
-                const text = t.intakes[i]
-                return (
-                  <tr key={row.intake} className="border-t bg-background">
-                    <td className="px-5 py-3 font-medium">{text.intake}</td>
-                    <td className="px-5 py-3 text-muted-foreground">{text.registration}</td>
-                    <td className="px-5 py-3 text-muted-foreground">{text.coeSubmission}</td>
-                    <td className="px-5 py-3 text-muted-foreground">{text.coeResult}</td>
-                  </tr>
-                )
-              })}
-            </tbody>
-          </table>
-        </div>
+        <IntakeSchedule className="mt-6" headClassName="bg-accent/60" rowClassName="bg-background" />
 
         <div className="mt-12 flex items-center gap-3">
           <MapPin className="h-6 w-6 text-primary" />
@@ -805,22 +789,7 @@ function StudySection() {
             {t.studySection.citiesTitle}
           </h3>
         </div>
-        <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-          {cities.map((city, i) => (
-            <div key={city.name} className="group relative overflow-hidden rounded-xl border">
-              <SmartImage
-                src={city.image}
-                alt={t.cities[i]}
-                className="aspect-[3/4] w-full"
-                imgClassName="transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent" />
-              <span className="absolute bottom-3 left-3 text-sm font-medium text-white">
-                {t.cities[i]}
-              </span>
-            </div>
-          ))}
-        </div>
+        <CityGrid className="mt-6" overlayClassName="from-primary/70" />
       </div>
     </section>
   )
@@ -832,7 +801,7 @@ function MeetInJapanBanner() {
     <section className="relative overflow-hidden scroll-mt-20" id="community">
       <div className="absolute inset-0">
         <SmartImage
-          src={images.shibuya}
+          src={images.japanLife}
           alt=""
           className="h-full w-full"
           imgClassName="animate-kenburns"

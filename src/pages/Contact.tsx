@@ -1,5 +1,4 @@
 import { useState, type FormEvent, type ReactNode } from 'react'
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import {
   Mail,
   MapPin,
@@ -12,7 +11,6 @@ import {
   Send,
 } from 'lucide-react'
 import PageHero from '../components/PageHero'
-import { db } from '../lib/firebase'
 import { site, images } from '../data'
 import { useLang } from '../lib/i18n'
 
@@ -44,10 +42,11 @@ export default function Contact() {
     }
     setStatus('submitting')
     try {
-      await addDoc(collection(db, 'enrollments'), {
+      // Firebase is fetched only on submit, keeping it out of the page load.
+      const { submitEnrollment } = await import('../lib/submitEnrollment')
+      await submitEnrollment({
         ...form,
         lang,
-        createdAt: serverTimestamp(),
       })
       setStatus('success')
       setForm({ name: '', email: '', phone: '', course: '', message: '' })

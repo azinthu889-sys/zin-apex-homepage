@@ -11,8 +11,8 @@ export default function About() {
     <>
       <PageHero
         title={t.aboutPage.heroTitle}
-        image={images.kyotoStreet}
-        imageAlt="Traditional street in Japan"
+        image={images.support}
+        imageAlt="ZAE students at orientation"
       >
         <p>{t.aboutSection.intro}</p>
         <p className="mt-3">{t.aboutSection.detail}</p>
