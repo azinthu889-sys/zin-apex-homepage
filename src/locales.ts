@@ -12,13 +12,13 @@ const en = {
     contactUs: 'Contact Us',
   },
   topbar: { hours: 'Tue–Sat, 8:30 AM – 5:30 PM' },
-  banner: { meetInJapan: "Your effort, our guidance — we'll meet in Japan." },
+  banner: { meetInJapan: 'Your effort, our guidance — see you in Japan.' },
   hero: {
     badge: 'Now enrolling — 2027 intakes',
-    titleLead: "Together, we'll cross what seems impossible — ",
+    titleLead: "What seems impossible, we'll overcome together — ",
     titleAccent: 'one sure step at a time.',
     subtitle:
-      'Helping Myanmar students study at top Japanese language schools — full guidance and support from application to arrival.',
+      'Helping Myanmar students study at reputable Japanese language schools — with full support from application to arrival.',
     cta1: 'Get Free Consultation',
     cta2: 'Explore Courses',
     trust1: 'Trusted since 2023',
@@ -66,10 +66,10 @@ const en = {
     intro:
       'Zin Apex Education offers Japanese language courses and provides complete support services for those who wish to study in Japan — from the initial application process all the way to their arrival in Japan.',
     detail:
-      'With a focus on both language learning and practical guidance, we help students prepare for life in Japan academically, culturally, and professionally.',
+      'With a focus on both language learning and practical guidance, we help students prepare for Japan academically, culturally, and in everyday life.',
     founderRole: 'Founder & Educator',
     founderBio:
-      "I'm Zin Thu Aung, a Burmese educator and content creator based in Japan, and the founder of Zin Apex Education. My mission is to guide Burmese students with clear pathways, accurate information, and full support — from language training to arrival assistance — helping them succeed both academically and culturally in Japan.",
+      "I'm Zin Thu Aung, a Myanmar educator and content creator based in Japan, and the founder of Zin Apex Education. My mission is to guide Myanmar students with clear pathways, accurate information, and full support — from language training to arrival assistance — helping them succeed both academically and culturally in Japan.",
     youtubeLink: 'Zin Japan Life on YouTube',
     mission: 'Mission',
     vision: 'Vision',
@@ -82,7 +82,7 @@ const en = {
       'To become a trusted, internationally recognized education agency for students aiming to study and thrive in Japan.',
     purposeItems: [
       'To enable students who wish to study in Japan to pursue their education with ease and confidence.',
-      'To assist our fellow citizens in overcoming any challenges they may face while living abroad.',
+      'To help fellow Myanmar people overcome the challenges of living abroad.',
       'To build a strong and inspiring community made up of talented and motivated young people.',
     ],
   },
@@ -130,22 +130,22 @@ const en = {
     {
       title: 'Strong COE Success Rate',
       description:
-        'Connected with reputable, high-ranking institutions, contributing to a consistently strong COE success rate for students.',
+        'We partner with reputable schools, which helps our students achieve a consistently strong COE success rate.',
     },
     {
-      title: 'Highly Positive Student Reviews',
+      title: 'Excellent Student Reviews',
       description:
-        'Many students who applied through us share excellent reviews, reflecting their satisfaction and trust in our service.',
+        'Many students who applied through us have left excellent reviews that reflect their satisfaction and trust.',
     },
     {
       title: 'Accurate Document Preparation',
       description:
-        'All documents are carefully prepared with precision, with clear communication to both students and parents.',
+        'Every document is prepared carefully and accurately, and we explain everything clearly to both students and parents.',
     },
     {
-      title: 'Transparent Financial Information',
+      title: 'Transparent Costs',
       description:
-        'Clear, honest explanations of all financial matters give students and families complete confidence and peace of mind.',
+        'Clear, honest explanations of every cost give students and families complete peace of mind.',
     },
     {
       title: 'Fair Service Fee',
@@ -190,8 +190,8 @@ const en = {
     eyebrow: 'Courses',
     title: 'Japanese Language Courses',
     subtitle:
-      'Comprehensive JLPT preparation designed to take you from beginner to advanced proficiency.',
-    features: 'Course Features',
+      'Structured JLPT preparation that takes you from your first hiragana all the way to N4.',
+    features: "What you'll learn",
     enroll: 'Enroll Now',
     flexibleTitle: 'Flexible ways to learn',
     whyTitle: 'Why our courses are effective',
@@ -215,11 +215,11 @@ const en = {
       level: 'Elementary',
       duration: '4 months',
       description:
-        'Progress to intermediate grammar, kanji, reading, and listening for the JLPT N4 exam.',
+        'Build on the basics with the grammar, kanji, reading, and listening you need for the JLPT N4 exam.',
       features: [
         '300+ kanji characters',
-        'Complex grammar patterns',
-        'Reading and article comprehension',
+        'More advanced grammar patterns',
+        'Reading comprehension',
         'Conversation practice for daily life',
       ],
     },
@@ -228,9 +228,9 @@ const en = {
       level: 'All levels',
       duration: 'Flexible',
       description:
-        'Conversation-centred lessons that build confidence and fluency for daily life in Japan.',
+        'Conversation-centered lessons that build confidence and fluency for daily life in Japan.',
       features: [
-        'Conversation-centred lessons',
+        'Conversation-centered lessons',
         'Confidence and fluency building',
         'Real-life situational practice',
       ],
@@ -276,7 +276,7 @@ const en = {
     {
       title: 'Training with Past JLPT Questions',
       description:
-        'Practising past exam questions ensures students are fully prepared and confident for the actual JLPT exam.',
+        'Practicing with past exam questions helps students walk into the real JLPT prepared and confident.',
     },
   ],
   studySection: {
@@ -301,12 +301,12 @@ const en = {
   requiredDocuments: [
     'Passport',
     'NRC (National Registration Card) for Student, Sponsor, and Parents',
-    'Family Registration Card',
+    'Household Registration List',
     'High School Graduation Certificate / Academic Transcript or Degree Certificate with yearly transcripts',
-    'Certificate of Completion & Yearly Transcripts of the final university year (current university students only)',
+    'Final-year university certificate and yearly transcripts (current university students only)',
     'Japanese Language Proficiency Test Certificate (e.g. JLPT, NAT-TEST)',
     'Certificate of Attendance for any Japanese language courses taken',
-    'Bank Statement as proof of show money (approximately 4 million kyats)',
+    'Bank statement as proof of funds (about 4 million kyats)',
     'Photograph (3cm x 4cm)',
   ],
   intakes: [
@@ -332,7 +332,7 @@ const en = {
   cities: ['Tokyo', 'Chiba', 'Shizuoka', 'Hamamatsu', 'Osaka', 'Kobe', 'Fukuoka'],
   storiesSection: {
     eyebrow: 'Student Stories',
-    title: 'Student Reviews',
+    title: 'Student Success Stories',
     subtitle:
       'See how our students benefited from our support services and achieved their study-abroad goals.',
     storyName: 'Student Success Story',
@@ -355,7 +355,7 @@ const en = {
       name: 'Nwe Nwe Khaing',
       intake: 'Recommended on Facebook',
       quote:
-        'Thank you to the whole ZIN APEX family for helping with every single thing. Even though it is an online service, there were no gaps — they patiently explained everything right up until I reached Japan. With Sensei Zin himself based in Japan, it could not be more reassuring.',
+        'Thank you to the whole ZIN APEX family for helping with every single thing. Even though it is an online service, there were no gaps — they patiently explained everything right up until I reached Japan. With Sensei Zin personally based in Japan, it could not be more reassuring.',
     },
     {
       name: 'Ingyin Pwint Phyu',
@@ -395,13 +395,13 @@ const en = {
   resultsSection: {
     eyebrow: 'Results',
     title: 'Our COE Results',
-    tagline: 'The right choice, precise guidance, a guaranteed path to Japan.',
+    tagline: 'The right choice, precise guidance, and a reliable path to Japan.',
     subtitle:
       "This track record demonstrates Zin Apex Education's commitment and capability in guiding students successfully through the Japanese immigration and study application process.",
     chartTitle: 'COE results by year',
     legendApplicants: 'Applicants',
     legendSuccessful: 'Successful COE',
-    pending: '9 pending',
+    pending: '{n} in progress',
   },
   faqSection: {
     eyebrow: 'FAQ',
@@ -422,14 +422,14 @@ const en = {
     },
     {
       q: 'Can I pay six months of tuition at a time?',
-      a: 'Yes. For the first academic year you pay the full year, and the second year can be paid in installments.',
+      a: 'Yes. Tuition for the first year is paid in full; from the second year, you can pay in six-month installments.',
     },
     {
       q: 'Can tuition be paid in Japanese yen?',
       a: 'Yes — the language school sends an invoice, so you can pay in yen directly to the school’s bank account through friends or relatives in Japan.',
     },
     {
-      q: 'I live outside the city — do I have to visit the office in person?',
+      q: 'I live outside Mandalay — do I need to visit the office in person?',
       a: 'No. From the first inquiry through interview training, the school interview, and the COE result, everything can be handled conveniently online.',
     },
     {
@@ -442,7 +442,7 @@ const en = {
     },
     {
       q: 'Can I work after finishing language school?',
-      a: 'Yes. After language school you can switch to work without continuing to university, and you can also apply to schools that introduce Tokutei (specified-skill) jobs.',
+      a: 'Yes. After language school you can start working instead of going on to university, and you can also apply to language schools that help place graduates in Specified Skilled Worker (Tokutei Ginou) jobs.',
     },
   ],
   contactCta: {
@@ -463,7 +463,7 @@ const en = {
     goal: 'Your goal',
     goalOptions: ['University', 'Vocational school', 'Language school'],
     level: 'Current Japanese level',
-    levelOptions: ['Beginner', 'Basic', 'N5–N4'],
+    levelOptions: ['No Japanese yet', 'Basic', 'N5–N4'],
     intake: 'Preferred intake',
     intakeOptions: ['April', 'July', 'October', 'January'],
     selectPlaceholder: 'Select',
@@ -522,10 +522,10 @@ const en = {
     heroTitle: 'About Zin Apex Education',
     founderTitle: 'Founder profile',
     founderYoutube:
-      'I also run Zin Japan Life on YouTube, sharing high-quality vlogs, knowledge sharing and tips, visa information, Japanese learning content, and real-life guidance for Burmese people living in or planning to come to Japan.',
+      'I also run Zin Japan Life on YouTube, where I share vlogs, practical tips, visa information, Japanese lessons, and real-life guidance for Myanmar people living in or planning to move to Japan.',
     qualifications: 'Qualifications',
     qualificationItems: [
-      'Graduated — Hamamatsu Japanese Language College',
+      'Hamamatsu Japanese Language College (graduate)',
       'Shizuoka Eiwa University, Japan (Business Management)',
       'Yadanabon University, Mandalay',
     ],
@@ -539,7 +539,7 @@ const en = {
     enroll: 'Enroll',
     textbooksTitle: 'N4 textbooks & materials',
     textbooksBody:
-      'Our N4 course covers grammar, kotoba, reading, listening, and kanji using Minna no Nihongo and curated supplementary materials — available through flexible video, live Zoom, or combined formats.',
+      'Our N4 course covers grammar, vocabulary, reading, listening, and kanji using Minna no Nihongo and curated supplementary materials — available through flexible video, live Zoom, or combined formats.',
     speakingTitle: 'Speaking-focused & flexible self-study',
     speakingBody:
       'Boost your conversational ability in our speaking classes, or learn at your own pace with flexible N5 video lessons.',
@@ -582,7 +582,7 @@ const ja: typeof en = {
     contactUs: 'お問い合わせ',
   },
   topbar: { hours: '火〜土 8:30〜17:30' },
-  banner: { meetInJapan: 'あなたの努力と私たちの導きで、日本で会いましょう。' },
+  banner: { meetInJapan: 'あなたの努力と私たちのサポートで、日本で会いましょう。' },
   hero: {
     badge: '2027年度 入学生募集中',
     titleLead: '不可能に見えることも、確かな一歩ずつ、',
@@ -614,7 +614,7 @@ const ja: typeof en = {
     eyebrow: '動画',
     title: 'Zin Apex Educationを動画で紹介',
     subtitle:
-      '私たちがどんな存在で、学生を日本までどう導くのかを、ぜひ動画でご覧ください。',
+      '私たちのことや、学生を日本までどのように導いているのかを、ぜひ動画でご覧ください。',
   },
   aboutSection: {
     eyebrow: '私たちについて',
@@ -622,7 +622,7 @@ const ja: typeof en = {
     intro:
       'Zin Apex Educationは、日本語コースの提供とともに、日本留学を希望する方へ出願手続きから日本到着まで一貫したサポートを行っています。',
     detail:
-      '語学学習と実践的なガイダンスの両方に重点を置き、学業・文化・生活のあらゆる面で日本での生活に備えられるよう支援します。',
+      '語学学習と実践的なガイダンスの両方に重点を置き、学業・文化・日常生活のあらゆる面で日本での新生活に備えられるよう支援します。',
     founderRole: '創設者・教育者',
     founderBio:
       '日本在住のミャンマー人教育者・コンテンツクリエイターのZin Thu Aungです。Zin Apex Educationの創設者として、明確な進路、正確な情報、そして語学研修から到着サポートまでの完全な支援でミャンマーの学生を導き、日本での学業と生活の成功をサポートすることを使命としています。',
@@ -631,7 +631,7 @@ const ja: typeof en = {
     vision: 'ビジョン',
     purpose: '目的',
     missionItems: [
-      '日本留学を目指す学生に、明確で正確、そして利用しやすい進学ルートを提供します。',
+      '日本留学を目指す学生に、明確で正確、そしてわかりやすい進学ルートを提供します。',
       '日本での適応と成功のため、語学と文化の両面の研修を提供します。',
     ],
     visionText: '日本で学び活躍したい学生に信頼される、国際的に認められた留学エージェントを目指します。',
@@ -719,7 +719,7 @@ const ja: typeof en = {
   coursesSection: {
     eyebrow: 'コース',
     title: '日本語コース',
-    subtitle: '初級から上級まで、JLPT対策を体系的に学べるコースです。',
+    subtitle: 'ひらがなの第一歩からN4まで、JLPT対策を体系的に学べるコースです。',
     features: 'コース内容',
     enroll: '申し込む',
     flexibleTitle: '選べる学習スタイル',
@@ -728,17 +728,17 @@ const ja: typeof en = {
   courses: [
     {
       title: '日本語基礎',
-      level: '初級',
+      level: '入門（N5）',
       duration: '3ヶ月',
       description: 'ひらがな・カタカナ・基礎文法・日常語彙など、日本語の土台をしっかり築きます。',
       features: ['ひらがな・カタカナ・基礎漢字', '基本の挨拶と文法', '日常語彙と表現', 'リスニング・発音練習'],
     },
     {
       title: '初級日本語',
-      level: '初中級',
+      level: '初級（N4）',
       duration: '4ヶ月',
-      description: 'JLPT N4に向けて、中級文法・漢字・読解・聴解へステップアップします。',
-      features: ['漢字300字以上', '複合的な文法パターン', '読解・文章理解', '日常会話の練習'],
+      description: 'JLPT N4合格に向けて、文法・漢字・読解・聴解の力を着実に伸ばします。',
+      features: ['漢字300字以上', 'より幅広い文法表現', '読解・文章理解', '日常会話の練習'],
     },
     {
       title: 'スピーキング特化クラス',
@@ -758,7 +758,7 @@ const ja: typeof en = {
   learningFormats: [
     { title: 'ビデオ', description: 'いつでも自分のペースで学べる自習型レッスン。' },
     { title: 'Zoom', description: 'リアルタイムでやり取りできるオンラインライブ授業。' },
-    { title: 'Zoom + ビデオ', description: 'ライブ授業と録画で、柔軟かつ完全な学習を。' },
+    { title: 'Zoom + ビデオ', description: 'ライブ授業と録画の両方で、無理なくしっかり学べます。' },
   ],
   whyCoursesWork: [
     { title: '正確な発音と文字の体系的練習', description: '正しい発音と書き方を段階的にマスターできるよう指導します。' },
@@ -789,12 +789,12 @@ const ja: typeof en = {
   requiredDocuments: [
     'パスポート',
     '本人・保証人・両親のNRC（国民登録証）',
-    '家族登録票',
+    '世帯登録証（家族リスト）',
     '高校卒業証明書／成績証明書、または学位証明書と各年度の成績証明書',
     '大学最終学年の修了証明書と各年度成績証明書（現役大学生のみ）',
     '日本語能力試験の証明書（JLPT・NAT-TESTなど）',
     '日本語コースの受講証明書',
-    '残高証明としての銀行取引明細書（約400万チャット）',
+    '残高証明書（約400万チャット）',
     '証明写真（3cm×4cm）',
   ],
   intakes: [
@@ -872,20 +872,20 @@ const ja: typeof en = {
     chartTitle: '年度別COE実績',
     legendApplicants: '出願者',
     legendSuccessful: 'COE取得',
-    pending: '9名審査中',
+    pending: '{n}名 申請中',
   },
   faqSection: { eyebrow: 'FAQ', title: 'よくある質問' },
   faqs: [
     { q: '高校卒業証明書がなくても出願できますか？', a: 'GEDまたは高卒同等の資格があれば出願できます。' },
     { q: '年齢制限はありますか？', a: '厳密な年齢制限はありませんが、入学時期と学校によりますので、詳しくはご相談ください。' },
     { q: '学校の面接対策はしてもらえますか？', a: 'はい、オンラインシステムで面接トレーニングを行っています。' },
-    { q: '学費を6ヶ月分ずつ払えますか？', a: '可能です。初年度は1年分を納入し、2年目は分割で納入できます。' },
+    { q: '学費を6ヶ月ごとに分けて払えますか？', a: '初年度は1年分を一括で納入していただきますが、2年目からは6ヶ月ごとの分割納入が可能です。' },
     {
       q: '学費を円で払えますか？',
       a: '学校から請求書が届きますので、日本にいる知人を通じて学校の口座へ直接円で納入できます。',
     },
     {
-      q: '地方在住ですが、必ず来店が必要ですか？',
+      q: 'マンダレー以外に住んでいますが、事務所に行く必要はありますか？',
       a: '不要です。お問い合わせから面接対策、学校面接、COE結果まで、すべてオンラインで対応しています。',
     },
     {
@@ -919,7 +919,7 @@ const ja: typeof en = {
     goal: 'ご希望の進路',
     goalOptions: ['大学', '専門学校', '日本語学校'],
     level: '現在の日本語レベル',
-    levelOptions: ['初心者', '基礎', 'N5〜N4'],
+    levelOptions: ['未学習', '基礎', 'N5〜N4'],
     intake: 'ご希望の入学時期',
     intakeOptions: ['4月', '7月', '10月', '1月'],
     selectPlaceholder: '選択してください',
@@ -927,7 +927,7 @@ const ja: typeof en = {
     sending: '送信中…',
     successTitle: 'ありがとうございます！',
     successBody: 'お申し込みを受け付けました。まもなくご連絡いたします。',
-    again: '別のリクエストを送る',
+    again: 'もう一度送信する',
     error: '送信に失敗しました。もう一度お試しいただくか、直接お問い合わせください。',
     secondary: 'Googleフォームでの登録はこちら',
   },
@@ -947,14 +947,14 @@ const ja: typeof en = {
   },
   contactPage: {
     heroTitle: 'お問い合わせ',
-    heroSub: '出願のご相談やご質問は、メッセージをお送りください。担当者よりすぐにご連絡いたします。',
+    heroSub: '出願のご相談やご質問は、お気軽にメッセージをお送りください。担当者より折り返しご連絡いたします。',
     address: '住所',
     phone: '電話',
     email: 'メール',
     officeHours: '営業時間',
     holiday: '定休日',
     holidayValue: '月曜・日曜（毎週）',
-    followUs: 'フォローする',
+    followUs: 'SNSでフォロー',
     fullName: 'お名前',
     namePlaceholder: 'お名前を入力',
     course: '希望コース',
@@ -989,7 +989,7 @@ const ja: typeof en = {
     enroll: '申し込む',
     textbooksTitle: 'N4教材のご紹介',
     textbooksBody:
-      'N4コースでは「みんなの日本語」と厳選した補助教材を使い、文法・言葉・読解・聴解・漢字を学びます。ビデオ、Zoomライブ、併用の3形式から選べます。',
+      'N4コースでは「みんなの日本語」と厳選した補助教材を使い、文法・語彙・読解・聴解・漢字を学びます。ビデオ、Zoomライブ、併用の3形式から選べます。',
     speakingTitle: 'スピーキング特化＆自由な自習',
     speakingBody:
       'スピーキングクラスで会話力を伸ばすことも、N5ビデオレッスンで自分のペースで学ぶこともできます。',
@@ -1012,7 +1012,7 @@ const ja: typeof en = {
   },
   faqPage: {
     heroTitle: 'よくある質問',
-    stillTitle: 'ご不明な点はありませんか？',
+    stillTitle: 'まだご質問がありますか？',
     stillBody: 'いつでもお気軽にお問い合わせください。',
     stillBtn: 'お問い合わせ',
   },
@@ -1401,7 +1401,7 @@ const my: typeof en = {
     chartTitle: 'နှစ်အလိုက် COE ရလဒ်များ',
     legendApplicants: 'လျှောက်ထားသူ',
     legendSuccessful: 'COE အောင်မြင်သူ',
-    pending: '၉ ဦး စောင့်ဆိုင်းဆဲ',
+    pending: '{n} ဦး လျှောက်ထားဆဲ',
   },
   faqSection: { eyebrow: 'FAQ', title: 'မေးလေ့ရှိသော မေးခွန်းများ' },
   faqs: [

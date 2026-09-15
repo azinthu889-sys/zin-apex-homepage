@@ -289,7 +289,9 @@ export const coeResults = [
   { year: '2024', applicants: 32, successful: '32' },
   { year: '2025', applicants: 38, successful: '37' },
   { year: '2026', applicants: 45, successful: '42' },
-  { year: '2027 (Oct intake)', applicants: 10, successful: '1 · 9 pending' },
+  // Intake cohorts after 2026 are labelled year.month so the label reads the same in every language
+  { year: '2026.10', applicants: 10, successful: '10' },
+  { year: '2027.04', applicants: 40, successful: '0 · 40 pending' },
 ]
 
 const passedCount = (successful: string) => parseInt(successful, 10) || 0
