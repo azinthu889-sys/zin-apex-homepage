@@ -4,8 +4,10 @@ ZAE Education Services (Interview Class) အတွက် ပြုစုထာ�
 
 | ဖိုင် | အကြောင်းအရာ |
 |---|---|
-| `HAL_Nagoya_Interview_Guide.pdf` | ထုတ်ဝေရန် အသင့် PDF (A4 · ၅၆ မျက်နှာ) |
+| `HAL_Nagoya_Interview_Guide.pdf` | လက်စွဲ အပြည့်အစုံ (A4 · ၇၇ မျက်နှာ) |
 | `HAL_Nagoya_Interview_Guide.src.html` | ပြင်ဆင်ရန် HTML မူရင်း (font များ embed ထားပြီး) |
+| `HAL_Nagoya_Kanji_Reading.pdf` | **Kanji ဖတ်နည်း** သီးသန့် စာအုပ်ငယ် (A4 · ၂၂ မျက်နှာ) — အပိုင်း ၁၆ ကို ထုတ်ထားခြင်း |
+| `HAL_Nagoya_Kanji_Reading.src.html` | အထက်ပါ စာအုပ်ငယ်၏ HTML မူရင်း |
 
 ## ပါဝင်သည့် အပိုင်းများ
 
@@ -24,6 +26,7 @@ ZAE Education Services (Interview Class) အတွက် ပြုစုထာ�
 13. Mock Interview အမှတ်ပေး ဇယား (၁၀၀ မှတ်)
 14. ကျောင်းသား Worksheet
 15. နောက်ဆုံး Checklist
+16. **付録 — Kanji ဖတ်နည်း** (音読み/訓読み · 促音 · 連濁 · ကနအသံ ↔ မြန်မာ သော့ချက် · စကားလုံး ၂၄၀ ၏ ふりがな + မြန်မာအသံ + အဓိပ္ပာယ် · ဖတ်ရခက်သော ၂၄ လုံး · လေ့ကျင့်နည်း ၄ ဆင့်)
 
 ## PDF ပြန်ထုတ်နည်း
 
@@ -33,6 +36,10 @@ HTML ကို ပြင်ပြီးနောက် —
 chrome --headless --disable-gpu --no-pdf-header-footer \
   --print-to-pdf=HAL_Nagoya_Interview_Guide.pdf \
   HAL_Nagoya_Interview_Guide.src.html
+
+chrome --headless --disable-gpu --no-pdf-header-footer \
+  --print-to-pdf=HAL_Nagoya_Kanji_Reading.pdf \
+  HAL_Nagoya_Kanji_Reading.src.html
 ```
 
 ## သတိပြုရန်
