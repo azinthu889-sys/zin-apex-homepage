@@ -996,7 +996,6 @@ function ResultsSection() {
           {coeResults.map((row, gi) => {
             const successful = parseInt(row.successful, 10) || 0
             const pending = row.successful.includes('pending')
-            const pendingCount = parseInt(row.successful.split('·')[1] ?? '', 10) || 0
             const max = Math.max(...coeResults.map((r) => r.applicants))
             return (
               <div key={row.year} className="flex min-w-0 flex-1 flex-col items-center">
@@ -1029,15 +1028,24 @@ function ResultsSection() {
                 <span className="mt-3 text-[10px] font-semibold text-muted-foreground sm:text-xs md:text-sm">
                   {row.year}
                 </span>
-                {pending && (
-                  <span className="mt-1 max-w-full rounded-xl bg-accent px-1.5 py-0.5 text-center text-[10px] font-semibold leading-tight text-primary">
-                    {t.resultsSection.pending.replace('{n}', localizeNumber(pendingCount, lang))}
-                  </span>
-                )}
               </div>
             )
           })}
         </div>
+
+        {coeResults
+          .filter((row) => row.successful.includes('pending'))
+          .map((row) => (
+            <p key={row.year} className="mt-5 text-center text-xs font-semibold text-primary">
+              <span className="inline-block rounded-full bg-accent px-3 py-1">
+                {row.year} ·{' '}
+                {t.resultsSection.pending.replace(
+                  '{n}',
+                  localizeNumber(parseInt(row.successful.split('·')[1] ?? '', 10) || 0, lang),
+                )}
+              </span>
+            </p>
+          ))}
       </div>
     </section>
   )
