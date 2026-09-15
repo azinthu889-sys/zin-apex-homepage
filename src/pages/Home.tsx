@@ -992,21 +992,21 @@ function ResultsSection() {
           </div>
         </div>
 
-        <div className="mt-8 flex items-end justify-between gap-3 md:gap-8">
+        <div className="mt-8 flex items-end justify-between gap-1.5 md:gap-8">
           {coeResults.map((row, gi) => {
             const successful = parseInt(row.successful, 10) || 0
             const pending = row.successful.includes('pending')
             const pendingCount = parseInt(row.successful.split('·')[1] ?? '', 10) || 0
             const max = Math.max(...coeResults.map((r) => r.applicants))
             return (
-              <div key={row.year} className="flex flex-1 flex-col items-center">
-                <div className="flex h-44 items-end gap-1.5 md:h-56 md:gap-2">
+              <div key={row.year} className="flex min-w-0 flex-1 flex-col items-center">
+                <div className="flex h-44 items-end gap-1 md:h-56 md:gap-2">
                   <div className="flex h-full flex-col items-center justify-end">
                     <span className="mb-1 text-[11px] font-bold text-secondary">
                       {row.applicants}
                     </span>
                     <div
-                      className="chart-bar w-5 rounded-t-md bg-secondary/30 md:w-8"
+                      className="chart-bar w-3.5 rounded-t-md bg-secondary/30 sm:w-5 md:w-8"
                       style={{
                         height: `${(row.applicants / max) * 100}%`,
                         transitionDelay: `${gi * 120}ms`,
@@ -1018,7 +1018,7 @@ function ResultsSection() {
                       {pending && successful === 0 ? '—' : successful}
                     </span>
                     <div
-                      className="chart-bar w-5 rounded-t-md bg-gold md:w-8"
+                      className="chart-bar w-3.5 rounded-t-md bg-gold sm:w-5 md:w-8"
                       style={{
                         height: `${Math.max((successful / max) * 100, 2)}%`,
                         transitionDelay: `${gi * 120 + 60}ms`,
@@ -1026,11 +1026,11 @@ function ResultsSection() {
                     />
                   </div>
                 </div>
-                <span className="mt-3 text-xs font-semibold text-muted-foreground md:text-sm">
+                <span className="mt-3 text-[10px] font-semibold text-muted-foreground sm:text-xs md:text-sm">
                   {row.year}
                 </span>
                 {pending && (
-                  <span className="mt-1 rounded-full bg-accent px-2 py-0.5 text-[10px] font-semibold text-primary">
+                  <span className="mt-1 max-w-full rounded-xl bg-accent px-1.5 py-0.5 text-center text-[10px] font-semibold leading-tight text-primary">
                     {t.resultsSection.pending.replace('{n}', localizeNumber(pendingCount, lang))}
                   </span>
                 )}
