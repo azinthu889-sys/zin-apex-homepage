@@ -9,7 +9,7 @@ const OUTLINE =
 const PINS: Record<string, { x: number; y: number; dx: number; dy: number; anchor: 'start' | 'middle' | 'end' }> = {
   Tokyo: { x: 258.8, y: 282.8, dx: -9, dy: -7, anchor: 'end' },
   Chiba: { x: 266.7, y: 284.9, dx: 9, dy: 4, anchor: 'start' },
-  Shizuoka: { x: 226.6, y: 303.1, dx: 7, dy: 14, anchor: 'start' },
+  Shizuoka: { x: 226.6, y: 303.1, dx: 8, dy: 10, anchor: 'start' },
   Hamamatsu: { x: 211.3, y: 310.7, dx: 0, dy: 22, anchor: 'middle' },
   Osaka: { x: 159.5, y: 311.2, dx: 7, dy: -9, anchor: 'start' },
   Kobe: { x: 152.4, y: 311.3, dx: -7, dy: 17, anchor: 'end' },
