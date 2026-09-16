@@ -57,7 +57,7 @@ export const site = {
   office: {
     label: 'Mandalay Office',
     address: 'Room 302, 3rd Floor, Asahi Condo, 84th St (between 24th & 25th St), Aungmyethazan Tsp, Mandalay, Myanmar',
-    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Asahi+Condo+Mandalay',
+    mapUrl: 'https://maps.google.com/?cid=2509964894922603038',
     phones: ['+95 9 982626367', '+95 9 756367766'],
     email: 'zinapexeducation@gmail.com',
     hours: '8:30 AM – 5:30 PM',
