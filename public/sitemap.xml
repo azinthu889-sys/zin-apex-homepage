@@ -2,30 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://zin-apex-home-page.web.app/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://zin-apex-home-page.web.app/?lang=en" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://zin-apex-home-page.web.app/?lang=ja" />
-    <xhtml:link rel="alternate" hreflang="my" href="https://zin-apex-home-page.web.app/?lang=my" />
+    <loc>https://zinapexeducation.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zinapexeducation.com/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://zinapexeducation.com/?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="my" href="https://zinapexeducation.com/?lang=my" />
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://zin-apex-home-page.web.app/about</loc>
+    <loc>https://zinapexeducation.com/about</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zin-apex-home-page.web.app/courses</loc>
+    <loc>https://zinapexeducation.com/courses</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://zin-apex-home-page.web.app/study-in-japan</loc>
+    <loc>https://zinapexeducation.com/study-in-japan</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://zin-apex-home-page.web.app/faq</loc>
+    <loc>https://zinapexeducation.com/faq</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zin-apex-home-page.web.app/contact</loc>
+    <loc>https://zinapexeducation.com/contact</loc>
     <priority>0.9</priority>
   </url>
 </urlset>
