@@ -344,7 +344,7 @@ function Footer() {
         <div>
           <h4 className="font-semibold text-gold">{t.footer.office}</h4>
           <ul className="mt-4 space-y-2 text-sm font-medium text-white/70">
-            <li>{site.office.address}</li>
+            <li>{t.office.address}</li>
             <li>{site.office.phones.join(' / ')}</li>
             <li>{site.office.email}</li>
             <li>{t.topbar.hours}</li>
