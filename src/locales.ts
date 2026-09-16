@@ -70,7 +70,7 @@ const en = {
       'With a focus on both language learning and practical guidance, we help students prepare for Japan academically, culturally, and in everyday life.',
     founderRole: 'Founder & Educator',
     founderBio:
-      "I'm Zin Thu Aung, a Myanmar educator and content creator based in Japan, and the founder of Zin Apex Education. My mission is to guide Myanmar students with clear pathways, accurate information, and full support — from language training to arrival assistance — helping them succeed both academically and culturally in Japan.",
+      "I'm Zin Thu Aung. Living in Japan, I meet so many Myanmar students who dream of coming here — and I know first-hand that turning that dream into reality takes a clear path and someone you can trust beside you. That's why I founded Zin Apex Education. Alongside sharing everyday life in Japan on 'Zin Japan Life,' here I walk with each student like family — from their very first language class all the way to settling into life in Japan. Let's begin your journey to Japan, together.",
     youtubeLink: 'Zin Japan Life on YouTube',
     mission: 'Mission',
     vision: 'Vision',
@@ -628,7 +628,7 @@ const ja: typeof en = {
       '語学学習と実践的なガイダンスの両方に重点を置き、学業・文化・日常生活のあらゆる面で日本での新生活に備えられるよう支援します。',
     founderRole: '創設者・教育者',
     founderBio:
-      '日本在住のミャンマー人教育者・コンテンツクリエイターのZin Thu Aungです。Zin Apex Educationの創設者として、明確な進路、正確な情報、そして語学研修から到着サポートまでの完全な支援でミャンマーの学生を導き、日本での学業と生活の成功をサポートすることを使命としています。',
+      'Zin Thu Aungです。日本で暮らしながら、日本を目指すミャンマーの学生たちの夢に日々出会ってきました。その夢を現実にするには、明確な道筋と、そばで信頼できる存在が必要だと自分自身で感じ、Zin Apex Educationを立ち上げました。『Zin Japan Life』で日本での暮らしを伝える一方、ここでは語学の最初の一歩から日本での生活の定着まで、一人ひとりに家族のように寄り添っています。あなたの日本への旅を、私たちと一緒に始めましょう。',
     youtubeLink: 'YouTube「Zin Japan Life」',
     mission: 'ミッション',
     vision: 'ビジョン',
@@ -1092,7 +1092,7 @@ const my: typeof en = {
       'ဘာသာစကား သင်ယူမှုနဲ့ လက်တွေ့ လမ်းညွှန်မှု နှစ်ခုလုံးကို အလေးထားပြီး ကျောင်းသားတွေ ဂျပန်မှာ ပညာရေး၊ ယဉ်ကျေးမှုနဲ့ နေ့စဉ်ဘဝ အဘက်ဘက်က အဆင်သင့်ဖြစ်အောင် ပြင်ဆင်ပေးပါတယ်။',
     founderRole: 'တည်ထောင်သူနှင့် ဆရာ',
     founderBio:
-      'ကျွန်တော် Zin Thu Aung ပါ။ ဂျပန်မှာ နေထိုင်တဲ့ မြန်မာဆရာတစ်ယောက်၊ content creator တစ်ယောက်ဖြစ်ပြီး Zin Apex Education ကို တည်ထောင်ခဲ့သူပါ။ ရှင်းလင်းတဲ့ လမ်းကြောင်း၊ မှန်ကန်တဲ့ အချက်အလက်နဲ့ ဘာသာစကား သင်တန်းကနေ ဂျပန်ရောက်တဲ့အထိ အပြည့်အဝ ကူညီပေးပြီး မြန်မာကျောင်းသားတွေ ဂျပန်မှာ ပညာရေးရော နေထိုင်မှုပါ အောင်မြင်အောင် လမ်းပြပေးဖို့ ရည်ရွယ်ပါတယ်။',
+      'ကျွန်တော် Zin Thu Aung ပါ။ ဂျပန်မှာ နေထိုင်ရင်း မြန်မာကျောင်းသားတွေ ဂျပန်ကို လာဖို့ အိပ်မက်နေကြတာ နေ့စဉ် တွေ့ရပါတယ်။ အဲ့အိပ်မက်ကို တကယ် အကောင်အထည်ဖော်ဖို့ဆိုရင် ရှင်းလင်းတဲ့ လမ်းကြောင်းနဲ့ ဘေးမှာ ယုံကြည်ရမယ့် လက်တွဲဖော်တစ်ယောက် လိုတယ်ဆိုတာ ကိုယ်တိုင် ခံစားမိလို့ Zin Apex Education ကို တည်ထောင်ခဲ့တာပါ။ "Zin Japan Life" မှာ ဂျပန်နေထိုင်မှု အတွေ့အကြုံတွေ မျှဝေရင်း၊ ဒီမှာတော့ ဘာသာစကား ပထမဆုံး အတန်းကနေ ဂျပန်မှာ အခြေချတဲ့အထိ ကျောင်းသားတစ်ယောက်ချင်းစီကို မိသားစုတစ်ယောက်လို အနားကနေ လိုက်ကူညီပေးနေပါတယ်။ သင့်ရဲ့ ဂျပန်ခရီးကို ကျွန်တော်တို့နဲ့အတူ စတင်ကြရအောင်။',
     youtubeLink: 'YouTube — Zin Japan Life',
     mission: 'ရည်မှန်းချက်',
     vision: 'မျှော်မှန်းချက်',
