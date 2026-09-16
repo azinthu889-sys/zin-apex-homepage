@@ -12,6 +12,7 @@ const en = {
     contactUs: 'Contact Us',
   },
   topbar: { hours: 'Tue–Sat, 8:30 AM – 5:30 PM' },
+  office: { address: 'Room 302, 3rd Floor, Asahi Condo, 84th St (between 24th & 25th St), Aungmyethazan Tsp, Mandalay, Myanmar' },
   banner: { meetInJapan: 'Your effort, our guidance — see you in Japan.' },
   hero: {
     badge: 'Now enrolling — 2027 intakes',
@@ -499,6 +500,7 @@ const en = {
     heroSub:
       'Ready to apply or have a question? Send us a message and our team will get back to you shortly.',
     address: 'Address',
+    openMap: 'Open in Google Maps',
     phone: 'Phone',
     email: 'Email',
     officeHours: 'Office hours',
@@ -582,6 +584,7 @@ const ja: typeof en = {
     contactUs: 'お問い合わせ',
   },
   topbar: { hours: '火〜土 8:30〜17:30' },
+  office: { address: 'ミャンマー・マンダレー市 アウンミェタザン郡区 84通り（24通りと25通りの間）アサヒ・コンド 3階 302号室' },
   banner: { meetInJapan: 'あなたの努力と私たちのサポートで、日本で会いましょう。' },
   hero: {
     badge: '2027年度 入学生募集中',
@@ -949,6 +952,7 @@ const ja: typeof en = {
     heroTitle: 'お問い合わせ',
     heroSub: '出願のご相談やご質問は、お気軽にメッセージをお送りください。担当者より折り返しご連絡いたします。',
     address: '住所',
+    openMap: 'Google マップで開く',
     phone: '電話',
     email: 'メール',
     officeHours: '営業時間',
@@ -1030,6 +1034,7 @@ const my: typeof en = {
     contactUs: 'Contact Us',
   },
   topbar: { hours: 'အင်္ဂါ–စနေ၊ နံနက် ၈:၃၀ – ညနေ ၅:၃၀' },
+  office: { address: 'အခန်း (၃၀၂)၊ တတိယထပ်၊ ASAHI ကွန်ဒို၊ ၈၄ လမ်း၊ ၂၄ လမ်း × ၂၅ လမ်းကြား၊ အောင်မြေသာစံမြို့နယ်၊ မန္တလေး' },
   banner: { meetInJapan: 'သင် ကြိုးစားပါ၊ ကျွန်ုပ်တို့ လမ်းပြပါ့မယ် — ဂျပန်မှာ ဆုံကြစို့။' },
   hero: {
     badge: '၂၀၂၇ ဝင်ခွင့်များ လက်ခံနေပါပြီ',
@@ -1495,6 +1500,7 @@ const my: typeof en = {
     heroTitle: 'ဆက်သွယ်ရန်',
     heroSub: 'လျှောက်ထားဖို့ အသင့်ဖြစ်ပြီလား၊ မေးစရာရှိပါသလား? စာလေးပို့ထားလိုက်ပါ — ကျွန်ုပ်တို့အဖွဲ့က မကြာမီ ပြန်လည်ဆက်သွယ်ပေးပါမယ်။',
     address: 'လိပ်စာ',
+    openMap: 'Google Maps တွင် ကြည့်ရန်',
     phone: 'ဖုန်း',
     email: 'အီးမေးလ်',
     officeHours: 'ရုံးချိန်',

@@ -75,7 +75,15 @@ export default function Contact() {
               <h2 className="text-lg font-medium">{t.footer.office}</h2>
               <div className="mt-5 space-y-5">
                 <InfoRow icon={<MapPin className="h-5 w-5" />} title={t.contactPage.address}>
-                  {site.office.address}
+                  {t.office.address}
+                  <a
+                    href={site.office.mapUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-1 block text-sm font-semibold text-secondary hover:underline"
+                  >
+                    {t.contactPage.openMap}
+                  </a>
                 </InfoRow>
                 <InfoRow icon={<Phone className="h-5 w-5" />} title={t.contactPage.phone}>
                   {site.office.phones.join(' / ')}
