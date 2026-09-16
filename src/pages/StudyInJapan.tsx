@@ -14,7 +14,7 @@ export default function StudyInJapan() {
     <>
       <PageHero
         title={t.studyPage.heroTitle}
-        image={images.cherryBlossom}
+        image={images.schoolGroup}
         imageAlt="Cherry blossoms in Japan"
       >
         <p>{t.studyPage.heroSub}</p>

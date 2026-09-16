@@ -22,7 +22,7 @@ export default function About() {
         <div data-reveal className="grid items-start gap-10 lg:grid-cols-[280px_1fr]">
           <div className="overflow-hidden rounded-2xl border bg-card text-center">
             <SmartImage
-              src={images.torii}
+              src={images.arrivalTeam}
               alt="Torii gates in Japan"
               className="aspect-[4/3] w-full"
             />
@@ -113,7 +113,7 @@ export default function About() {
         subtitle={t.aboutPage.ctaSub}
         buttonLabel={t.aboutPage.ctaBtn}
         to="/contact"
-        image={images.cherryBlossom}
+        image={images.schoolGroup}
       />
     </>
   )
