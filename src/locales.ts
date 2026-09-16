@@ -69,8 +69,11 @@ const en = {
     detail:
       'With a focus on both language learning and practical guidance, we help students prepare for Japan academically, culturally, and in everyday life.',
     founderRole: 'Founder & Educator',
-    founderBio:
-      "I'm Zin Thu Aung. I walked this road myself — I came to Japan as a ryugakusei (international student), went from language school on to university here, and graduated. Along the way I met what every student meets: the language barrier, tuition and living costs, balancing a part-time job with study, and being far from family. Because I know first-hand where that road gets hard, I founded Zin Apex Education — so the students who come after me don't have to find their way alone. From the very first language class to the day life in Japan finally settles, we stay beside each student the whole way.",
+    founderBio: [
+      "I'm Zin Thu Aung. I came to Japan as an international student, moved on from language school to university, and graduated in Business Management. I then worked here as a full-time employee at a Japanese company — so I have lived this country both as a student and as a working adult, not as a visitor.",
+      'The hardest part of that road was not the studying. It was having no one to guide me. Which school suited me, how the paperwork had to be prepared, what to do once I landed — I worked all of it out alone, and made the mistakes that come with that.',
+      'Zin Apex Education is built on that experience. It exists so that the Burmese students who come after me never have to guess their way through: a clear pathway and accurate information, from the first language class to the day life in Japan is finally steady.',
+    ],
     youtubeLink: 'Zin Japan Life on YouTube',
     mission: 'Mission',
     vision: 'Vision',
@@ -630,8 +633,11 @@ const ja: typeof en = {
     detail:
       '語学学習と実践的なガイダンスの両方に重点を置き、学業・文化・日常生活のあらゆる面で日本での新生活に備えられるよう支援します。',
     founderRole: '創設者・教育者',
-    founderBio:
-      'Zin Thu Aungです。私自身、留学生として来日し、日本語学校から大学へ進み、卒業しました。言葉の壁、学費や生活費、アルバイトと勉強の両立、家族と離れて暮らす心細さ——留学生がぶつかることは、ひと通り自分で経験してきました。どこでつまずきやすいかを身をもって知っているからこそ、後に続くミャンマーの学生が同じ苦労を一人で背負わずに済むように、Zin Apex Educationを立ち上げました。語学の最初の一歩から日本での生活が軌道に乗るまで、一人ひとりのそばで伴走しています。',
+    founderBio: [
+      'Zin Thu Aungと申します。留学生として来日し、日本語学校から大学へ進学、経営学を修めて卒業いたしました。その後は日本企業で正社員として勤務し、学生としても社会人としても、この国で生活してまいりました。',
+      'この道のりで最も難しかったのは、勉強そのものではありません。導いてくれる人が一人もいなかったことです。どの学校が自分に合うのか、書類はどう準備するのか、来日後に何をすべきか——すべてを手探りで、多くの失敗を重ねながら進むほかありませんでした。',
+      'Zin Apex Educationは、その経験の上に設立いたしました。後に続くミャンマーの学生が一人で手探りをせずに済むよう、明確な道筋と正確な情報をお届けすること。語学の最初の一歩から、日本での生活が軌道に乗るその日までを支えることが、私たちの役割です。',
+    ],
     youtubeLink: 'YouTube「Zin Japan Life」',
     mission: 'ミッション',
     vision: 'ビジョン',
@@ -1097,8 +1103,11 @@ const my: typeof en = {
     detail:
       'ဘာသာစကား သင်ယူမှုနဲ့ လက်တွေ့ လမ်းညွှန်မှု နှစ်ခုလုံးကို အလေးထားပြီး ကျောင်းသားတွေ ဂျပန်မှာ ပညာရေး၊ ယဉ်ကျေးမှုနဲ့ နေ့စဉ်ဘဝ အဘက်ဘက်က အဆင်သင့်ဖြစ်အောင် ပြင်ဆင်ပေးပါတယ်။',
     founderRole: 'တည်ထောင်သူနှင့် ဆရာ',
-    founderBio:
-      'ကျွန်တော် Zin Thu Aung ပါ။ ကျွန်တော်ကိုယ်တိုင် 留学生 (ပညာတော်သင် ကျောင်းသား) အဖြစ် ဂျပန်ကို ရောက်ခဲ့ပြီး၊ ဘာသာစကားကျောင်းကနေ တက္ကသိုလ်အထိ ဆက်တက်ကာ ဘွဲ့ရအောင် ကြိုးစားခဲ့သူ ဖြစ်ပါတယ်။ အဲဒီခရီးမှာ ဘာသာစကား အခက်အခဲ၊ ကျောင်းစရိတ်နဲ့ နေထိုင်စရိတ်၊ အလုပ်နဲ့ စာသင်ချိန် ချိန်ညှိရတာ၊ မိသားစုနဲ့ ဝေးကွာနေရတဲ့ အထီးကျန်မှု — ကျောင်းသားတိုင်း ကြုံရတဲ့အရာတွေကို ကိုယ်တိုင် ဖြတ်သန်းခဲ့ရပါတယ်။ ဘယ်နေရာမှာ ခက်ခဲတယ်ဆိုတာ ကိုယ်တွေ့ သိထားလို့ — နောက်မှလာမယ့် မြန်မာကျောင်းသားတွေ တစ်ယောက်တည်း ရုန်းကန်မနေရအောင် Zin Apex Education ကို တည်ထောင်ခဲ့တာပါ။ ဘာသာစကား ပထမဆုံးအတန်းကနေ ဂျပန်မှာ ဘဝ အခြေကျတဲ့အထိ ကျောင်းသားတစ်ယောက်ချင်းစီရဲ့ အနားမှာ အမြဲ ရှိနေပေးပါမယ်။',
+    founderBio: [
+      'ကျွန်တော် Zin Thu Aung ပါ။ ဂျပန်နိုင်ငံသို့ 留学生 (နိုင်ငံခြားသား ကျောင်းသား) အဖြစ် ရောက်ရှိခဲ့ပြီး၊ ဘာသာစကားကျောင်းမှ တက္ကသိုလ်သို့ ဆက်လက်တက်ရောက်ကာ စီးပွားရေး စီမံခန့်ခွဲမှု (経営学) ဘွဲ့ကို ရရှိခဲ့ပါသည်။ ထို့နောက် ဂျပန်ကုမ္ပဏီတစ်ခုတွင် အချိန်ပြည့်ဝန်ထမ်း (正社員) အဖြစ် လုပ်ကိုင်ခဲ့ပါသည် — ကျောင်းသားဘဝရော အလုပ်သမားဘဝပါ ဤနိုင်ငံတွင် ကိုယ်တိုင် ဖြတ်သန်းခဲ့သူ ဖြစ်ပါသည်။',
+      'ထိုခရီးတွင် အခက်ခဲဆုံးမှာ စာသင်ခြင်း မဟုတ်ပါ။ လမ်းညွှန်ပေးမည့်သူ တစ်ဦးတစ်ယောက်မျှ မရှိခဲ့ခြင်း ဖြစ်ပါသည်။ မည်သည့်ကျောင်းက သင့်လျော်သနည်း၊ စာရွက်စာတမ်းများကို မည်သို့ ပြင်ဆင်ရမည်နည်း၊ ဂျပန်ရောက်ပြီးနောက် ဘာဆက်လုပ်ရမည်နည်း — အားလုံးကို ကိုယ်တိုင် စမ်းတဝါးဝါး ရှာဖွေခဲ့ရပြီး အမှားများစွာလည်း ကျူးလွန်ခဲ့ရပါသည်။',
+      'Zin Apex Education ကို ထိုအတွေ့အကြုံပေါ် အခြေခံ၍ တည်ထောင်ခဲ့ခြင်း ဖြစ်ပါသည်။ နောက်မှလာမည့် မြန်မာကျောင်းသားများ တစ်ဦးတည်း မှန်းဆရှာဖွေစရာ မလိုစေရန် — ရှင်းလင်းသော လမ်းကြောင်းနှင့် မှန်ကန်သော အချက်အလက်ကို ဘာသာစကား ပထမဆုံးအတန်းမှစ၍ ဂျပန်တွင် ဘဝအခြေကျသည့်နေ့အထိ ပံ့ပိုးပေးရန် ဖြစ်ပါသည်။',
+    ],
     youtubeLink: 'YouTube — Zin Japan Life',
     mission: 'ရည်မှန်းချက်',
     vision: 'မျှော်မှန်းချက်',

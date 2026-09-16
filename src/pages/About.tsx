@@ -47,7 +47,11 @@ export default function About() {
             <h2 className="text-2xl font-semibold tracking-tight">
               {t.aboutPage.founderTitle}
             </h2>
-            <p className="mt-4 text-muted-foreground">{t.aboutSection.founderBio}</p>
+            <div className="mt-4 space-y-4 text-muted-foreground">
+              {t.aboutSection.founderBio.map((para) => (
+                <p key={para}>{para}</p>
+              ))}
+            </div>
             <p className="mt-4 text-muted-foreground">{t.aboutPage.founderYoutube}</p>
             <h3 className="mt-8 font-medium">{t.aboutPage.qualifications}</h3>
             <ul className="mt-3 space-y-2">
