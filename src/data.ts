@@ -83,7 +83,7 @@ export const founder = {
   name: 'Zin Thu Aung',
   initials: 'ZA',
   role: 'Founder & Educator',
-  bio: "I'm Zin Thu Aung. I came to Japan as an international student myself, went from language school on to university here, and graduated — so I know first-hand where that road gets hard. I founded Zin Apex Education on that experience, to give Burmese students a clear pathway, accurate information and full support from their first language class to settling into life in Japan.",
+  bio: "I'm Zin Thu Aung. I came to Japan as an international student, moved on from language school to university, graduated in Business Management, and then worked here as a full-time employee at a Japanese company. The hardest part of that road was having no one to guide me — and that is why Zin Apex Education exists: a clear pathway and accurate information for the Burmese students who come after me.",
   youtube:
     'I also run Zin Japan Life on YouTube, sharing high-quality vlogs, knowledge sharing and tips, visa information, Japanese learning content, and real-life guidance for Burmese people living in or planning to come to Japan.',
   qualifications: [

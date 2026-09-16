@@ -349,9 +349,11 @@ function AboutSection() {
                 </p>
               </div>
             </div>
-            <p className="mt-4 text-sm font-medium text-muted-foreground">
-              {t.aboutSection.founderBio}
-            </p>
+            <div className="mt-4 space-y-3 text-sm font-medium text-muted-foreground">
+              {t.aboutSection.founderBio.map((para) => (
+                <p key={para}>{para}</p>
+              ))}
+            </div>
             <a
               href={site.social.youtube}
               target="_blank"
