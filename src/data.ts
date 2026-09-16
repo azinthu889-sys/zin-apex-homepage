@@ -27,6 +27,14 @@ import activity7 from './assets/activity7.webp'
 import activity8 from './assets/activity8.webp'
 import activity9 from './assets/activity9.webp'
 import activity10 from './assets/activity10.webp'
+import groupSchool from './assets/group-school.webp'
+import groupSchool2 from './assets/group-school-2.webp'
+import groupSchool3 from './assets/group-school-3.webp'
+import groupCelebrate from './assets/group-celebrate.webp'
+import arrivalTeam from './assets/arrival-team.webp'
+import arrivalLineup from './assets/arrival-lineup.webp'
+import classroomLesson from './assets/classroom-lesson.webp'
+import classroomStudy from './assets/classroom-study.webp'
 import airportPhoto from './assets/airport.webp'
 import heroArrivals from './assets/hero-arrivals.webp'
 import tokyoPhoto from './assets/cities/tokyo.webp'
@@ -258,11 +266,11 @@ export const images = {
   n4Textbooks: n4TextbooksImg,
   // Real ZAE photos read as more trustworthy than stock scenery
   japanLife: activity6,
-  torii: unsplash('1545569341-9eb8b30979d9', 1400),
-  cherryBlossom: unsplash('1522383225653-ed111181a951', 1400),
-  study: unsplash('1456513080510-7bf3a84b82f8', 1200),
-  graduation: unsplash('1523050854058-8df90110c9f1', 1400),
-  classroom: unsplash('1524178232363-1fb2b075b655', 1200),
+  arrivalTeam: arrivalTeam,
+  schoolGroup: groupSchool,
+  studyingTogether: classroomStudy,
+  celebrating: groupCelebrate,
+  classroomLesson: classroomLesson,
 }
 
 export const cities = [
@@ -348,4 +356,7 @@ export const activities = [
   { title: 'Dinner with our student community', image: activity8 },
   { title: 'Arriving in the city', image: activity6 },
   { title: 'Celebrating together in Japan', image: activity9 },
+  { title: 'At our partner school in Japan', image: groupSchool2 },
+  { title: 'Together at the school entrance', image: groupSchool3 },
+  { title: 'Our group arriving in Japan', image: arrivalLineup },
 ]

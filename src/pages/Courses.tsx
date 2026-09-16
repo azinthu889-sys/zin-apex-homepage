@@ -12,7 +12,7 @@ export default function Courses() {
     <>
       <PageHero
         title={t.coursesPage.heroTitle}
-        image={images.classroom}
+        image={images.classroomLesson}
         imageAlt="Japanese language classroom"
       >
         <p>{t.coursesPage.heroSub}</p>
@@ -121,7 +121,7 @@ export default function Courses() {
             </ul>
           </div>
           <SmartImage
-            src={images.study}
+            src={images.studyingTogether}
             alt="Studying Japanese at your own pace"
             className="aspect-[4/3] rounded-2xl border shadow-sm"
           />
@@ -133,7 +133,7 @@ export default function Courses() {
         subtitle={t.coursesPage.ctaSub}
         buttonLabel={t.coursesPage.ctaBtn}
         to="/contact"
-        image={images.graduation}
+        image={images.celebrating}
       />
     </>
   )

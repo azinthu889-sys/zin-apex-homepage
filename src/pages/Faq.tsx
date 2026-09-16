@@ -13,7 +13,7 @@ export default function Faq() {
     <>
       <PageHero
         title={t.faqPage.heroTitle}
-        image={images.study}
+        image={images.studyingTogether}
         imageAlt="Studying and preparing questions"
       >
         <p>{t.faqPage.stillBody}</p>

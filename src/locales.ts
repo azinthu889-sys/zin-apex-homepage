@@ -392,6 +392,9 @@ const en = {
     'Dinner with our student community',
     'Arriving in the city',
     'Celebrating together in Japan',
+    'At our partner school in Japan',
+    'Together at the school entrance',
+    'Our group arriving in Japan',
   ],
   resultsSection: {
     eyebrow: 'Results',
@@ -865,6 +868,9 @@ const ja: typeof en = {
     '学生コミュニティの夕食会',
     '街に到着',
     '日本でお祝い',
+    '日本の提携校にて',
+    '校舎前でみんな一緒に',
+    '日本に到着したZAEのグループ',
   ],
   resultsSection: {
     eyebrow: '実績',
@@ -1396,6 +1402,9 @@ const my: typeof en = {
     'ကျောင်းသား အသိုက်အဝန်းနှင့် ညစာ',
     'မြို့ထဲ ရောက်ရှိ',
     'ဂျပန်မှာ အတူတူ ဆင်နွှဲ',
+    'ဂျပန်က မိတ်ဖက်ကျောင်းမှာ',
+    'ကျောင်းဝင်းရှေ့မှာ အတူတကွ',
+    'ဂျပန်ကို အတူတကွ ရောက်ရှိစဉ်',
   ],
   resultsSection: {
     eyebrow: 'ရလဒ်များ',
