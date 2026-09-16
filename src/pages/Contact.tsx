@@ -45,7 +45,9 @@ export default function Contact() {
       // Firebase is fetched only on submit, keeping it out of the page load.
       const { submitEnrollment } = await import('../lib/submitEnrollment')
       await submitEnrollment({
+        source: 'contact',
         ...form,
+        elapsed: Date.now() - openedAt,
         lang,
       })
       setStatus('success')

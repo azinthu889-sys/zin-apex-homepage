@@ -47,6 +47,7 @@ export default function LeadForm() {
       // works under the existing Firestore rules. `source` distinguishes leads.
       await submitEnrollment({
         source: 'lead-form',
+        elapsed: Date.now() - openedAt,
         name: form.name,
         phone: form.phone,
         goal: canonical('goalOptions', form.goal),
